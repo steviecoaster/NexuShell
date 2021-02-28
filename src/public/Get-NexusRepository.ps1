@@ -1,4 +1,26 @@
 function Get-NexusRepository {
+    <#
+    .SYNOPSIS
+    Returns info about configured Nexus repository
+    
+    .DESCRIPTION
+    Returns details for currently configured repositories on your Nexus server
+    
+    .PARAMETER Format
+    Query for only a specific repository format. E.g. nuget, maven2, or docker
+    
+    .PARAMETER Name
+    Query for a specific repository by name
+    
+    .EXAMPLE
+    Get-NexusRepository
+
+    .EXAMPLE
+    Get-NexusRepository -Format nuget
+
+    .EXAMPLE
+    Get-NexusRepository -Name CompanyNugetPkgs
+    #>
     [cmdletBinding(DefaultParameterSetName="default")]
     param(
         [Parameter(ParameterSetName="Type",Mandatory)]
@@ -23,8 +45,8 @@ function Get-NexusRepository {
     process {
 
         switch($PSCmdlet.ParameterSetName){
-            {$Type} {
-                $filter = { $_.format -eq $Type}
+            {$Format} {
+                $filter = { $_.format -eq $Format}
 
                 $result = Invoke-Nexus -UriSlug $urislug -Method Get
                 $result | Where-Object $filter

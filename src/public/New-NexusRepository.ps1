@@ -1,4 +1,68 @@
 function New-NexusRepository {
+    <#
+    .SYNOPSIS
+    Creates a new repository in your Nexus server
+    
+    .DESCRIPTION
+    Creates a new repository of the specified type and settings in your Nexus server
+    
+    .PARAMETER Name
+    The name to give to the new repository
+    
+    .PARAMETER Format
+    The format of the new repository
+    
+    .PARAMETER Type
+    The type of repository to create: Hosted,Group,Proxy
+    
+    .PARAMETER GroupMember
+    Members to add to group repository types. Must be of the same repository format as the repository you are creating
+    
+    .PARAMETER ProxyRemoteUrl
+    When setting a Proxy type repository, this is the upstream repository url to point the new repository
+    
+    .PARAMETER ContentMaxAgeMinutes
+    When using a Proxy type repository, the length of time to cache package contents before reaching back out to the upstream url
+    
+    .PARAMETER MetadataMaxAgeMinutes
+    When using a Proxy type repository, the length of time to cache package metadata before reaching back out to the upstream url
+    
+    .PARAMETER QueryCacheItemMaxAgSeconds
+    When using a Proxy type repository, the length of time to cache upstream url repsonses
+    
+    .PARAMETER NugetVersion
+    For Nuget proxy repositories the version of nuget packages your upstream url contains
+    
+    .PARAMETER UseNegativeCache
+    Use Negative Cache for proxy url
+    
+    .PARAMETER NegativeCacheTTLMinutes
+    The Negative Cache TTL value
+    
+    .PARAMETER CleanupPolicy
+    The cleanup policy to apply to the new repository
+    
+    .PARAMETER RoutingRule
+    The Routing Rule to apply to the new repository
+    
+    .PARAMETER Online
+    Make the new repository immediately available for use. This basically means "Enabled", or "Disabled"
+    
+    .PARAMETER BlobStoreName
+    The blob store to use with the new repository
+    
+    .PARAMETER StrictContentValidation
+    Specify that uploaded artifacts adhere to the MIME type of the specified format
+    
+    .PARAMETER DeploymentPolicy
+    Controls whether you can push the same package version repeatedly, or push packages at all
+    
+    .EXAMPLE
+    New-NexusRepository -Name NugetCenter -Format nuget -Type hosted -DeploymentPolicy Allow
+    
+    .EXAMPLE
+    New-NexusRepository -Name ChocoUpstream -Format nuget -Type proxy -ProxyRemoteUrl 'https://chocolatey.org/api/v2'
+    #>
     [CmdletBinding()]
     Param(
         [Parameter(Mandatory)]

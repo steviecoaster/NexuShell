@@ -1,4 +1,32 @@
 function Connect-NexusServer {
+    <#
+    .SYNOPSIS
+    Creates the authentication header needed for REST calls to your Nexus server
+    
+    .DESCRIPTION
+    Creates the authentication header needed for REST calls to your Nexus server
+    
+    .PARAMETER Hostname
+    The hostname or ip address of your Nexus server
+    
+    .PARAMETER Credential
+    The credentials to authenticate to your Nexus server
+    
+    .PARAMETER UseSSL
+    Use https instead of http for REST calls. Defaults to 8443.
+    
+    .PARAMETER Sslport
+    If not the default 8443 provide the current SSL port your Nexus server uses
+    
+    .EXAMPLE
+    Connect-NexusServer -Hostname nexus.fabrikam.com -Credential (Get-Credential)
+
+    .EXAMPLE
+    Connect-NexusServer -Hostname nexus.fabrikam.com -Credential (Get-Credential) -UseSSL
+
+    .EXAMPLE
+    Connect-NexusServer -Hostname nexus.fabrikam.com -Credential $Cred -UseSSL -Sslport 443
+    #>
     [cmdletBinding()]
     param(
         [Parameter(Mandatory,Position=0)]

@@ -69,7 +69,7 @@ function New-NexusBlobStore {
     .NOTES
     S3 buckets are currently not supported by the cmdlet until I can get S3 for testing
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusBlobStore.md')]
     Param(
         [Parameter(Mandatory,ParameterSetName="File")]
         [Parameter(Mandatory,ParameterSetName="S3")]

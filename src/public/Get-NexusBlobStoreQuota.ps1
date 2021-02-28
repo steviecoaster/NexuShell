@@ -1,5 +1,18 @@
 function Get-NexusBlobStoreQuota {
-    [CmdletBinding()]
+    <#
+    .SYNOPSIS
+    Get the quota settings of a blob store
+    
+    .DESCRIPTION
+    Get the quota settings of a blob store
+    
+    .PARAMETER Name
+    The blob store to retrieve quota settings
+    
+    .EXAMPLE
+    Get-NexusBlobStoreQuota -Name TestBlob
+    #>
+    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusBlobStoreQuota.md')]
     Param(
         [Parameter(Mandatory)]
         [String[]]

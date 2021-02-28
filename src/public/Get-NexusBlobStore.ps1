@@ -1,5 +1,30 @@
 function Get-NexusBlobStore {
-    [CmdletBinding(DefaultParameterSetName = "Default")]
+    <#
+    .SYNOPSIS
+    Get information about a blob store
+    
+    .DESCRIPTION
+    Get basic or detailed blob store configuration information
+    
+    .PARAMETER Name
+    The blob store to get information from
+    
+    .PARAMETER Type
+    The type of the blob store
+    
+    .PARAMETER Detailed
+    Return detailed information about the blob store
+    
+    .EXAMPLE
+    Get-NexusBlobStore
+
+    .EXAMPLE
+    Get-NexusBlobStore -Name default -Type file
+
+    .EXAMPLE
+    Get-NexusBlobStore -Name TreasureBlob -Type file -Detailed
+    #>
+    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusBlobStore.md',DefaultParameterSetName = "Default")]
     Param(
         [Parameter(Mandatory, ParameterSetName = "Name")]
         [String]

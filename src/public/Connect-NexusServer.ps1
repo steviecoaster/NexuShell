@@ -27,7 +27,7 @@ function Connect-NexusServer {
     .EXAMPLE
     Connect-NexusServer -Hostname nexus.fabrikam.com -Credential $Cred -UseSSL -Sslport 443
     #>
-    [cmdletBinding()]
+    [cmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Connect-NexusServer.md')]
     param(
         [Parameter(Mandatory,Position=0)]
         [Alias('Server')]

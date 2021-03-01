@@ -9,6 +9,10 @@ function Invoke-Nexus {
         [Hashtable]
         $Body,
 
+        [Parameter()]
+        [String]
+        $ContentType,
+
         [Parameter(Mandatory)]
         [String]
         $Method

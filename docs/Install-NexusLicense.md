@@ -5,34 +5,34 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-NexusBlobStoreQuota
+# Install-NexusLicense
 
 ## SYNOPSIS
-Get the quota settings of a blob store
+Installs a license on a nexus instance.
 
 ## SYNTAX
 
 ```
-Get-NexusBlobStoreQuota [-Name] <String[]> [<CommonParameters>]
+Install-NexusLicense [-NexusLicense] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Get the quota settings of a blob store
+Installs a license on a nexus instance.
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 ```
-Get-NexusBlobStoreQuota -Name TestBlob
+Install-NexusLicense -NexusLicense 'C:\temp\sonatype-repository-manager.lic'
 ```
 
 ## PARAMETERS
 
-### -Name
-The blob store to retrieve quota settings
+### -NexusLicense
+The license file to install
 
 ```yaml
-Type: String[]
+Type: String
 Parameter Sets: (All)
 Aliases:
 

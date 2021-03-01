@@ -8,7 +8,7 @@ schema: 2.0.0
 # Get-NexusBlobStore
 
 ## SYNOPSIS
-{{ Fill in the Synopsis }}
+Get information about a blob store
 
 ## SYNTAX
 
@@ -28,36 +28,29 @@ Get-NexusBlobStore -Type <String> [-Detailed] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+Get basic or detailed blob store configuration information
 
 ## EXAMPLES
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### EXAMPLE 1
+```
+Get-NexusBlobStore
 ```
 
-{{ Add example description here }}
+### EXAMPLE 2
+```
+Get-NexusBlobStore -Name default -Type file
+```
+
+### EXAMPLE 3
+```
+Get-NexusBlobStore -Name TreasureBlob -Type file -Detailed
+```
 
 ## PARAMETERS
 
-### -Detailed
-{{ Fill Detailed Description }}
-
-```yaml
-Type: SwitchParameter
-Parameter Sets: Name, Type
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Name
-{{ Fill Name Description }}
+The blob store to get information from
 
 ```yaml
 Type: String
@@ -72,17 +65,31 @@ Accept wildcard characters: False
 ```
 
 ### -Type
-{{ Fill Type Description }}
+The type of the blob store
 
 ```yaml
 Type: String
 Parameter Sets: Name, Type
 Aliases:
-Accepted values: File, S3
 
 Required: True
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Detailed
+Return detailed information about the blob store
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: Name, Type
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -92,11 +99,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
-
 ## OUTPUTS
 
-### System.Object
 ## NOTES
 
 ## RELATED LINKS

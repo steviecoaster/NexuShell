@@ -11,7 +11,7 @@ function Invoke-Nexus {
 
         [Parameter()]
         [String]
-        $ContentType,
+        $ContentType = 'application/json',
 
         [Parameter(Mandatory)]
         [String]
@@ -24,7 +24,7 @@ function Invoke-Nexus {
         $Uri = $UriBase + $UriSlug
         $Params = @{
             Headers = $header
-            ContentType = 'application/json'
+            ContentType = $ContentType
             Uri = $Uri
             Method = $Method
         }

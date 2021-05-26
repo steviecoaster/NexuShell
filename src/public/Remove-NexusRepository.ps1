@@ -53,20 +53,20 @@ function Remove-NexusRepository {
            
             if ($Force -and -not $Confirm) {
                 $ConfirmPreference = 'None'
-                if ($PSCmdlet.ShouldProcess("$name", "Remove Repository")) {
+                if ($PSCmdlet.ShouldProcess("$Repository", "Remove Repository")) {
                     $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
                     [pscustomobject]@{
                         Status     = 'Success'
-                        Repository = $Name        
+                        Repository = $Repository     
                     }
                 }
             }
             else {
-                if ($PSCmdlet.ShouldProcess("$name", "Remove Repository")) {
+                if ($PSCmdlet.ShouldProcess("$Repository", "Remove Repository")) {
                     $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
                     [pscustomobject]@{
                         Status     = 'Success'
-                        Repository = $Name
+                        Repository = $Repository
                         Timestamp  = $result.date
                     }
                 }

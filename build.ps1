@@ -31,6 +31,9 @@ process {
 
             if (Test-Path "$root\Output") {
                 Remove-Item "$root\Output\TreasureChest\*.psm1" -Recurse -Force
+            } else {
+                $Null = New-Item "$root\Output" -ItemType Directory
+                $null = New-item "$root\Output\TreasureChest" -ItemType Directory
             }
         
             if (Test-Path "$root\src\nuget\tools\TreasureChest.zip") {

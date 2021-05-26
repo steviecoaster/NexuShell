@@ -16,7 +16,7 @@ function Remove-NexusRepository {
     Remove-NexusRepository -Repository ProdNuGet
 
     .EXAMPLE
-    Remove-NexusRepository -Repository MavenReleases -Force
+    Remove-NexusRepository -Repository MavenReleases -Force()
     #>
     [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Remove-NexusRepository.md', SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
@@ -47,7 +47,7 @@ function Remove-NexusRepository {
         $urislug = "/service/rest/v1/repositories"
     }
     process {
-        $Uri = $urislug + "/$Name"
+        $Uri = $urislug + "/$Repository"
 
         try {
            

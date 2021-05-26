@@ -20,17 +20,19 @@ function Remove-NexusRepository {
     #>
     [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Remove-NexusRepository.md', SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
-        [Parameter(Mandatory)]
-        [ArgumentCompleter({
-            param($command,$WordToComplete,$CommandAst,$FakeBoundParams)
-            $repositories = (Get-NexusRepository).Name
+        [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
+        [Alias('Name')]
+        [ArgumentCompleter( {
+                param($command, $WordToComplete, $CommandAst, $FakeBoundParams)
+                $repositories = (Get-NexusRepository).Name
 
-            if($WordToComplete){
-                $repositories.Where{$_ -match "^$WordToComplete"}
-            } else {
-                $repositories
-            }
-        })]
+                if ($WordToComplete) {
+                    $repositories.Where{ $_ -match "^$WordToComplete" }
+                }
+                else {
+                    $repositories
+                }
+            })]
         [String[]]
         $Repository,
 
@@ -47,34 +49,37 @@ function Remove-NexusRepository {
         $urislug = "/service/rest/v1/repositories"
     }
     process {
-        $Uri = $urislug + "/$Repository"
 
-        try {
+        $Repository | Foreach-Object {
+            $Uri = $urislug + "/$_"
+
+            try {
            
-            if ($Force -and -not $Confirm) {
-                $ConfirmPreference = 'None'
-                if ($PSCmdlet.ShouldProcess("$Repository", "Remove Repository")) {
-                    $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
-                    [pscustomobject]@{
-                        Status     = 'Success'
-                        Repository = $Repository     
+                if ($Force -and -not $Confirm) {
+                    $ConfirmPreference = 'None'
+                    if ($PSCmdlet.ShouldProcess("$_", "Remove Repository")) {
+                        $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
+                        [pscustomobject]@{
+                            Status     = 'Success'
+                            Repository = $_     
+                        }
+                    }
+                }
+                else {
+                    if ($PSCmdlet.ShouldProcess("$_", "Remove Repository")) {
+                        $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
+                        [pscustomobject]@{
+                            Status     = 'Success'
+                            Repository = $_
+                            Timestamp  = $result.date
+                        }
                     }
                 }
             }
-            else {
-                if ($PSCmdlet.ShouldProcess("$Repository", "Remove Repository")) {
-                    $result = Invoke-Nexus -UriSlug $Uri -Method 'DELETE' -ErrorAction Stop
-                    [pscustomobject]@{
-                        Status     = 'Success'
-                        Repository = $Repository
-                        Timestamp  = $result.date
-                    }
-                }
-            }
-        }
 
-        catch {
-            $_.exception.message
+            catch {
+                $_.exception.message
+            }
         }
     }
 }

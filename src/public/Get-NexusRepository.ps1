@@ -23,10 +23,15 @@ function Get-NexusRepository {
     #>
     [cmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusRepository.md',DefaultParameterSetName="default")]
     param(
-        [Parameter(ParameterSetName="Type",Mandatory)]
+        [Parameter(ParameterSetName="Format",Mandatory)]
         [String]
         [ValidateSet('apt','bower','cocoapods','conan','conda','docker','gitlfs','go','helm','maven2','npm','nuget','p2','pypi','r','raw','rubygems','yum')]
         $Format,
+
+        [Parameter(ParameterSetName="Type",Mandatory)]
+        [String]
+        [ValidateSet('hosted','group','proxy')]
+        $Type,
 
         [Parameter(ParameterSetName="Name",Mandatory)]
         [String]
@@ -54,11 +59,17 @@ function Get-NexusRepository {
             }
 
             {$Name} {
-                $filter = { $_.name -eq $Name}
+                $filter = { $_.name -eq $Name }
 
                 $result = Invoke-Nexus -UriSlug $urislug -Method Get
                 $result | Where-Object $filter
 
+            }
+
+            {$Type} {
+                $filter = { $_.type -eq $Type }
+                $result = Invoke-Nexus -UriSlug $urislug -Method Get
+                $result | Where-Object $filter
             }
 
             default {

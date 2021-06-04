@@ -108,28 +108,28 @@ function New-NexusAptRepository {
 
         $FullUrlSlug = $formatUrl + "/$Type"
 
+        $Body = @{
+            name       = $Name
+            online     = $Online
+            apt        = @{
+                distribution = $Distribution
+            }
+            aptSigning = @{
+                keypair    = $SigningKey
+                passprhase = $SigningKeyPassphrase
+            }
+            cleanup    = @{
+                policyNames = @($CleanupPolicy )
+            }
+            storage    = @{
+                strictContentTypeValidation = $StrictContentValidation
+                blobStoreName               = $BlobStore
+                writePolicy                 = $($DeploymentPolicy.ToUpper())
+            }
+        }
+
         switch($Type){
-            'Hosted' {
-                $Body = @{
-                    name       = $Name
-                    online     = $Online
-                    apt        = @{
-                        distribution = $Distribution
-                    }
-                    aptSigning = @{
-                        keypair    = $SigningKey
-                        passprhase = $SigningKeyPassphrase
-                    }
-                    cleanup    = @{
-                        policyNames = @($CleanupPolicy )
-                    }
-                    storage    = @{
-                        strictContentTypeValidation = $StrictContentValidation
-                        blobStoreName               = $BlobStore
-                        writePolicy                 = $($DeploymentPolicy.ToUpper())
-                    }
-                }
-        
+            'Hosted' {        
                 if ($HasProprietaryComponents) {
                     $Prop = @{
                         proprietaryComponents = 'True'

@@ -8,27 +8,31 @@ schema: 2.0.0
 # Set-NexusAnonymousAuth
 
 ## SYNOPSIS
+
 Turns Anonymous Authentication on or off in Nexus
 
 ## SYNTAX
 
-```
+```powershell
 Set-NexusAnonymousAuth [-Enabled] [-Disabled] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Turns Anonymous Authentication on or off in Nexus
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+
+```powershell
 Set-NexusAnonymousAuth -Enabled
 ```
 
 ## PARAMETERS
 
 ### -Enabled
+
 Turns on Anonymous Auth
 
 ```yaml
@@ -44,6 +48,7 @@ Accept wildcard characters: False
 ```
 
 ### -Disabled
+
 Turns off Anonymous Auth
 
 ```yaml
@@ -59,6 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

@@ -8,32 +8,37 @@ schema: 2.0.0
 # Get-NexusRealm
 
 ## SYNOPSIS
+
 Gets Nexus Realm information
 
 ## SYNTAX
 
-```
+```powershell
 Get-NexusRealm [-Active] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Gets Nexus Realm information
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+
+```powershell
 Get-NexusRealm
 ```
 
 ### EXAMPLE 2
-```
+
+```powershell
 Get-NexusRealm -Active
 ```
 
 ## PARAMETERS
 
 ### -Active
+
 Returns only active realms
 
 ```yaml
@@ -49,6 +54,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

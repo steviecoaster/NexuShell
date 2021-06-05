@@ -8,62 +8,73 @@ schema: 2.0.0
 # New-NexusBlobStore
 
 ## SYNOPSIS
+
 Creates a new blob store
 
 ## SYNTAX
 
 ### S3
-```
+
+```powershell
 New-NexusBlobStore -Type <String> -Name <String> [<CommonParameters>]
 ```
 
 ### File
-```
+
+```powershell
 New-NexusBlobStore -Type <String> -Name <String> [-UseQuota] [-QuotaType <String>] [-SoftQuotaInMB <Int32>]
  [-Path <String>] [<CommonParameters>]
 ```
 
 ### FileQuota
-```
+
+```powershell
 New-NexusBlobStore [-UseQuota] -QuotaType <String> -SoftQuotaInMB <Int32> [<CommonParameters>]
 ```
 
 ### S3Options
-```
+
+```powershell
 New-NexusBlobStore -Bucket <String> [-Region <String>] [-Prefix <String>] [-ExpirationDays <Int32>]
  [<CommonParameters>]
 ```
 
 ### S3AuthenticationSettings
-```
+
+```powershell
 New-NexusBlobStore [-UseAuthentication] -AccessKey <String> -SecretKey <String> [-AssumeRoleARN <String>]
  [-SessionTokenARN <String>] [<CommonParameters>]
 ```
 
 ### S3EncryptionSettings
-```
+
+```powershell
 New-NexusBlobStore [-UseEncryption] -EncryptionType <String> [-KMSKeyId <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Nexus stores artifacts for repositories in blobs.
 This cmdlet creates a new Nexus Blob for your artifacts
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+
+```powershell
 New-NexusBlobStore -Name TreasureBlobQuota -Type File -Path C:\blob2 -UseQuota -QuotaType spaceRemainingQuota -SoftQuotaInMB 300
 ```
 
 ### EXAMPLE 2
-```
+
+```powershell
 New-NexusBlobStore -Name TreasureBlob -Type File -Path C:\blob
 ```
 
 ## PARAMETERS
 
 ### -Type
+
 The type of Blob Store to create.
 This can be File, or S3
 
@@ -80,6 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+
 The name of the blob store
 
 ```yaml
@@ -95,6 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseQuota
+
 Enforce a Quota on the blob
 
 ```yaml
@@ -122,6 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -QuotaType
+
 The type of Quota to enforce
 
 ```yaml
@@ -149,6 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -SoftQuotaInMB
+
 The storage limit for the Quota
 
 ```yaml
@@ -176,6 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -Path
+
 The path for the File type blob
 
 ```yaml
@@ -191,6 +207,7 @@ Accept wildcard characters: False
 ```
 
 ### -Bucket
+
 The bucket for the S3 type blob
 
 ```yaml
@@ -206,6 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -Region
+
 The AWS region of the S3 bucket
 
 ```yaml
@@ -221,6 +239,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
+
 (Optional) Prefix of S3 bucket
 
 ```yaml
@@ -236,6 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpirationDays
+
 The amount of time to wait after removing an S3 blob store for the underlying bucket to be deleted
 
 ```yaml
@@ -251,6 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseAuthentication
+
 Require authentication for an S3 blob
 
 ```yaml
@@ -266,6 +287,7 @@ Accept wildcard characters: False
 ```
 
 ### -AccessKey
+
 The access key needed to connect an S3 blob when using authentication
 
 ```yaml
@@ -281,6 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -SecretKey
+
 The Secret Key needed to connect an S3 blob when using authentication
 
 ```yaml
@@ -296,6 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -AssumeRoleARN
+
 Optional AssumeRoleARN for s3 blob authentication
 
 ```yaml
@@ -311,6 +335,7 @@ Accept wildcard characters: False
 ```
 
 ### -SessionTokenARN
+
 Optional SessionTokenARN for s3 blob authentication
 
 ```yaml
@@ -326,6 +351,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseEncryption
+
 Require encryption of the S3 blob
 
 ```yaml
@@ -341,6 +367,7 @@ Accept wildcard characters: False
 ```
 
 ### -EncryptionType
+
 The type of encryption to use
 
 ```yaml
@@ -356,6 +383,7 @@ Accept wildcard characters: False
 ```
 
 ### -KMSKeyId
+
 If using KMS Encryption the KMS Key Id needed
 
 ```yaml
@@ -371,6 +399,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -378,6 +407,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ## NOTES
+
 S3 buckets are currently not supported by the cmdlet until I can get S3 for testing
 
 ## RELATED LINKS

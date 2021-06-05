@@ -8,12 +8,14 @@ schema: 2.0.0
 # New-NexusNugetProxyRepository
 
 ## SYNOPSIS
+
 Creates a new NuGet Proxy Repository
 
 ## SYNTAX
 
 ### Default (Default)
-```
+
+```powershell
 New-NexusNugetProxyRepository -Name <String> -ProxyRemoteUrl <String> [-ContentMaxAgeMinutes <String>]
  [-MetadataMaxAgeMinutes <String>] [-QueryCacheItemMaxAgeSeconds <String>] -NugetVersion <String>
  [-UseNegativeCache] [-NegativeCacheTTLMinutes <String>] [-CleanupPolicy <String>] [-RoutingRule <String>]
@@ -24,7 +26,8 @@ New-NexusNugetProxyRepository -Name <String> -ProxyRemoteUrl <String> [-ContentM
 ```
 
 ### Authentication
-```
+
+```powershell
 New-NexusNugetProxyRepository -Name <String> -ProxyRemoteUrl <String> [-ContentMaxAgeMinutes <String>]
  [-MetadataMaxAgeMinutes <String>] [-QueryCacheItemMaxAgeSeconds <String>] -NugetVersion <String>
  [-UseNegativeCache] [-NegativeCacheTTLMinutes <String>] [-CleanupPolicy <String>] [-RoutingRule <String>]
@@ -36,25 +39,29 @@ New-NexusNugetProxyRepository -Name <String> -ProxyRemoteUrl <String> [-ContentM
 ```
 
 ## DESCRIPTION
+
 Creates a new NuGet Proxy Repository
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+
+```powershell
 $ProxyParameters = @{
     Name = 'ChocoProxy'
     ProxyRemoteUrl = 'https://community.chocolatey.org/api/v2'
     NugetVersion = 'V2'
     DeploymentPolicy = 'Allow'
-```
+
 
 }
 
 New-NexusNugetProxyRepository @ProxyParameters
+```
 
 ### EXAMPLE 2
-```
+
+```powershell
 $ProxyParameters = @{
     Name = 'ChocoProxy'
     ProxyRemoteUrl = 'https://community.chocolatey.org/api/v2'
@@ -63,15 +70,17 @@ $ProxyParameters = @{
     UseAuthentication = $true
     AuthenticationType = 'Username'
     Credential = (Get-Credential)
-```
+
 
 }
 
 New-NexusNugetProxyRepository @ProxyParameters
+```
 
 ## PARAMETERS
 
 ### -Name
+
 The name to give the repository
 
 ```yaml
@@ -87,6 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -ProxyRemoteUrl
+
 Location of the remote repository being proxied, e.g.
 https://api.nuget.org/v3/index.json
 
@@ -103,6 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentMaxAgeMinutes
+
 Time before cached content is refreshed.
 Defaults to 1440
 
@@ -119,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -MetadataMaxAgeMinutes
+
 Time before cached metadata is refreshed.
 Defaults to 1440
 
@@ -135,6 +147,7 @@ Accept wildcard characters: False
 ```
 
 ### -QueryCacheItemMaxAgeSeconds
+
 Time before the query cache expires.
 Defaults to 3600
 
@@ -151,6 +164,7 @@ Accept wildcard characters: False
 ```
 
 ### -NugetVersion
+
 Upstream NuGet version.
 Can either be V2 or V3
 
@@ -167,6 +181,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseNegativeCache
+
 Use the built-in Negative Cache feature
 
 ```yaml
@@ -182,6 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -NegativeCacheTTLMinutes
+
 The Negative Cache Time To Live value.
 Defaults to 1440
 
@@ -198,6 +214,7 @@ Accept wildcard characters: False
 ```
 
 ### -CleanupPolicy
+
 The Cleanup Policy to apply to this repository
 
 ```yaml
@@ -213,6 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -RoutingRule
+
 Routing Rules you wish to apply to this repository
 
 ```yaml
@@ -228,6 +246,7 @@ Accept wildcard characters: False
 ```
 
 ### -Online
+
 Mark the repository as Online.
 Defaults to True
 
@@ -244,6 +263,7 @@ Accept wildcard characters: False
 ```
 
 ### -BlobStoreName
+
 The back-end blob store in which to store cached packages
 
 ```yaml
@@ -259,6 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -StrictContentValidation
+
 Validate that all content uploaded to this repository is of a MIME type appropriate for the repository format
 
 ```yaml
@@ -274,6 +295,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeploymentPolicy
+
 Controls whether packages can be overwritten
 
 ```yaml
@@ -289,6 +311,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseNexusTrustStore
+
 Use certificates stored in the Nexus truststore to connect to external systems
 
 ```yaml
@@ -304,6 +327,7 @@ Accept wildcard characters: False
 ```
 
 ### -UseAuthentication
+
 Use authentication for the upstream repository
 
 ```yaml
@@ -319,6 +343,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthenticationType
+
 The type of authentication required by the upstream repository
 
 ```yaml
@@ -334,6 +359,7 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
+
 Credentials to use to connecto to upstream repository
 
 ```yaml
@@ -349,6 +375,7 @@ Accept wildcard characters: False
 ```
 
 ### -HostnameFqdn
+
 If using NTLM authentication, the Hostname of the NTLM host to query
 
 ```yaml
@@ -364,6 +391,7 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
+
 The domain name of the NTLM host
 
 ```yaml
@@ -379,6 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -BlockOutboundConnections
+
 Block outbound connections on the repository
 
 ```yaml
@@ -394,6 +423,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAutoBlocking
+
 Auto-block outbound connections on the repository if remote peer is detected as unreachable/unresponsive
 
 ```yaml
@@ -409,6 +439,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionRetries
+
 Connection attempts to upstream repository before a failure
 
 ```yaml
@@ -424,6 +455,7 @@ Accept wildcard characters: False
 ```
 
 ### -ConnectionTimeoutSeconds
+
 Amount of time to wait before retrying the connection to the upstream repository
 
 ```yaml
@@ -439,6 +471,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableCircularRedirects
+
 Enable redirects to the same location (may be required by some servers)
 
 ```yaml
@@ -454,6 +487,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableCookies
+
 Allow cookies to be stored and used
 
 ```yaml
@@ -469,6 +503,7 @@ Accept wildcard characters: False
 ```
 
 ### -CustomUserAgent
+
 Custom fragment to append to "User-Agent" header in HTTP requests
 
 ```yaml
@@ -484,6 +519,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS

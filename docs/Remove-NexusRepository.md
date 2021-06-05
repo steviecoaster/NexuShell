@@ -8,43 +8,48 @@ schema: 2.0.0
 # Remove-NexusRepository
 
 ## SYNOPSIS
+
 Removes a given repository from the Nexus instance
 
 ## SYNTAX
 
-```
+```powershell
 Remove-NexusRepository [-Repository] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
+
 Removes a given repository from the Nexus instance
 
 ## EXAMPLES
 
 ### EXAMPLE 1
-```
+
+```powershell
 Remove-NexusRepository -Repository ProdNuGet
 ```
 
 ### EXAMPLE 2
-```
-Remove-NexusRepository -Repository MavenReleases -Force
+
+```powershell
+Remove-NexusRepository -Repository MavenReleases -Force()
 ```
 
 ## PARAMETERS
 
 ### -Repository
+
 The repository to remove
 
 ```yaml
 Type: String[]
 Parameter Sets: (All)
-Aliases:
+Aliases: Name
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 

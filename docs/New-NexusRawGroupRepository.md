@@ -51,7 +51,7 @@ Accept wildcard characters: False
 
 ### -GroupMembers
 
-The Raw Repositories to add as group memebers
+The Raw Repositories to add as group members
 
 ```yaml
 Type: String[]

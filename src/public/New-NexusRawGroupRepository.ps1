@@ -10,7 +10,7 @@ function New-NexusRawGroupRepository {
     The name of the repository
     
     .PARAMETER GroupMembers
-    The Raw Repositories to add as group memebers
+    The Raw Repositories to add as group members
     
     .PARAMETER Online
     Marks the repository as online

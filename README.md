@@ -10,6 +10,26 @@ A PowerShell module for Sonatype Nexus repository server administration
 4. Explore the available commands with `Get-Help`
 5. Start having fun!
 
-### Disclaimer
+### Currently supported functions
 
-At the moment I have only tested with Nuget Hosted and Nuget Proxy repositories when creating new repos.
+- Connect-NexusServer
+- Get-NexusAnonymousAuthStatus
+- Get-NexusBlobStore
+- Get-NexusBlobStoreQuota
+- Get-NexusLicenseStatus
+- Get-NexusReadOnlyState
+- Get-NexusRealm
+- Get-NexusRepository
+- Install-NexusLicense
+- New-NexusAptHostedRepository
+- New-NexusAptProxyRepository
+- New-NexusBlobStore
+- New-NexusNugetHostedRepository
+- New-NexusNugetProxyRepository
+- New-NexusRawGroupRepository
+- New-NexusRawHostedRepository
+- New-NexusRepository
+- Remove-NexusBlobStore
+- Remove-NexusRepository
+- Set-NexusAnonymousAuth
+- Set-NexusReadOnlyMode

@@ -40,10 +40,17 @@ function Get-NexusRealm {
             $current = Invoke-Nexus -UriSlug $urislug -Method 'GET'
             $urislug = '/service/rest/v1/security/realms/active'
             $Activated = Invoke-Nexus -UriSlug $urislug -Method 'GET'
-            $current | Where-Object { $_.Id -in $Activated}
+            $current | Where-Object { $_.Id -in $Activated }
         }
         else {
-            Invoke-Nexus -UriSlug $urislug -Method 'GET'
+            $result = Invoke-Nexus -UriSlug $urislug -Method 'GET' 
+
+            $result | Foreach-Object {
+                [pscustomobject]@{
+                    Id   = $_.id
+                    Name = $_.name
+                }
+            }
         }
     }
 }

@@ -31,6 +31,12 @@ A PowerShell module for Sonatype Nexus repository server administration
 - New-NexusBowerHostedRepository
 - New-NexusBowerProxyRepository
 - New-NexusBowerGroupRepository
+- New-NexusCocoaPodProxyRepository
+- New-NexusConanProxyRepository
+- New-NexusCondaProxyRepository
+- New-NexusDockerGroupRepository
+- New-NexusDockerHostedRepository
+- New-NexusDockerProxyRepository
 - Remove-NexusBlobStore
 - Remove-NexusRepository
 - Set-NexusAnonymousAuth

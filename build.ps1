@@ -40,7 +40,7 @@ process {
                 Remove-Item "$root\src\nuget\tools\TreasureChest.zip" -Force
             }
             
-            Get-ChildItem $root\src\public\*.ps1 | 
+            Get-ChildItem $root\src\public -Recurse -Filter *.ps1 | 
             Foreach-Object { 
                 Get-Content $_.FullName | Add-Content "$root\Output\TreasureChest\TreasureChest.psm1" -Force
             }

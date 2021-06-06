@@ -35,7 +35,7 @@ function New-NexusDockerGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusDockerHostedRepository.md')]
     Param(
         [Parameter(Mandatory)]
         [String]

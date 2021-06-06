@@ -32,7 +32,7 @@ function New-NexusBowerGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusBowerHostedRepository.md')]
     Param(
         [Parameter(Mandatory)]
         [String]

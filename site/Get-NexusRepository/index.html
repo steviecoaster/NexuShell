@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Get-NexusRepository - TreasureDocs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Get-NexusRepository";
+    var mkdocs_page_input_path = "Get-NexusRepository.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> TreasureDocs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">TreasureChest Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Connect-NexusServer/">Connect-NexusServer</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Disable-NexusRealm/">Disable-NexusRealm</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Enable-NexusRealm/">Enable-NexusRealm</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusAnonymousAuthStatus/">Get-NexusAnonymousAuthStatus</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusBlobStore/">Get-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusLicenseStatus/">Get-NexusLicenseStatus</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusReadOnlyState/">Get-NexusReadOnlyState</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusRealm/">Get-NexusRealm</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Get-NexusRepository</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#default-default">default (Default)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#format">Format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#type">Type</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#name">Name</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-format">-Format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-type">-Type</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusRoutingRule/">Get-NexusRoutingRule</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Install-NexusLicense/">Install-NexusLicense</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusAptHostedRepository/">New-NexusAptHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusAptProxyRepository/">New-NexusAptProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusAptRepository/">New-NexusAptRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBlobStore/">New-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerGroupRepository/">New-NexusBowerGroupRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerHostedRepository/">New-NexusBowerHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerProxyRepository/">New-NexusBowerProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCocoaPodProxyRepository/">New-NexusCocoaPodProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusConanProxyRepository/">New-NexusConanProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCondaProxyRepository/">New-NexusCondaProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerGroupRepository/">New-NexusDockerGroupRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerHostedRepository/">New-NexusDockerHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerProxyRepository/">New-NexusDockerProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGitlfsHostedRepository/">New-NexusGitlfsHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGoGroupRepository/">New-NexusGoGroupRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGoProxyRepository/">New-NexusGoProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusNugetHostedRepository/">New-NexusNugetHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusNugetProxyRepository/">New-NexusNugetProxyRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRawGroupRepository/">New-NexusRawGroupRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRawHostedRepository/">New-NexusRawHostedRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRepository/">New-NexusRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRoutingRule/">New-NexusRoutingRule</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusRepository/">Remove-NexusRepository</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Set-NexusAnonymousAuth/">Set-NexusAnonymousAuth</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Set-NexusReadOnlyMode/">Set-NexusReadOnlyMode</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Set-NexusRoutingRule/">Set-NexusRoutingRule</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">TreasureDocs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Get-NexusRepository</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="get-nexusrepository">Get-NexusRepository</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Returns info about configured Nexus repository</p>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="default-default">default (Default)</h3>
+<pre><code class="powershell">Get-NexusRepository [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="format">Format</h3>
+<pre><code class="powershell">Get-NexusRepository -Format &lt;String&gt; [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="type">Type</h3>
+<pre><code class="powershell">Get-NexusRepository -Type &lt;String&gt; [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="name">Name</h3>
+<pre><code class="powershell">Get-NexusRepository -Name &lt;String&gt; [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h2 id="description">DESCRIPTION</h2>
+<p>Returns details for currently configured repositories on your Nexus server</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code class="powershell">Get-NexusRepository
+</code></pre>
+
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code class="powershell">Get-NexusRepository -Format nuget
+</code></pre>
+
+<h3 id="example-3">EXAMPLE 3</h3>
+<pre><code class="powershell">Get-NexusRepository -Name CompanyNugetPkgs
+</code></pre>
+
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-format">-Format</h3>
+<p>Query for only a specific repository format.
+E.g.
+nuget, maven2, or docker</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Format
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-type">-Type</h3>
+<p>{{ Fill Type Description }}</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Type
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-name">-Name</h3>
+<p>Query for a specific repository by name</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Name
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h2 id="outputs">OUTPUTS</h2>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Get-NexusRoutingRule/" class="btn btn-neutral float-right" title="Get-NexusRoutingRule">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Get-NexusRealm/" class="btn btn-neutral" title="Get-NexusRealm"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Get-NexusRealm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Get-NexusRoutingRule/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

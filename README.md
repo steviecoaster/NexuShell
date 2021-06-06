@@ -13,6 +13,7 @@ A PowerShell module for Sonatype Nexus repository server administration
 ### Currently supported functions
 
 - Connect-NexusServer
+- Enable-NexusRealm
 - Get-NexusAnonymousAuthStatus
 - Get-NexusBlobStore
 - Get-NexusBlobStoreQuota

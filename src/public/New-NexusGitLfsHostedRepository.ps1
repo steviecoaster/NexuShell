@@ -1,10 +1,10 @@
-function New-NexusBowerHostedRepository {
+function New-NexusGitlfsHostedRepository {
     <#
-    .SYNOPSIS
-    Creates a new Bower Hosted repository
+.SYNOPSIS
+    Creates a new GitLfs Hosted repository
     
     .DESCRIPTION
-    Creates a new Bower Hosted repository
+    Creates a new GitLfs Hosted repository
     
     .PARAMETER Name
     The name of the repository
@@ -16,7 +16,7 @@ function New-NexusBowerHostedRepository {
     Marks the repository to accept incoming requests
     
     .PARAMETER BlobStoreName
-    Blob store to use to store Bower packages
+    Blob store to use to store GitLfs packages
     
     .PARAMETER StrictContentValidation
     Validate that all content uploaded to this repository is of a MIME type appropriate for the repository format
@@ -28,23 +28,22 @@ function New-NexusBowerHostedRepository {
     Components in this repository count as proprietary for namespace conflict attacks (requires Sonatype Nexus Firewall)
     
     .EXAMPLE
-    New-NexusBowerHostedRepository -Name BowerHostedTest -DeploymentPolicy Allow
+    New-NexusGitLfsHostedRepository -Name GitLfsHostedTest -DeploymentPolicy Allow
 
     .EXAMPLE
 
     $RepoParams = @{
-        Name = 'MyBowerRepo'
+        Name = 'MyGitLfsRepo'
         CleanupPolicy = '90 Days'
         DeploymentPolicy = 'Allow'
         UseStrictContentValidation = $true
     }
     
-    New-NexusBowerHostedRepository @RepoParams
+    New-NexusGitLfsHostedRepository @RepoParams
 
     .NOTES
-    General notes
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusBowerHostedRepository.md')]
+    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusGitLfsHostedRepository.md')]
     Param(
         [Parameter(Mandatory)]
         [String]
@@ -55,18 +54,16 @@ function New-NexusBowerHostedRepository {
         $CleanupPolicy,
 
         [Parameter()]
-        [ValidateSet('True', 'False')]
-        [String]
-        $Online = 'True',
+        [Switch]
+        $Online,
 
         [Parameter()]
         [String]
         $BlobStoreName = 'default',
 
         [Parameter()]
-        [ValidateSet('True', 'False')]
-        [String]
-        $UseStrictContentValidation = 'True',
+        [Switch]
+        $UseStrictContentValidation,
 
         [Parameter()]
         [ValidateSet('Allow', 'Deny', 'Allow_Once')]
@@ -77,24 +74,24 @@ function New-NexusBowerHostedRepository {
         [Switch]
         $HasProprietaryComponents
     )
-
+    
     begin {
 
         if (-not $header) {
             throw "Not connected to Nexus server! Run Connect-NexusServer first."
         }
 
-        $urislug = "/service/rest/v1/repositories/bower/hosted"
+        $urislug = "/service/rest/v1/repositories/gitlfs/hosted"
 
     }
 
     process {
         $body = @{
             name    = $Name
-            online  = $Online
+            online  = [bool]$Online
             storage = @{
                 blobStoreName               = $BlobStoreName
-                strictContentTypeValidation = $UseStrictContentValidation
+                strictContentTypeValidation = [bool]$UseStrictContentValidation
                 writePolicy                 = $DeploymentPolicy
             }
             cleanup = @{
@@ -112,6 +109,5 @@ function New-NexusBowerHostedRepository {
 
         Write-Verbose $($Body | ConvertTo-Json)
         Invoke-Nexus -UriSlug $urislug -Body $Body -Method POST
-
     }
 }

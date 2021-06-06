@@ -10,12 +10,17 @@ function Invoke-Nexus {
         $Body,
 
         [Parameter()]
+        [Array]
+        $BodyAsArray,
+
+        [Parameter()]
         [String]
         $ContentType = 'application/json',
 
         [Parameter(Mandatory)]
         [String]
         $Method
+
 
     )
     process {
@@ -30,9 +35,15 @@ function Invoke-Nexus {
         }
 
         if($Body){
-            $Params.Add('Body',$($Body | ConvertTo-Json -Depth 3))
+                $Params.Add('Body',$($Body | ConvertTo-Json -Depth 3))
+            } 
+        
+        if($BodyAsArray){
+            $Params.Add('Body',$($BodyAsArray | ConvertTo-Json -Depth 3))
         }
 
-        Invoke-RestMethod @Params
+         Invoke-RestMethod @Params
+        
+
     }
 }

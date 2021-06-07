@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Set-NexusScript - TreasureChest Documentation</title>
+  <title>New-NexusSupportZip - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Set-NexusScript";
-    var mkdocs_page_input_path = "Scripts/Set-NexusScript.md";
+    var mkdocs_page_name = "New-NexusSupportZip";
+    var mkdocs_page_input_path = "Support/New-NexusSupportZip.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -210,50 +210,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Scripts</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusScript/">Get-NexusScript</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Get-NexusScript/">Get-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusScript/">New-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/New-NexusScript/">New-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusScript/">Remove-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Remove-NexusScript/">Remove-NexusScript</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Set-NexusScript</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-content">-Content</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-type">-Type</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Set-NexusScript/">Set-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Start-NexusScript/">Start-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Start-NexusScript/">Start-NexusScript</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Security</span></p>
@@ -280,8 +246,58 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Support</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Support/New-NexusSupportZip/">New-NexusSupportZip</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">New-NexusSupportZip</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-includesysteminfo">-IncludeSystemInfo</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includethreaddump">-IncludeThreadDump</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includemetrics">-IncludeMetrics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includeconfiguration">-IncludeConfiguration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includesecurity">-IncludeSecurity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includenexuslog">-IncludeNexusLog</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includetasklog">-IncludeTaskLog</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includeauditlog">-IncludeAuditLog</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-includejmx">-IncludeJmx</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-limitfilesize">-LimitFileSize</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-limitzipsizes">-LimitZipSizes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -305,14 +321,14 @@
     
       
         
-          <li>Scripts &raquo;</li>
+          <li>Support &raquo;</li>
         
       
     
-    <li>Set-NexusScript</li>
+    <li>New-NexusSupportZip</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Scripts/Set-NexusScript.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Support/New-NexusSupportZip.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -323,56 +339,162 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="set-nexusscript">Set-NexusScript</h1>
+                <h1 id="new-nexussupportzip">New-NexusSupportZip</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Updates a script saved in Nexus</p>
+<p>Prepares a support zip file on your Nexus Server</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">Set-NexusScript [-Name] &lt;String&gt; [-Content] &lt;String&gt; [-Type] &lt;String&gt; [&lt;CommonParameters&gt;]
+<pre><code class="powershell">New-NexusSupportZip [-IncludeSystemInfo] [-IncludeThreadDump] [-IncludeMetrics] [-IncludeConfiguration]
+ [-IncludeSecurity] [-IncludeNexusLog] [-IncludeTaskLog] [-IncludeAuditLog] [-IncludeJmx] [-LimitFileSize]
+ [-LimitZipSizes] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Updates a script saved in Nexus</p>
+<p>Prepares a support zip file on your Nexus Server</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Set-NexusScript -Name SuperAwesomeScript -Content &quot;some awesome groovy code&quot; -Type groovy
+<pre><code class="powershell">New-NexusSupportZip -IncludeNexusLog -IncludeConfiguration
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
-<h3 id="-name">-Name</h3>
-<p>The script to update</p>
-<pre><code class="yaml">Type: String
+<h3 id="-includesysteminfo">-IncludeSystemInfo</h3>
+<p>Includes system info in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 1
-Default value: None
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-content">-Content</h3>
-<p>The new content of the script</p>
-<pre><code class="yaml">Type: String
+<h3 id="-includethreaddump">-IncludeThreadDump</h3>
+<p>Includes a thread dump in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 2
-Default value: None
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-type">-Type</h3>
-<p>The new type, if different</p>
-<pre><code class="yaml">Type: String
+<h3 id="-includemetrics">-IncludeMetrics</h3>
+<p>Includes metrics in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: 3
-Default value: None
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includeconfiguration">-IncludeConfiguration</h3>
+<p>Includes server configuration in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includesecurity">-IncludeSecurity</h3>
+<p>Include security information in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includenexuslog">-IncludeNexusLog</h3>
+<p>Include the nexus log in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includetasklog">-IncludeTaskLog</h3>
+<p>Include the task log in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includeauditlog">-IncludeAuditLog</h3>
+<p>Include the audit log in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-includejmx">-IncludeJmx</h3>
+<p>Include the jmx configuration in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-limitfilesize">-LimitFileSize</h3>
+<p>Limit the output size of files in the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-limitzipsizes">-LimitZipSizes</h3>
+<p>Limit the overall size of the zip</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
@@ -390,10 +512,8 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Start-NexusScript/" class="btn btn-neutral float-right" title="Start-NexusScript">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../Remove-NexusScript/" class="btn btn-neutral" title="Remove-NexusScript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Security/User%20Sources/Get-NexusUserSource/" class="btn btn-neutral" title="Get-NexusUserSource"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -421,10 +541,8 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Remove-NexusScript/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../Security/User%20Sources/Get-NexusUserSource/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../Start-NexusScript/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

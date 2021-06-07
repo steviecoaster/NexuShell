@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
-creates a new LDAP Connection in Nexus
+Creates a new LDAP Connection in Nexus
 
 ## SYNTAX
 
@@ -42,7 +42,7 @@ New-NexusLDAPServerConnection -Name <String> -LdapProtocol <String> [-UseTrustSt
 
 ## DESCRIPTION
 
-Creaes a new LDAP connection in Nexus, allowing domain users to authenticate
+Creates a new LDAP connection in Nexus, allowing domain users to authenticate
 
 ## EXAMPLES
 
@@ -69,9 +69,9 @@ $params = @{
     GroupType = 'Dynamic'
     WalkGroupSubtree = $true
 }
-```
 
 New-NexusLDAPServerConnection @params
+```
 
 ## PARAMETERS
 

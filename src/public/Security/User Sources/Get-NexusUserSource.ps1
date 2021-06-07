@@ -12,6 +12,8 @@ Get-NexusUserSource
 .NOTES
 
 #>
+[CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User%20Sources/Get-NexusUserSource/')]
+Param()
     begin {
         if (-not $header) {
             throw "Not connected to Nexus server! Run Connect-NexusServer first."

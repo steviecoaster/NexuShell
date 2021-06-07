@@ -20,7 +20,7 @@ function Remove-NexusLDAPServer {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Remove-NexusLDAPServer.md',SupportsShouldProcess,ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Security/LDAP/Remove-NexusLDAPServer/',SupportsShouldProcess,ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [String[]]

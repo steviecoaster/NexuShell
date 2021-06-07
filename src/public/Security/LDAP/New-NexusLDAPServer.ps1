@@ -119,7 +119,7 @@ function New-NexusLDAPServerConnection {
     
     .NOTES
     #>
-    [CmdletBinding(DefaultParameterSetName = "default")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/New-NexusLDAPServerConnection/',DefaultParameterSetName = "default")]
     Param(
         [Parameter(Mandatory)]
         [String]

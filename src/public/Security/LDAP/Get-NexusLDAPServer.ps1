@@ -19,7 +19,7 @@ function Get-NexusLDAPServer {
     .NOTES
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/Get-NexusLDAPServer/')]
     Param(
         [Parameter()]
         [String[]]

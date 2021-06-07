@@ -15,7 +15,7 @@ function Switch-NexusLdapOrder {
     .NOTES
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/Switch-NexusLdapOrder/')]
     Param(
         [Parameter(Mandatory)]
         [Array]

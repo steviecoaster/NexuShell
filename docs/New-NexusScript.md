@@ -5,35 +5,35 @@ online version:
 schema: 2.0.0
 ---
 
-# New-NexusRoutingRule
+# New-NexusScript
 
 ## SYNOPSIS
-Create a new Nexus routing rule
+
+Stores a new script in Nexus
 
 ## SYNTAX
 
-```
-New-NexusRoutingRule [-Name] <String> [[-Description] <String>] [-Mode] <String> [-Matchers] <String[]>
- [<CommonParameters>]
+```powershell
+New-NexusScript [-Name] <String> [-Content] <String> [-Type] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Create a new Nexus routing rule
+Stores a new script in Nexus
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-NexusRoutingRule -Name BlockNuGet -Mode Block -Matchers 'NuGet','[\w]Nuget.+'
+New-NexusScript -Name TestScript -Content 'Get-ComputerInfo' -Type powershell
 ```
 
 ## PARAMETERS
 
 ### -Name
 
-The name of the rule
+The name of the script
 
 ```yaml
 Type: String
@@ -47,25 +47,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
+### -Content
 
-A brief explanation of the routing rule
+The contents of the script
 
 ```yaml
 Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Mode
+### -Type
 
-Allow the connection, or block the connection
+The language of the script
 
 ```yaml
 Type: String
@@ -74,22 +74,6 @@ Aliases:
 
 Required: True
 Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Matchers
-
-Regex strings to match for the route
-
-```yaml
-Type: String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

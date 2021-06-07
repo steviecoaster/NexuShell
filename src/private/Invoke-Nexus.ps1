@@ -15,6 +15,10 @@ function Invoke-Nexus {
 
         [Parameter()]
         [String]
+        $BodyAsString,
+
+        [Parameter()]
+        [String]
         $ContentType = 'application/json',
 
         [Parameter(Mandatory)]
@@ -40,6 +44,10 @@ function Invoke-Nexus {
         
         if($BodyAsArray){
             $Params.Add('Body',$($BodyAsArray | ConvertTo-Json -Depth 3))
+        }
+
+        if($BodyAsString){
+            $Params.Add('Body',$BodyAsString)
         }
 
          Invoke-RestMethod @Params

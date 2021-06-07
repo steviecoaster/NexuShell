@@ -5,83 +5,47 @@ online version:
 schema: 2.0.0
 ---
 
-# New-NexusRoutingRule
+# Remove-NexusScript
 
 ## SYNOPSIS
-Create a new Nexus routing rule
+
+Deletes a stored script from Nexus
 
 ## SYNTAX
 
-```
-New-NexusRoutingRule [-Name] <String> [[-Description] <String>] [-Mode] <String> [-Matchers] <String[]>
- [<CommonParameters>]
+```powershell
+Remove-NexusScript [-Name] <String[]> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Create a new Nexus routing rule
+Deletes a stored script from Nexus
 
 ## EXAMPLES
 
 ### EXAMPLE 1
 
 ```powershell
-New-NexusRoutingRule -Name BlockNuGet -Mode Block -Matchers 'NuGet','[\w]Nuget.+'
+Remove-NexusScript -Name TestScript
+```
+
+### EXAMPLE 2
+
+```powershell
+Remove-NexusScript -Name TestScript -Force
+```
+
+### EXAMPLE 3
+
+```powershell
+GetNexusScript | Remove-NexusScript -Force
 ```
 
 ## PARAMETERS
 
 ### -Name
 
-The name of the rule
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-
-A brief explanation of the routing rule
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Mode
-
-Allow the connection, or block the connection
-
-```yaml
-Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Matchers
-
-Regex strings to match for the route
+The script to remove
 
 ```yaml
 Type: String[]
@@ -89,7 +53,56 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 4
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### -Force
+
+Don't prompt for confirmation before removing
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

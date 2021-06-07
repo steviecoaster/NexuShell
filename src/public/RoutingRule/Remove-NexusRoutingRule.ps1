@@ -62,13 +62,13 @@ function Remove-NexusRoutingRule {
            
             if ($Force -and -not $Confirm) {
                 $ConfirmPreference = 'None'
-                if ($PSCmdlet.ShouldProcess("$_", "Remove Repository")) {
+                if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
                     Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
                     
                 }
             }
             else {
-                if ($PSCmdlet.ShouldProcess("$_", "Remove Repository")) {
+                if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
                     Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
                 }
             }

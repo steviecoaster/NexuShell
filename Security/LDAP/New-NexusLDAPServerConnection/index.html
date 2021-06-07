@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>New-NexusLDAPServerConnection - TreasureChest Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "New-NexusLDAPServerConnection";
+    var mkdocs_page_input_path = "Security/LDAP/New-NexusLDAPServerConnection.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TreasureChest Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TreasureChest Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Connect-NexusServer/">Connect-NexusServer</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Anonymous Auth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Anonymous%20Auth/Get-NexusAnonymousAuthStatus/">Get-NexusAnonymousAuthStatus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Anonymous%20Auth/Set-NexusAnonymousAuth/">Set-NexusAnonymousAuth</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Blob Stores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Blob%20Stores/Get-NexusBlobStore/">Get-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Blob%20Stores/Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Blob%20Stores/New-NexusBlobStore/">New-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Blob%20Stores/Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Licensing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Licensing/Get-NexusLicenseStatus/">Get-NexusLicenseStatus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Licensing/Install-NexusLicense/">Install-NexusLicense</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Read Only</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Read-Only/Get-NexusReadOnlyState/">Get-NexusReadOnlyState</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Read-Only/Set-NexusReadOnlyMode/">Set-NexusReadOnlyMode</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Realms</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Realms/Disable-NexusRealm/">Disable-NexusRealm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Realms/Enable-NexusRealm/">Enable-NexusRealm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Realms/Get-NexusRealm/">Get-NexusRealm</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Repository</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/Get-NexusRepository/">Get-NexusRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusAptHostedRepository/">New-NexusAptHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusAptProxyRepository/">New-NexusAptProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusAptRepository/">New-NexusAptRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusBowerGroupRepository/">New-NexusBowerGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusBowerHostedRepository/">New-NexusBowerHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusBowerProxyRepository/">New-NexusBowerProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusCocoaPodProxyRepository/">New-NexusCocoaPodProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusConanProxyRepository/">New-NexusConanProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusCondaProxyRepository/">New-NexusCondaProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusDockerGroupRepository/">New-NexusDockerGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusDockerHostedRepository/">New-NexusDockerHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusDockerProxyRepository/">New-NexusDockerProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusGitlfsHostedRepository/">New-NexusGitlfsHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusGoGroupRepository/">New-NexusGoGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusGoProxyRepository/">New-NexusGoProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusNugetHostedRepository/">New-NexusNugetHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusNugetProxyRepository/">New-NexusNugetProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusRawGroupRepository/">New-NexusRawGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/New-NexusRawHostedRepository/">New-NexusRawHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Repository/Remove-NexusRepository/">Remove-NexusRepository</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Routing Rules</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Routing%20Rules/Get-NexusRoutingRule/">Get-NexusRoutingRule</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Routing%20Rules/New-NexusRoutingRule/">New-NexusRoutingRule</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Routing%20Rules/Set-NexusRoutingRule/">Set-NexusRoutingRule</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Scripts</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Scripts/Get-NexusScript/">Get-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Scripts/New-NexusScript/">New-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Scripts/Remove-NexusScript/">Remove-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Scripts/Set-NexusScript/">Set-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Scripts/Start-NexusScript/">Start-NexusScript</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Security</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">LDAP</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Get-NexusLDAPServer/">Get-NexusLDAPServer</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">New-NexusLDAPServerConnection</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#default-default">default (Default)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#auth">Auth</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-ldapprotocol">-LdapProtocol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-usetruststore">-UseTrustStore</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-ldaphost">-LdapHost</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-ldapport">-LdapPort</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-searchbase">-SearchBase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-authenticationscheme">-AuthenticationScheme</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-authenticationrealm">-AuthenticationRealm</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-credential">-Credential</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-connectiontimeoutseconds">-ConnectionTimeoutSeconds</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-retrydelayseconds">-RetryDelaySeconds</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-maxincidentcount">-MaxIncidentCount</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-userbasedn">-UserBaseDN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-walkusersubtree">-WalkUserSubtree</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-userobjectclass">-UserObjectClass</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-userldapfilter">-UserLDAPFilter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-useridattribute">-UserIdAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-userrealnameattribute">-UserRealNameAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-useremailaddressattribute">-UserEmailAddressAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-userpasswordattribute">-UserPasswordAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-ldapgroupsasroles">-LDAPGroupsAsRoles</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-grouptype">-GroupType</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-groupbasedn">-GroupBaseDN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-walkgroupsubtree">-WalkGroupSubtree</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-groupobjectclass">-GroupObjectClass</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-groupidattribute">-GroupIdAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-groupmemberattribute">-GroupMemberAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-groupmemberformat">-GroupMemberFormat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-usermemberofattribute">-UserMemberOfAttribute</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusLDAPServer/">Remove-NexusLDAPServer</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Switch-NexusLdapOrder/">Switch-NexusLdapOrder</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">User Sources</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../User%20Sources/Get-NexusUserSource/">Get-NexusUserSource</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TreasureChest Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>LDAP &raquo;</li>
+        
+      
+        
+          <li>Security &raquo;</li>
+        
+      
+    
+    <li>New-NexusLDAPServerConnection</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Security/LDAP/New-NexusLDAPServerConnection.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="new-nexusldapserverconnection">New-NexusLDAPServerConnection</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>creates a new LDAP Connection in Nexus</p>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="default-default">default (Default)</h3>
+<pre><code class="powershell">New-NexusLDAPServerConnection -Name &lt;String&gt; -LdapProtocol &lt;String&gt; [-UseTrustStore] -LdapHost &lt;String&gt;
+ -LdapPort &lt;Int32&gt; -SearchBase &lt;String&gt; [-AuthenticationScheme &lt;String&gt;] -ConnectionTimeoutSeconds &lt;Int32&gt;
+ -RetryDelaySeconds &lt;Int32&gt; -MaxIncidentCount &lt;Int32&gt; -UserBaseDN &lt;String&gt; [-WalkUserSubtree]
+ -UserObjectClass &lt;String&gt; -UserLDAPFilter &lt;String&gt; [-UserIdAttribute &lt;String&gt;]
+ [-UserRealNameAttribute &lt;String&gt;] [-UserEmailAddressAttribute &lt;String&gt;] [-UserPasswordAttribute &lt;String&gt;]
+ [-LDAPGroupsAsRoles] [-GroupType &lt;String&gt;] [-GroupBaseDN &lt;String&gt;] [-WalkGroupSubtree]
+ [-GroupObjectClass &lt;String&gt;] [-GroupIdAttribute &lt;String&gt;] [-GroupMemberAttribute &lt;String&gt;]
+ [-GroupMemberFormat &lt;String&gt;] [-UserMemberOfAttribute &lt;String&gt;] [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="auth">Auth</h3>
+<pre><code class="powershell">New-NexusLDAPServerConnection -Name &lt;String&gt; -LdapProtocol &lt;String&gt; [-UseTrustStore] -LdapHost &lt;String&gt;
+ -LdapPort &lt;Int32&gt; -SearchBase &lt;String&gt; -AuthenticationScheme &lt;String&gt; -AuthenticationRealm &lt;String&gt;
+ -Credential &lt;PSCredential&gt; -ConnectionTimeoutSeconds &lt;Int32&gt; -RetryDelaySeconds &lt;Int32&gt;
+ -MaxIncidentCount &lt;Int32&gt; -UserBaseDN &lt;String&gt; [-WalkUserSubtree] -UserObjectClass &lt;String&gt;
+ -UserLDAPFilter &lt;String&gt; [-UserIdAttribute &lt;String&gt;] [-UserRealNameAttribute &lt;String&gt;]
+ [-UserEmailAddressAttribute &lt;String&gt;] [-UserPasswordAttribute &lt;String&gt;] [-LDAPGroupsAsRoles]
+ [-GroupType &lt;String&gt;] [-GroupBaseDN &lt;String&gt;] [-WalkGroupSubtree] [-GroupObjectClass &lt;String&gt;]
+ [-GroupIdAttribute &lt;String&gt;] [-GroupMemberAttribute &lt;String&gt;] [-GroupMemberFormat &lt;String&gt;]
+ [-UserMemberOfAttribute &lt;String&gt;] [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h2 id="description">DESCRIPTION</h2>
+<p>Creaes a new LDAP connection in Nexus, allowing domain users to authenticate</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code class="powershell">$params = @{                                                                                                     
+    Name = 'ExampleLDAPConnection'                 
+    LdapProtocol = 'Ldap'                   
+    LdapHost = 'domaincontroller'
+    LdapPort = 389          
+    SearchBase = &quot;OU=Sales,DC=domain,DC=com&quot;
+    ConnectionTimeoutSeconds = 50           
+    RetryDelaySeconds = 50 
+    MaxIncidentCount = 50   
+    UserBaseDN = &quot;CN=Users,DC=domain,DC=com&quot;
+    WalkUserSubtree = $true           
+    UserObjectClass = 'user'    
+    UserLDAPFilter = 'phone=foo'      
+    UserIdAttribute = 'samAccountName'
+    UserRealNameAttribute = 'cn'
+    UserEmailAddressAttribute = 'mail'
+    LDAPGroupsAsRoles = $true
+    GroupType = 'Dynamic'
+    WalkGroupSubtree = $true
+}
+</code></pre>
+
+<p>New-NexusLDAPServerConnection @params</p>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-name">-Name</h3>
+<p>The Name of the LDAP Connection</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-ldapprotocol">-LdapProtocol</h3>
+<p>The LDAP Protocol to use</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-usetruststore">-UseTrustStore</h3>
+<p>Whether to use certificates stored in Nexus Repository Manager's truststore</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-ldaphost">-LdapHost</h3>
+<p>LDAP server connection hostname</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-ldapport">-LdapPort</h3>
+<p>Typically 389 for ldap:// and 636 for ldaps://</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-searchbase">-SearchBase</h3>
+<p>LDAP location to be added to the connection URL</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-authenticationscheme">-AuthenticationScheme</h3>
+<p>Authentication scheme used for connecting to LDAP server</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: default
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<pre><code class="yaml">Type: String
+Parameter Sets: Auth
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-authenticationrealm">-AuthenticationRealm</h3>
+<p>The SASL realm to bind to.
+Required if authScheme is CRAM_MD5 or DIGEST_MD5</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Auth
+Aliases: Domain
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-credential">-Credential</h3>
+<p>Used to generate the authUsername and authPassword fields required when using an Authentication Scheme other than 'None'</p>
+<pre><code class="yaml">Type: PSCredential
+Parameter Sets: Auth
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-connectiontimeoutseconds">-ConnectionTimeoutSeconds</h3>
+<p>How long to wait before timeout</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-retrydelayseconds">-RetryDelaySeconds</h3>
+<p>How long to wait before retrying</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-maxincidentcount">-MaxIncidentCount</h3>
+<p>The number of retries before failure</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-userbasedn">-UserBaseDN</h3>
+<p>The relative DN where user objects are found (e.g.
+ou=people).
+This value will have the Search base DN value appended to form the full User search base DN.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-walkusersubtree">-WalkUserSubtree</h3>
+<p>Are users located in structures below the user base DN?</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-userobjectclass">-UserObjectClass</h3>
+<p>LDAP class for user objects</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-userldapfilter">-UserLDAPFilter</h3>
+<p>LDAP search filter to limit user search (e.g.
+(|(mail=<em>@example.com)(uid=dom</em>)) )</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-useridattribute">-UserIdAttribute</h3>
+<p>This is used to find a user given its user ID (e.g.
+'uid')</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Uid
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-userrealnameattribute">-UserRealNameAttribute</h3>
+<p>This is used to find a real name given the user ID (e.g.
+'cn')</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Cn
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-useremailaddressattribute">-UserEmailAddressAttribute</h3>
+<p>This is used to find an email address given the user ID (e.g.
+'mail')</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Mail
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-userpasswordattribute">-UserPasswordAttribute</h3>
+<p>If this field is blank the user will be authenticated against a bind with the LDAP server</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-ldapgroupsasroles">-LDAPGroupsAsRoles</h3>
+<p>Denotes whether LDAP assigned roles are used as Nexus Repository Manager roles</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-grouptype">-GroupType</h3>
+<p>Defines a type of groups used: static (a group contains a list of users) or dynamic (a user contains a list of groups).
+Required if ldapGroupsAsRoles is true.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Static
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-groupbasedn">-GroupBaseDN</h3>
+<p>The relative DN where group objects are found (e.g.
+ou=Group).
+This value will have the Search base DN value appended to form the full Group search base DN.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-walkgroupsubtree">-WalkGroupSubtree</h3>
+<p>Are groups located in structures below the group base DN</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-groupobjectclass">-GroupObjectClass</h3>
+<p>LDAP class for group objects.
+Required if groupType is static</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-groupidattribute">-GroupIdAttribute</h3>
+<p>This field specifies the attribute of the Object class that defines the Group ID.
+Required if groupType is static</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-groupmemberattribute">-GroupMemberAttribute</h3>
+<p>LDAP attribute containing the usernames for the group.
+Required if groupType is static</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-groupmemberformat">-GroupMemberFormat</h3>
+<p>The format of user ID stored in the group member attribute.
+Required if groupType is static (e.g.
+uid=${username},ou=people,dc=example,dc=com)</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-usermemberofattribute">-UserMemberOfAttribute</h3>
+<p>Set this to the attribute used to store the attribute which holds groups DN in the user object.
+Required if groupType is dynamic (e.g.
+'memberOf')</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: MemberOf
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h2 id="outputs">OUTPUTS</h2>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Remove-NexusLDAPServer/" class="btn btn-neutral float-right" title="Remove-NexusLDAPServer">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Get-NexusLDAPServer/" class="btn btn-neutral" title="Get-NexusLDAPServer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../Get-NexusLDAPServer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Remove-NexusLDAPServer/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

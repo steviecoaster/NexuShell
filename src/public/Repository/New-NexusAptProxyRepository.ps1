@@ -107,7 +107,7 @@ function New-NexusAptProxyRepository {
     .NOTES
     General notes
     #>
-    [CmdletBinding(DefaultParameterSetName = 'Hosted')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/New-NexusAptProxyRepository/',DefaultParameterSetName = 'Hosted')]
     Param(
         [Parameter(Mandatory)]
         [String]

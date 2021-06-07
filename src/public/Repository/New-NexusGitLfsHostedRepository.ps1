@@ -43,7 +43,7 @@ function New-NexusGitlfsHostedRepository {
 
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusGitLfsHostedRepository.md')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusGitlfsHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

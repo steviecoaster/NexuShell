@@ -105,7 +105,7 @@ $ProxyParameters = @{
 
 New-NexusGoProxyRepository @ProxyParameters
 #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusGoProxyRepository.md', DefaultParameterSetname = "Default")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusGoProxyRepository/', DefaultParameterSetname = "Default")]
     Param(
         [Parameter(Mandatory)]
         [String]

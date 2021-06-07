@@ -32,7 +32,7 @@ function New-NexusRawGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/New-NexusRawGroupRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

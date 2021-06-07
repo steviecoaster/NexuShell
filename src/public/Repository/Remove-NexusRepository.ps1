@@ -18,7 +18,7 @@ function Remove-NexusRepository {
     .EXAMPLE
     Remove-NexusRepository -Repository MavenReleases -Force()
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Remove-NexusRepository.md', SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Remove-NexusRepository/', SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [Alias('Name')]

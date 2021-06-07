@@ -10,6 +10,7 @@ function Remove-NexusRoutingRule {
     The realms you wish to activate
 
     .PARAMETER Force
+    Don't prompt for confirmation
     
     .EXAMPLE
     Remove-NexusRoutingRule -Rule NugetRule

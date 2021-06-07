@@ -24,7 +24,7 @@ function Get-NexusBlobStore {
     .EXAMPLE
     Get-NexusBlobStore -Name TreasureBlob -Type file -Detailed
     #>
-    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusBlobStore.md',DefaultParameterSetName = "Default")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Get-NexusBlobStore/',DefaultParameterSetName = "Default")]
     Param(
         [Parameter(Mandatory, ParameterSetName = "Name")]
         [String]

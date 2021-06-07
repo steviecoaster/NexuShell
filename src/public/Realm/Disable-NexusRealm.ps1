@@ -17,7 +17,7 @@ function Disable-NexusRealm {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Disable-NexusRealm.md',SupportsShouldProcess,ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Disable-NexusRealm/',SupportsShouldProcess,ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

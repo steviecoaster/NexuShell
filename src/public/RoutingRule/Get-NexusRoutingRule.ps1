@@ -17,7 +17,7 @@ function Get-NexusRoutingRule {
     
     .NOTES
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Get-NexusRoutingRule/')]
     Param(
         [Parameter()]
         [String[]]

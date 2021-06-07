@@ -9,7 +9,7 @@ function Get-NexusReadOnlyState {
     .EXAMPLE
     Get-NexusReadOnlyState
     #>
-    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusReadOnlyState.md')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Get-NexusReadOnlyState/')]
     Param()
     begin {
 

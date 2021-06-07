@@ -108,7 +108,7 @@ function New-NexusBowerProxyRepository {
     
     New-NexusBowerProxyRepository @ProxyParameters
     #>
-        [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusBowerProxyRepository.md',DefaultParameterSetname="Default")]
+        [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusBowerProxyRepository/',DefaultParameterSetname="Default")]
         Param(
             [Parameter(Mandatory)]
             [String]

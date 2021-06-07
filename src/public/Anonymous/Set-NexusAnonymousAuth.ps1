@@ -15,7 +15,7 @@ function Set-NexusAnonymousAuth {
     .EXAMPLE
     Set-NexusAnonymousAuth -Enabled
     #>
-    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Set-NexusAnonymousAuth.md')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Set-NexusAnonymousAuth/')]
     Param(
         [Parameter()]
         [Switch]

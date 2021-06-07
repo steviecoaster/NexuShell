@@ -12,7 +12,7 @@ function Get-NexusBlobStoreQuota {
     .EXAMPLE
     Get-NexusBlobStoreQuota -Name TestBlob
     #>
-    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Get-NexusBlobStoreQuota.md')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Get-NexusBlobStoreQuota/')]
     Param(
         [Parameter(Mandatory)]
         [String[]]

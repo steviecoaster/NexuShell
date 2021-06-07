@@ -105,7 +105,7 @@ $ProxyParameters = @{
 
 New-NexusCondaProxyRepository @ProxyParameters
 #>
-[CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusCondaProxyRepository.md',DefaultParameterSetname="Default")]
+[CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusCondaProxyRepository/',DefaultParameterSetname="Default")]
 Param(
     [Parameter(Mandatory)]
     [String]

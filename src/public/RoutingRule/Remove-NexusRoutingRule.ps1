@@ -50,32 +50,32 @@ function Remove-NexusRoutingRule {
         if (-not $header) {
             throw "Not connected to Nexus server! Run Connect-NexusServer first."
         }
-
-        $urislug = "/service/rest/v1/routing-rules/$Rule"
-
     }
 
     process {
+        $Rule | ForEach-Object {
+            $urislug = "/service/rest/v1/routing-rules/$_"
 
-
-        try {
+            try {
            
-            if ($Force -and -not $Confirm) {
-                $ConfirmPreference = 'None'
-                if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
-                    Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
-                    
+                if ($Force -and -not $Confirm) {
+                    $ConfirmPreference = 'None'
+                    if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
+                        Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
+                        
+                    }
+                }
+                else {
+                    if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
+                        Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
+                    }
                 }
             }
-            else {
-                if ($PSCmdlet.ShouldProcess("$_", "Remove Routing rule")) {
-                    Invoke-Nexus -UriSlug $urislug -Method DELETE -ErrorAction Stop
-                }
+    
+            catch {
+                $_.exception.message
             }
-        }
-
-        catch {
-            $_.exception.message
+    
         }
 
     }

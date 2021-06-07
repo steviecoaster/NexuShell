@@ -1,0 +1,4 @@
+site_name: TreasureChest Documentation
+theme: readthedocs
+repo_url: https://github.com/steviecoaster/TreausureChest
+docs_dir: ../docs/

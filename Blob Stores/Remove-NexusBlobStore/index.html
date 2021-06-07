@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Remove-NexusScript - TreasureChest Documentation</title>
+  <title>Remove-NexusBlobStore - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Remove-NexusScript";
-    var mkdocs_page_input_path = "Scripts/Remove-NexusScript.md";
+    var mkdocs_page_name = "Remove-NexusBlobStore";
+    var mkdocs_page_input_path = "Blob Stores/Remove-NexusBlobStore.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,12 +63,50 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Blob Stores</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStore/">Get-NexusBlobStore</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusBlobStore/">Get-NexusBlobStore</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Remove-NexusBlobStore</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-force">-Force</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-whatif">-WhatIf</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-confirm">-Confirm</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Licensing</span></p>
@@ -151,56 +189,16 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Scripts</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusScript/">Get-NexusScript</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Get-NexusScript/">Get-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusScript/">New-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/New-NexusScript/">New-NexusScript</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Remove-NexusScript</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-force">-Force</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-whatif">-WhatIf</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-confirm">-Confirm</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Remove-NexusScript/">Remove-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Set-NexusScript/">Set-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Set-NexusScript/">Set-NexusScript</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Start-NexusScript/">Start-NexusScript</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Start-NexusScript/">Start-NexusScript</a>
                     </li>
                 </ul>
       </div>
@@ -224,14 +222,14 @@
     
       
         
-          <li>Scripts &raquo;</li>
+          <li>Blob Stores &raquo;</li>
         
       
     
-    <li>Remove-NexusScript</li>
+    <li>Remove-NexusBlobStore</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Scripts/Remove-NexusScript.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Blob Stores/Remove-NexusBlobStore.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -242,44 +240,40 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="remove-nexusscript">Remove-NexusScript</h1>
+                <h1 id="remove-nexusblobstore">Remove-NexusBlobStore</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Deletes a stored script from Nexus</p>
+<p>Deletes a Nexus blob store</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">Remove-NexusScript [-Name] &lt;String[]&gt; [-Force] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Remove-NexusBlobStore [-Name] &lt;String&gt; [-Force] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Deletes a stored script from Nexus</p>
+<p>Deletes a Nexus blob store</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Remove-NexusScript -Name TestScript
+<pre><code class="powershell">Remove-NexusBlobStore -Name TreasureBlob
 </code></pre>
 
 <h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">Remove-NexusScript -Name TestScript -Force
-</code></pre>
-
-<h3 id="example-3">EXAMPLE 3</h3>
-<pre><code class="powershell">GetNexusScript | Remove-NexusScript -Force
+<pre><code class="powershell">Remove-NexusBlobStore -Name TreasureBlob -Force
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-name">-Name</h3>
-<p>The script to remove</p>
-<pre><code class="yaml">Type: String[]
+<p>The blob store to remove</p>
+<pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
 Default value: None
-Accept pipeline input: True (ByPropertyName, ByValue)
+Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
 <h3 id="-force">-Force</h3>
-<p>Don't prompt for confirmation before removing</p>
+<p>Disable confirmation of the delete action.</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -331,10 +325,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Set-NexusScript/" class="btn btn-neutral float-right" title="Set-NexusScript">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Licensing/Get-NexusLicenseStatus/" class="btn btn-neutral float-right" title="Get-NexusLicenseStatus">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../New-NexusScript/" class="btn btn-neutral" title="New-NexusScript"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Get-NexusBlobStoreQuota/" class="btn btn-neutral" title="Get-NexusBlobStoreQuota"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -362,10 +356,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../New-NexusScript/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Get-NexusBlobStoreQuota/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Set-NexusScript/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../Licensing/Get-NexusLicenseStatus/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>New-NexusAptProxyRepository - TreasureChest Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "New-NexusAptProxyRepository";
+    var mkdocs_page_input_path = "Repository/New-NexusAptProxyRepository.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> TreasureChest Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">TreasureChest Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Connect-NexusServer/">Connect-NexusServer</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Anonymous Auth</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Anonymous%20Auth/Get-NexusAnonymousAuthStatus/">Get-NexusAnonymousAuthStatus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Anonymous%20Auth/Set-NexusAnonymousAuth/">Set-NexusAnonymousAuth</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Blob Stores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStore/">Get-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Licensing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Licensing/Get-NexusLicenseStatus/">Get-NexusLicenseStatus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Licensing/Install-NexusLicense/">Install-NexusLicense</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Read Only</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Read-Only/Get-NexusReadOnlyState/">Get-NexusReadOnlyState</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Read-Only/Set-NexusReadOnlyMode/">Set-NexusReadOnlyMode</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Realms</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Realms/Disable-NexusRealm/">Disable-NexusRealm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Realms/Enable-NexusRealm/">Enable-NexusRealm</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Realms/Get-NexusRealm/">Get-NexusRealm</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Repository</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusRepository/">Get-NexusRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusAptHostedRepository/">New-NexusAptHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">New-NexusAptProxyRepository</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hosted-default">Hosted (Default)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-distribution">-Distribution</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-signingkey">-SigningKey</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-signingkeypassphrase">-SigningKeyPassphrase</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-blobstore">-BlobStore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-usestrictcontentvalidation">-UseStrictContentValidation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-deploymentpolicy">-DeploymentPolicy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-cleanuppolicy">-CleanupPolicy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-online">-Online</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-hasproprietarycomponents">-HasProprietaryComponents</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-proxyremoteurl">-ProxyRemoteUrl</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-contentmaxageminutes">-ContentMaxAgeMinutes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-metadatamaxageminutes">-MetadataMaxAgeMinutes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-querycacheitemmaxagseconds">-QueryCacheItemMaxAgSeconds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-usenegativecache">-UseNegativeCache</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-negativecachettlminutes">-NegativeCacheTTLMinutes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-flatupstream">-FlatUpstream</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-useauthentication">-UseAuthentication</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-authenticationtype">-AuthenticationType</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-credential">-Credential</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-hostnamefqdn">-HostnameFqdn</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-domainname">-DomainName</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-blockoutboundconnections">-BlockOutboundConnections</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-enableautoblocking">-EnableAutoBlocking</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-connectionretries">-ConnectionRetries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-connectiontimeoutseconds">-ConnectionTimeoutSeconds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-enablecircularredirects">-EnableCircularRedirects</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-enablecookies">-EnableCookies</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-customuseragent">-CustomUserAgent</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusAptRepository/">New-NexusAptRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBlobStore/">New-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerGroupRepository/">New-NexusBowerGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerHostedRepository/">New-NexusBowerHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusBowerProxyRepository/">New-NexusBowerProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCocoaPodProxyRepository/">New-NexusCocoaPodProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusConanProxyRepository/">New-NexusConanProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCondaProxyRepository/">New-NexusCondaProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerGroupRepository/">New-NexusDockerGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerHostedRepository/">New-NexusDockerHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusDockerProxyRepository/">New-NexusDockerProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGitlfsHostedRepository/">New-NexusGitlfsHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGoGroupRepository/">New-NexusGoGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusGoProxyRepository/">New-NexusGoProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusNugetHostedRepository/">New-NexusNugetHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusNugetProxyRepository/">New-NexusNugetProxyRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRawGroupRepository/">New-NexusRawGroupRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusRawHostedRepository/">New-NexusRawHostedRepository</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusRepository/">Remove-NexusRepository</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Routing Rules</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Routing%20Rules/Get-NexusRoutingRule/">Get-NexusRoutingRule</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Routing%20Rules/New-NexusRoutingRule/">New-NexusRoutingRule</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Routing%20Rules/Set-NexusRoutingRule/">Set-NexusRoutingRule</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Scripts</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Get-NexusScript/">Get-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/New-NexusScript/">New-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Remove-NexusScript/">Remove-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Set-NexusScript/">Set-NexusScript</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Scripts/Start-NexusScript/">Start-NexusScript</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">TreasureChest Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Repository &raquo;</li>
+        
+      
+    
+    <li>New-NexusAptProxyRepository</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Repository/New-NexusAptProxyRepository.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="new-nexusaptproxyrepository">New-NexusAptProxyRepository</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Creates a new Apt Proxy Repository</p>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="hosted-default">Hosted (Default)</h3>
+<pre><code class="powershell">New-NexusAptProxyRepository -Name &lt;String&gt; -Distribution &lt;String&gt; -SigningKey &lt;String&gt;
+ [-SigningKeyPassphrase &lt;String&gt;] [-BlobStore &lt;String&gt;] [-StrictContentValidation] -DeploymentPolicy &lt;String&gt;
+ [-CleanupPolicy &lt;String&gt;] [-Online] [-HasProprietaryComponents] -ProxyRemoteUrl &lt;String&gt;
+ [-ContentMaxAgeMinutes &lt;String&gt;] [-MetadataMaxAgeMinutes &lt;String&gt;] [-QueryCacheItemMaxAgSeconds &lt;String&gt;]
+ [-UseNegativeCache] [-NegativeCacheTTLMinutes &lt;String&gt;] [-FlatUpstream] [-BlockOutboundConnections]
+ [-EnableAutoBlocking] [-ConnectionRetries &lt;String&gt;] [-ConnectionTimeoutSeconds &lt;String&gt;]
+ [-EnableCircularRedirects] [-EnableCookies] [-CustomUserAgent &lt;String&gt;] [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="authentication">Authentication</h3>
+<pre><code class="powershell">New-NexusAptProxyRepository -Name &lt;String&gt; -Distribution &lt;String&gt; -SigningKey &lt;String&gt;
+ [-SigningKeyPassphrase &lt;String&gt;] [-BlobStore &lt;String&gt;] [-StrictContentValidation] -DeploymentPolicy &lt;String&gt;
+ [-CleanupPolicy &lt;String&gt;] [-Online] [-HasProprietaryComponents] -ProxyRemoteUrl &lt;String&gt;
+ [-ContentMaxAgeMinutes &lt;String&gt;] [-MetadataMaxAgeMinutes &lt;String&gt;] [-QueryCacheItemMaxAgSeconds &lt;String&gt;]
+ [-UseNegativeCache] [-NegativeCacheTTLMinutes &lt;String&gt;] [-FlatUpstream] [-UseAuthentication]
+ -AuthenticationType &lt;String&gt; -Credential &lt;PSCredential&gt; [-HostnameFqdn &lt;String&gt;] [-DomainName &lt;String&gt;]
+ [-BlockOutboundConnections] [-EnableAutoBlocking] [-ConnectionRetries &lt;String&gt;]
+ [-ConnectionTimeoutSeconds &lt;String&gt;] [-EnableCircularRedirects] [-EnableCookies] [-CustomUserAgent &lt;String&gt;]
+ [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h2 id="description">DESCRIPTION</h2>
+<p>Creates a new Apt Proxy Repository</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code class="powershell">$RepoParams = @{
+    Name = 'AptProxy'
+    Distribution = 'bionic'
+    SigningKey = 'SuperSecretKey'
+    DeploymentPolicy = 'Allow_Once'
+    ProxyUrl = 'https://upstream.deb.com'
+}
+</code></pre>
+
+<p>New-NexusAptProxyRepository @RepoParams</p>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-name">-Name</h3>
+<p>The name given to the repository</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-distribution">-Distribution</h3>
+<p>Distribution to fetch e.g.
+bionic</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-signingkey">-SigningKey</h3>
+<p>PGP signing key pair (armored private key e.g.
+gpg --export-secret-key --armor )</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-signingkeypassphrase">-SigningKeyPassphrase</h3>
+<p>Passphrase to access PGP Signing Key</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-blobstore">-BlobStore</h3>
+<p>Blob store used to store repository contents</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-usestrictcontentvalidation">-UseStrictContentValidation</h3>
+<p>Validate that all content uploaded to this repository is of a MIME type appropriate for the repository format</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-deploymentpolicy">-DeploymentPolicy</h3>
+<p>Controls if deployments of and updates to artifacts are allowed</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-cleanuppolicy">-CleanupPolicy</h3>
+<p>Components that match any of the Applied policies will be deleted</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-online">-Online</h3>
+<p>The repository accepts incoming requests</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-hasproprietarycomponents">-HasProprietaryComponents</h3>
+<p>Components in this repository count as proprietary for namespace conflict attacks (requires Sonatype Nexus Firewall)</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-proxyremoteurl">-ProxyRemoteUrl</h3>
+<p>Location of the remote repository being proxied</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-contentmaxageminutes">-ContentMaxAgeMinutes</h3>
+<p>How long (in minutes) to cache artifacts before rechecking the remote repository.
+Release repositories should use -1.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1440
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-metadatamaxageminutes">-MetadataMaxAgeMinutes</h3>
+<p>How long (in minutes) to cache metadata before rechecking the remote repository.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1440
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-querycacheitemmaxagseconds">-QueryCacheItemMaxAgSeconds</h3>
+<p>How long to cache the fact that a file was not found in the repository (in minutes)</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 3600
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-usenegativecache">-UseNegativeCache</h3>
+<p>Cache responses for content not present in the proxied repository</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-negativecachettlminutes">-NegativeCacheTTLMinutes</h3>
+<p>How long to cache the fact that a file was not found in the repository (in minutes)</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: 1440
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-flatupstream">-FlatUpstream</h3>
+<p>Is this repository flat?</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-useauthentication">-UseAuthentication</h3>
+<p>Use authentication for the upstream repository</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: Authentication
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-authenticationtype">-AuthenticationType</h3>
+<p>The type of authentication required by the upstream repository</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Authentication
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-credential">-Credential</h3>
+<p>Credentials to use to connecto to upstream repository</p>
+<pre><code class="yaml">Type: PSCredential
+Parameter Sets: Authentication
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-hostnamefqdn">-HostnameFqdn</h3>
+<p>If using NTLM authentication, the Hostname of the NTLM host to query</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Authentication
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-domainname">-DomainName</h3>
+<p>The domain name of the NTLM host</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Authentication
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-blockoutboundconnections">-BlockOutboundConnections</h3>
+<p>Block outbound connections on the repository</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-enableautoblocking">-EnableAutoBlocking</h3>
+<p>Auto-block outbound connections on the repository if remote peer is detected as unreachable/unresponsive</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-connectionretries">-ConnectionRetries</h3>
+<p>Connection attempts to upstream repository before a failure</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-connectiontimeoutseconds">-ConnectionTimeoutSeconds</h3>
+<p>Amount of time to wait before retrying the connection to the upstream repository</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-enablecircularredirects">-EnableCircularRedirects</h3>
+<p>Enable redirects to the same location (may be required by some servers)</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-enablecookies">-EnableCookies</h3>
+<p>Allow cookies to be stored and used</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-customuseragent">-CustomUserAgent</h3>
+<p>Custom fragment to append to "User-Agent" header in HTTP requests</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h2 id="outputs">OUTPUTS</h2>
+<h2 id="notes">NOTES</h2>
+<h2 id="related-links">RELATED LINKS</h2>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../New-NexusAptRepository/" class="btn btn-neutral float-right" title="New-NexusAptRepository">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../New-NexusAptHostedRepository/" class="btn btn-neutral" title="New-NexusAptHostedRepository"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../New-NexusAptHostedRepository/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../New-NexusAptRepository/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

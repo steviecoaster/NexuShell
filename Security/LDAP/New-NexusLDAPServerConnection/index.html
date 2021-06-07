@@ -321,7 +321,7 @@
               
                 <h1 id="new-nexusldapserverconnection">New-NexusLDAPServerConnection</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>creates a new LDAP Connection in Nexus</p>
+<p>Creates a new LDAP Connection in Nexus</p>
 <h2 id="syntax">SYNTAX</h2>
 <h3 id="default-default">default (Default)</h3>
 <pre><code class="powershell">New-NexusLDAPServerConnection -Name &lt;String&gt; -LdapProtocol &lt;String&gt; [-UseTrustStore] -LdapHost &lt;String&gt;
@@ -347,7 +347,7 @@
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Creaes a new LDAP connection in Nexus, allowing domain users to authenticate</p>
+<p>Creates a new LDAP connection in Nexus, allowing domain users to authenticate</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
 <pre><code class="powershell">$params = @{                                                                                                     
@@ -370,9 +370,10 @@
     GroupType = 'Dynamic'
     WalkGroupSubtree = $true
 }
+
+New-NexusLDAPServerConnection @params
 </code></pre>
 
-<p>New-NexusLDAPServerConnection @params</p>
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-name">-Name</h3>
 <p>The Name of the LDAP Connection</p>

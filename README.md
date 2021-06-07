@@ -10,35 +10,6 @@ A PowerShell module for Sonatype Nexus repository server administration
 4. Explore the available commands with `Get-Help`
 5. Start having fun!
 
-### Currently supported functions
+### Documentation
 
-- Connect-NexusServer
-- Enable-NexusRealm
-- Get-NexusAnonymousAuthStatus
-- Get-NexusBlobStore
-- Get-NexusBlobStoreQuota
-- Get-NexusLicenseStatus
-- Get-NexusReadOnlyState
-- Get-NexusRealm
-- Get-NexusRepository
-- Install-NexusLicense
-- New-NexusAptHostedRepository
-- New-NexusAptProxyRepository
-- New-NexusBlobStore
-- New-NexusNugetHostedRepository
-- New-NexusNugetProxyRepository
-- New-NexusRawGroupRepository
-- New-NexusRawHostedRepository
-- New-NexusBowerHostedRepository
-- New-NexusBowerProxyRepository
-- New-NexusBowerGroupRepository
-- New-NexusCocoaPodProxyRepository
-- New-NexusConanProxyRepository
-- New-NexusCondaProxyRepository
-- New-NexusDockerGroupRepository
-- New-NexusDockerHostedRepository
-- New-NexusDockerProxyRepository
-- Remove-NexusBlobStore
-- Remove-NexusRepository
-- Set-NexusAnonymousAuth
-- Set-NexusReadOnlyMode
+Information about currently supported functions and their usage can be found on the [docs](https://steviecoaster.dev/TreasureChest/) site.

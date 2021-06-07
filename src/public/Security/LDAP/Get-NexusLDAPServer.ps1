@@ -1,4 +1,4 @@
-function Get-NexusLDAPServer {
+function Get-NexusLDAPServerConnection {
     <#
     .SYNOPSIS
     Returns a list of conigured LDAP sources
@@ -11,15 +11,15 @@ function Get-NexusLDAPServer {
     when you run wthis command without any parameters
     
     .EXAMPLE
-    Get-NexusLDAPServer
+    Get-NexusLDAPServerConnection
 
     .EXAMPLE
-    Get-NexusLDAPServer -Name ActiveDirectoryConnection
+    Get-NexusLDAPServerConnection -Name ActiveDirectoryConnection
     
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/Get-NexusLDAPServer/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/Get-NexusLDAPServerConnection/')]
     Param(
         [Parameter()]
         [String[]]

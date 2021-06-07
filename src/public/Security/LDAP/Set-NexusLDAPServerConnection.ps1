@@ -1,10 +1,10 @@
-function New-NexusLDAPServerConnection {
+function Set-NexusLDAPServerConnection {
     <#
     .SYNOPSIS
-    Creates a new LDAP Connection in Nexus
+    Updates a new LDAP Connection in Nexus
     
     .DESCRIPTION
-    Creates a new LDAP connection in Nexus, allowing domain users to authenticate
+    Updates a new LDAP connection in Nexus, allowing domain users to authenticate
     
     .PARAMETER Name
     The Name of the LDAP Connection
@@ -115,15 +115,19 @@ function New-NexusLDAPServerConnection {
         WalkGroupSubtree = $true
     }
 
-    New-NexusLDAPServerConnection @params
+    Set-NexusLDAPServerConnection @params
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/LDAP/New-NexusLDAPServerConnection/',DefaultParameterSetName = "default")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Security/LDAP/Set-NexusLDAPServerConnection/', DefaultParameterSetName = "default")]
     Param(
         [Parameter(Mandatory)]
         [String]
         $Name,
+
+        [Parameter()]
+        [String]
+        $NewName,
 
         [Parameter(Mandatory)]
         [ValidateSet('Ldap', 'Ldaps')]
@@ -252,10 +256,17 @@ function New-NexusLDAPServerConnection {
     }
 
     process {
-        $urislug = '/service/rest/v1/security/ldap'
+        $urislug = '/service/rest/v1/security/ldap/$Name'
+
+        $UpdatedName = if ($NewName) {
+            $NewName
+        }
+        else { 
+            $Name 
+        }
 
         $body = @{
-            name                        = $Name
+            name                        = $UpdatedName
             protocol                    = $LdapProtocol.ToLower()
             useTrustStore               = [bool]$UseTrustStore
             host                        = $LdapHost
@@ -323,6 +334,6 @@ function New-NexusLDAPServerConnection {
         }
 
         Write-Verbose ($body | ConvertTo-Json)
-        Invoke-Nexus -Urislug $urislug -Body $Body -Method POST
+        Invoke-Nexus -Urislug $urislug -Body $Body -Method PUT
     }
 }

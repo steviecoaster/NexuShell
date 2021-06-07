@@ -1,4 +1,4 @@
-function Remove-NexusLDAPServer {
+function Remove-NexusLDAPServerConnection {
     <#
     .SYNOPSIS
     Renove LDAP Connection from Nexus
@@ -13,14 +13,14 @@ function Remove-NexusLDAPServer {
     Don't prompt for confirmation
     
     .EXAMPLE
-    Remove-NexusLDAPServer -Name DevLDAP
+    Remove-NexusLDAPServerConnection -Name DevLDAP
 
     .EXAMPLE
-    Remove-NexusLDAPServer -Name DevLDAP -Force
+    Remove-NexusLDAPServerConnection -Name DevLDAP -Force
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Security/LDAP/Remove-NexusLDAPServer/',SupportsShouldProcess,ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Security/LDAP/Remove-NexusLDAPServerConnection/',SupportsShouldProcess,ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [String[]]

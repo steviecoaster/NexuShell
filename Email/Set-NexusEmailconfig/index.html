@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>New-NexusSupportZip - TreasureChest Documentation</title>
+  <title>Set-NexusEmailconfig - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "New-NexusSupportZip";
-    var mkdocs_page_input_path = "Support/New-NexusSupportZip.md";
+    var mkdocs_page_name = "Set-NexusEmailconfig";
+    var mkdocs_page_input_path = "Email/Set-NexusEmailconfig.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -74,14 +74,66 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Email</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Clear-NexusEmailConfig/">Clear-NexusEmailConfig</a>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Clear-NexusEmailConfig/">Clear-NexusEmailConfig</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Get-NexusEmailConfig/">Get-NexusEmailConfig</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusEmailConfig/">Get-NexusEmailConfig</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Set-NexusEmailconfig/">Set-NexusEmailconfig</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Set-NexusEmailconfig</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-smtpserver">-SmtpServer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-smtpport">-SmtpPort</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-enabled">-Enabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-credential">-Credential</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-fromaddress">-FromAddress</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-subjectprefix">-SubjectPrefix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-starttlsenabled">-StartTlsEnabled</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-starttlsrequired">-StartTlsRequired</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-sslonconnect">-SSLOnConnect</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-verifyserveridentity">-VerifyServerIdentity</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-usenexustruststore">-UseNexusTrustStore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Test-NexusEmailConfig/">Test-NexusEmailConfig</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Test-NexusEmailConfig/">Test-NexusEmailConfig</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Licensing</span></p>
@@ -262,58 +314,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Support</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">New-NexusSupportZip</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#-includesysteminfo">-IncludeSystemInfo</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includethreaddump">-IncludeThreadDump</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includemetrics">-IncludeMetrics</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includeconfiguration">-IncludeConfiguration</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includesecurity">-IncludeSecurity</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includenexuslog">-IncludeNexusLog</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includetasklog">-IncludeTaskLog</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includeauditlog">-IncludeAuditLog</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-includejmx">-IncludeJmx</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-limitfilesize">-LimitFileSize</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-limitzipsizes">-LimitZipSizes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Support/New-NexusSupportZip/">New-NexusSupportZip</a>
                     </li>
                 </ul>
       </div>
@@ -337,14 +339,14 @@
     
       
         
-          <li>Support &raquo;</li>
+          <li>Email &raquo;</li>
         
       
     
-    <li>New-NexusSupportZip</li>
+    <li>Set-NexusEmailconfig</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Support/New-NexusSupportZip.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Email/Set-NexusEmailconfig.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -355,25 +357,55 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="new-nexussupportzip">New-NexusSupportZip</h1>
+                <h1 id="set-nexusemailconfig">Set-NexusEmailconfig</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Prepares a support zip file on your Nexus Server</p>
+<p>Sets the email settings for Nexus</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">New-NexusSupportZip [-IncludeSystemInfo] [-IncludeThreadDump] [-IncludeMetrics] [-IncludeConfiguration]
- [-IncludeSecurity] [-IncludeNexusLog] [-IncludeTaskLog] [-IncludeAuditLog] [-IncludeJmx] [-LimitFileSize]
- [-LimitZipSizes] [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Set-NexusEmailconfig [[-SmtpServer] &lt;String&gt;] [-SmtpPort] &lt;Int32&gt; [-Enabled] [[-Credential] &lt;PSCredential&gt;]
+ [[-FromAddress] &lt;String&gt;] [[-SubjectPrefix] &lt;String&gt;] [-StartTlsEnabled] [-StartTlsRequired] [-SSLOnConnect]
+ [-VerifyServerIdentity] [-UseNexusTrustStore] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Prepares a support zip file on your Nexus Server</p>
+<p>Sets the email settings for Nexus</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">New-NexusSupportZip -IncludeNexusLog -IncludeConfiguration
+<pre><code class="powershell">Set-NexusEmailConfig -SmtpSerer mail.foo.org -Port 25 -Enabled
+</code></pre>
+
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code class="powershell">Set-NexusEmailConfig -SmtpServer mail.foo.org -Port 427 -Enabled -StartTlsEnabled -StartTlsrequired
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
-<h3 id="-includesysteminfo">-IncludeSystemInfo</h3>
-<p>Includes system info in the zip</p>
+<h3 id="-smtpserver">-SmtpServer</h3>
+<p>The hostname or IP address of your mail server</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-smtpport">-SmtpPort</h3>
+<p>The SMTP port of your mail server</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-enabled">-Enabled</h3>
+<p>Enable sending mail from Nexus</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -385,8 +417,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-includethreaddump">-IncludeThreadDump</h3>
-<p>Includes a thread dump in the zip</p>
+<h3 id="-credential">-Credential</h3>
+<p>Credentials to connect to your SMTP server if required</p>
+<pre><code class="yaml">Type: PSCredential
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-fromaddress">-FromAddress</h3>
+<p>Messages from Nexus with be sent from this email address</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-subjectprefix">-SubjectPrefix</h3>
+<p>Append a prefix to messages from Nexus if desired</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-starttlsenabled">-StartTlsEnabled</h3>
+<p>Enable StartTLS</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -398,8 +469,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-includemetrics">-IncludeMetrics</h3>
-<p>Includes metrics in the zip</p>
+<h3 id="-starttlsrequired">-StartTlsRequired</h3>
+<p>Require TLS on the smtp connection</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -411,8 +482,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-includeconfiguration">-IncludeConfiguration</h3>
-<p>Includes server configuration in the zip</p>
+<h3 id="-sslonconnect">-SSLOnConnect</h3>
+<p>Require SSL on the smtp connection</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -424,8 +495,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-includesecurity">-IncludeSecurity</h3>
-<p>Include security information in the zip</p>
+<h3 id="-verifyserveridentity">-VerifyServerIdentity</h3>
+<p>Verify mail server identity before sending messages</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -437,73 +508,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-includenexuslog">-IncludeNexusLog</h3>
-<p>Include the nexus log in the zip</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-includetasklog">-IncludeTaskLog</h3>
-<p>Include the task log in the zip</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-includeauditlog">-IncludeAuditLog</h3>
-<p>Include the audit log in the zip</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-includejmx">-IncludeJmx</h3>
-<p>Include the jmx configuration in the zip</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-limitfilesize">-LimitFileSize</h3>
-<p>Limit the output size of files in the zip</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-limitzipsizes">-LimitZipSizes</h3>
-<p>Limit the overall size of the zip</p>
+<h3 id="-usenexustruststore">-UseNexusTrustStore</h3>
+<p>Use Nexus Trust Store for email certificates</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -528,8 +534,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../Test-NexusEmailConfig/" class="btn btn-neutral float-right" title="Test-NexusEmailConfig">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../../Status/Get-NexusStatus/" class="btn btn-neutral" title="Get-NexusStatus"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../Get-NexusEmailConfig/" class="btn btn-neutral" title="Get-NexusEmailConfig"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -557,8 +565,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../Status/Get-NexusStatus/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Get-NexusEmailConfig/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../Test-NexusEmailConfig/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -92,6 +92,13 @@ function New-NexusSupportZip {
         $LimitZipSizes
     )
 
+    begin {
+        if (-not $header) {
+            throw "Not connected to Nexus server! Run Connect-NexusServer first."
+        }
+
+    }
+
     process {
         $Body = @{
             systemInformation = [bool]$IncludeSystemInfo

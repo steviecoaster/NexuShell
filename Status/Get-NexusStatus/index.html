@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Set-NexusReadOnlyMode - TreasureChest Documentation</title>
+  <title>Get-NexusStatus - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Set-NexusReadOnlyMode";
-    var mkdocs_page_input_path = "Read-Only/Set-NexusReadOnlyMode.md";
+    var mkdocs_page_name = "Get-NexusStatus";
+    var mkdocs_page_input_path = "Status/Get-NexusStatus.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -83,56 +83,10 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Read Only</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusReadOnlyState/">Get-NexusReadOnlyState</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Read-Only/Get-NexusReadOnlyState/">Get-NexusReadOnlyState</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Set-NexusReadOnlyMode</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#enable-default">Enable (Default)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#disable">Disable</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#-enable">-Enable</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-disable">-Disable</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-force">-Force</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-whatif">-WhatIf</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#-confirm">-Confirm</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Read-Only/Set-NexusReadOnlyMode/">Set-NexusReadOnlyMode</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Realms</span></p>
@@ -292,8 +246,50 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Status</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Status/Get-NexusStatus/">Get-NexusStatus</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Get-NexusStatus</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-4">EXAMPLE 4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-5">EXAMPLE 5</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-verifyread">-VerifyRead</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-verifysystem">-VerifySystem</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-verifywrite">-VerifyWrite</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Support</span></p>
@@ -322,14 +318,14 @@
     
       
         
-          <li>Read Only &raquo;</li>
+          <li>Status &raquo;</li>
         
       
     
-    <li>Set-NexusReadOnlyMode</li>
+    <li>Get-NexusStatus</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Read-Only/Set-NexusReadOnlyMode.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Status/Get-NexusStatus.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -340,92 +336,73 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="set-nexusreadonlymode">Set-NexusReadOnlyMode</h1>
+                <h1 id="get-nexusstatus">Get-NexusStatus</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Sets the nexus instance Read-Only mode</p>
+<p>Returns Nexus System Status information</p>
 <h2 id="syntax">SYNTAX</h2>
-<h3 id="enable-default">Enable (Default)</h3>
-<pre><code class="powershell">Set-NexusReadOnlyMode [-Enable] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="disable">Disable</h3>
-<pre><code>Set-NexusReadOnlyMode [-Disable] [-Force] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Get-NexusStatus [-VerifyRead] [-VerifySystem] [-VerifyWrite] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Either Disable or Enable Read-Only mode of your nexus instance</p>
+<p>Returns Nexus System Status information</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Set-NexusReadOnlyMode -Enable
+<pre><code class="powershell">Get-NexusStatus
 </code></pre>
 
+<p>Returns system information</p>
 <h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">Set-NexusReadOnlyMode -Disable
+<pre><code class="powershell">Get-NexusStatus -VerifyRead
+</code></pre>
+
+<h3 id="example-3">EXAMPLE 3</h3>
+<pre><code class="powershell">Get-NexusStatus -VerifySystem
+</code></pre>
+
+<h3 id="example-4">EXAMPLE 4</h3>
+<pre><code class="powershell">Get-NexusStatus -VerifyWrite
+</code></pre>
+
+<h3 id="example-5">EXAMPLE 5</h3>
+<pre><code class="powershell">Get-NexusStatus -VerifyRead -VerifyWrite -VerifySystem
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
-<h3 id="-enable">-Enable</h3>
-<p>Sets the nexus instance to Read-Only mode</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: Enable
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-disable">-Disable</h3>
-<p>Sets the nexus instance to write-enabled mode</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: Disable
-Aliases:
-
-Required: True
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-force">-Force</h3>
-<p>{{ Fill Force Description }}</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: Disable
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-whatif">-WhatIf</h3>
-<p>Shows what would happen if the cmdlet runs.
-The cmdlet is not run.</p>
+<h3 id="-verifyread">-VerifyRead</h3>
+<p>Verifies that Nexus can accept read requests</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: wi
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-confirm">-Confirm</h3>
-<p>Prompts you for confirmation before running the cmdlet.</p>
+<h3 id="-verifysystem">-VerifySystem</h3>
+<p>Returns system information</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: cf
+Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-verifywrite">-VerifyWrite</h3>
+<p>Verifies that Nexus can accpet write requests</p>
+<pre><code class="yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
@@ -443,10 +420,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Realms/Disable-NexusRealm/" class="btn btn-neutral float-right" title="Disable-NexusRealm">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Support/New-NexusSupportZip/" class="btn btn-neutral float-right" title="New-NexusSupportZip">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Get-NexusReadOnlyState/" class="btn btn-neutral" title="Get-NexusReadOnlyState"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Security/User%20Sources/Get-NexusUserSource/" class="btn btn-neutral" title="Get-NexusUserSource"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -474,10 +451,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Get-NexusReadOnlyState/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../Security/User%20Sources/Get-NexusUserSource/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../Realms/Disable-NexusRealm/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../Support/New-NexusSupportZip/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

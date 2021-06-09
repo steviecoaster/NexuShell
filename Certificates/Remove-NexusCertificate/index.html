@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Remove-NexusLicense - TreasureChest Documentation</title>
+  <title>Remove-NexusCertificate - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Remove-NexusLicense";
-    var mkdocs_page_input_path = "Licensing/Remove-NexusLicense.md";
+    var mkdocs_page_name = "Remove-NexusCertificate";
+    var mkdocs_page_input_path = "Certificates/Remove-NexusCertificate.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -74,32 +74,12 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Certificates</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/Get-NexusCertificate/">Get-NexusCertificate</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/New-NexusCertificate/">New-NexusCertificate</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/Remove-NexusCertificate/">Remove-NexusCertificate</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Email</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Clear-NexusEmailConfig/">Clear-NexusEmailConfig</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Get-NexusEmailConfig/">Get-NexusEmailConfig</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Set-NexusEmailconfig/">Set-NexusEmailconfig</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Test-NexusEmailConfig/">Test-NexusEmailConfig</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Licensing</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusLicenseStatus/">Get-NexusLicenseStatus</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Get-NexusCertificate/">Get-NexusCertificate</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Install-NexusLicense/">Install-NexusLicense</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCertificate/">New-NexusCertificate</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Remove-NexusLicense</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Remove-NexusCertificate</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
     </li>
@@ -113,10 +93,14 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-thumbprint">-Thumbprint</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#-force">-Force</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#-whatif">-WhatIf</a>
@@ -136,6 +120,26 @@
     <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
     </li>
     </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Email</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Clear-NexusEmailConfig/">Clear-NexusEmailConfig</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Get-NexusEmailConfig/">Get-NexusEmailConfig</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Set-NexusEmailconfig/">Set-NexusEmailconfig</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Email/Test-NexusEmailConfig/">Test-NexusEmailConfig</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Licensing</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Licensing/Get-NexusLicenseStatus/">Get-NexusLicenseStatus</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Licensing/Install-NexusLicense/">Install-NexusLicense</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Licensing/Remove-NexusLicense/">Remove-NexusLicense</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Lifecycle</span></p>
@@ -352,14 +356,14 @@
     
       
         
-          <li>Licensing &raquo;</li>
+          <li>Certificates &raquo;</li>
         
       
     
-    <li>Remove-NexusLicense</li>
+    <li>Remove-NexusCertificate</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Licensing/Remove-NexusLicense.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Certificates/Remove-NexusCertificate.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -370,27 +374,44 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="remove-nexuslicense">Remove-NexusLicense</h1>
+                <h1 id="remove-nexuscertificate">Remove-NexusCertificate</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Removes the license from a Nexus instance</p>
+<p>Remove a certificate in the trust store.</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">Remove-NexusLicense [-Force] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Remove-NexusCertificate [-Thumbprint] &lt;String&gt; [-Force] [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Removes the license from a Nexus instance</p>
+<p>Remove a certificate in the trust store.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Remove-NexusLicense
+<pre><code class="powershell">Remove-NexusCertificate -Thumbprint 1a:25:25:25:93:85:94
 </code></pre>
 
 <h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">Remove-NexusLicense -Force
+<pre><code class="powershell">Remove-NexusCertificate -Thumbprint 1a:25:25:25:93:85:94 -Force
+</code></pre>
+
+<h3 id="example-3">EXAMPLE 3</h3>
+<pre><code class="powershell">Get-NexusCertificate | Remove-NexusCertificate
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
+<h3 id="-thumbprint">-Thumbprint</h3>
+<p>The id of the certificate that should be removed.</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: (All)
+Aliases: Id
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+</code></pre>
+
 <h3 id="-force">-Force</h3>
-<p>Don't prompt for confirmation before removing the license</p>
+<p>Don't prompt before removing</p>
 <pre><code class="yaml">Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
@@ -442,10 +463,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Lifecycle/Get-NexusCurrentLifecyclePhase/" class="btn btn-neutral float-right" title="Get-NexusCurrentLifecyclePhase">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Email/Clear-NexusEmailConfig/" class="btn btn-neutral float-right" title="Clear-NexusEmailConfig">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Install-NexusLicense/" class="btn btn-neutral" title="Install-NexusLicense"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../New-NexusCertificate/" class="btn btn-neutral" title="New-NexusCertificate"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -473,10 +494,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Install-NexusLicense/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../New-NexusCertificate/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../Lifecycle/Get-NexusCurrentLifecyclePhase/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../Email/Clear-NexusEmailConfig/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

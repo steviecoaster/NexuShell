@@ -127,7 +127,7 @@ function New-NexusPrivilege {
     .NOTES
 
     #>
-    [CmdletBinding(DefaultParameterSetName="Default")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/Privileges/New-NexusPrivilege/',DefaultParameterSetName="Default")]
     Param(
         [Parameter(Mandatory,ParameterSetName="Default")]
         [Parameter(Mandatory,ParameterSetName="Repo")]

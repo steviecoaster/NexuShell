@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>New-NexusPrivilege - TreasureChest Documentation</title>
+  <title>Set-NexusUserPassword - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "New-NexusPrivilege";
-    var mkdocs_page_input_path = "Security/Privileges/New-NexusPrivilege.md";
+    var mkdocs_page_name = "Set-NexusUserPassword";
+    var mkdocs_page_input_path = "Security/User/Set-NexusUserPassword.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -266,29 +266,33 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Privileges</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../Get-NexusPrivilege/">Get-NexusPrivilege</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Privileges</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Privileges/Get-NexusPrivilege/">Get-NexusPrivilege</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">New-NexusPrivilege</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Privileges/New-NexusPrivilege/">New-NexusPrivilege</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Privileges/Remove-NexusPrivilege/">Remove-NexusPrivilege</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Privileges/Set-NexusPrivilege/">Set-NexusPrivilege</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">User</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Get-NexusUser/">Get-NexusUser</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../New-NexusUser/">New-NexusUser</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusUser/">Remove-NexusUser</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Set-NexusUser/">Set-NexusUser</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Set-NexusUserPassword</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#default-default">Default (Default)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#wildcard">Wildcard</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#content">Content</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#script">Script</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#application">Application</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#repo">Repo</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
     </li>
@@ -296,39 +300,13 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-4">EXAMPLE 4</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-5">EXAMPLE 5</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-6">EXAMPLE 6</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#-type">-Type</a>
+    <li class="toctree-l4"><a class="reference internal" href="#-username">-Username</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-name">-Name</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-description">-Description</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-action">-Action</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-repository">-Repository</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-format">-Format</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-scriptname">-ScriptName</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-domain">-Domain</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-contentselector">-ContentSelector</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-wildcardpattern">-WildcardPattern</a>
+    <li class="toctree-l4"><a class="reference internal" href="#-newpassword">-NewPassword</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
     </li>
@@ -343,24 +321,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
     </li>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusPrivilege/">Remove-NexusPrivilege</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Set-NexusPrivilege/">Set-NexusPrivilege</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">User</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../User/Get-NexusUser/">Get-NexusUser</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../User/New-NexusUser/">New-NexusUser</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../User/Remove-NexusUser/">Remove-NexusUser</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../User/Set-NexusUser/">Set-NexusUser</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../User/Set-NexusUserPassword/">Set-NexusUserPassword</a>
                 </li>
     </ul>
                     </li>
@@ -411,7 +371,7 @@
     
       
         
-          <li>Privileges &raquo;</li>
+          <li>User &raquo;</li>
         
       
         
@@ -419,10 +379,10 @@
         
       
     
-    <li>New-NexusPrivilege</li>
+    <li>Set-NexusUserPassword</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Security/Privileges/New-NexusPrivilege.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Security/User/Set-NexusUserPassword.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -433,244 +393,42 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="new-nexusprivilege">New-NexusPrivilege</h1>
+                <h1 id="set-nexususerpassword">Set-NexusUserPassword</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Creates a new Nexus privilege which can be assigned to Roles</p>
+<p>Change a user's password.</p>
 <h2 id="syntax">SYNTAX</h2>
-<h3 id="default-default">Default (Default)</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -Name &lt;String&gt; [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="wildcard">Wildcard</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -WildcardPattern &lt;String&gt; [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="content">Content</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -ContentSelector &lt;String&gt; [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="script">Script</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -Name &lt;String&gt; -Description &lt;String&gt; -Action &lt;String[]&gt; -ScriptName &lt;String&gt;
- [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="application">Application</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -Domain &lt;String&gt; [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="repo">Repo</h3>
-<pre><code class="powershell">New-NexusPrivilege -Type &lt;String&gt; -Name &lt;String&gt; -Description &lt;String&gt; -Action &lt;String[]&gt; -Repository &lt;String&gt;
- -Format &lt;String&gt; [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Set-NexusUserPassword [-Username] &lt;String&gt; [-NewPassword] &lt;SecureString&gt; [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Creates a new Nexus privilege which can be assigned to Roles</p>
+<p>Change a user's password.</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">$params = @{
-    Type = 'Application'
-    Name = 'ApplicationPrivilegeExample'
-    Description = 'Briefly describe the privilege'
-    Action = 'Browse,Edit'
-    Domain = 'blobstores''
-}
-
-New-NexusPrivilege @params
-</code></pre>
-
-<h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">$params = @{
-Type = 'Repository-Admin'
-Name = 'RepositoryAdminPrivilegeExample'
-Description = 'Briefly describe the privilege'
-Action = 'Browse,Edit'
-Format = 'npm'
-Repository = 'npmWebDevRepo'
-}
-
-New-NexusPrivilege @params
-</code></pre>
-
-<h3 id="example-3">EXAMPLE 3</h3>
-<pre><code class="powershell">$params = @{
-Type = 'Repository-Content-Selector'
-Name = 'RepoContentSelectorPrivilegeExample'
-Description = 'Briefly describe the privilege'
-Action = 'Browse,Edit'
-Format = 'nuget'
-Repository = 'NuGetProductionRepo'
-ContentSelector = 'LargeNupkgContent'
-}
-
-New-NexusPrivilege @params
-</code></pre>
-
-<h3 id="example-4">EXAMPLE 4</h3>
-<pre><code class="powershell">$params = @{
-Type = 'Repository-View'
-Name = 'RepoViewPrivilegeExample'
-Description = 'Briefly describe the privilege'
-Action = 'Browse,Edit'
-Format = 'nuget'
-Repostiory = 'NuGetProductionRepo'
-}
-
-New-NexusPrivilege @params
-</code></pre>
-
-<h3 id="example-5">EXAMPLE 5</h3>
-<pre><code class="powershell">$params = @{
-Type = 'Script'
-Name = 'ScriptPrivilegeExample'
-Description = 'Briefly describe the privilege'
-Action = 'Browse','Read','Edit'
-ScriptName = 'GroovySurfaceApiKeyDetails'
-
-}
-
-New-NexusPrivilege @params
-</code></pre>
-
-<h3 id="example-6">EXAMPLE 6</h3>
-<pre><code class="powershell">$params = @{
-Type = 'Wildcard'
-Name = 'WildcardPrivilegeExample'
-Description = 'Briefly describe the privilege'
-WildcardPattern = 'nuget:npm:*'
-}
-
-New-NexusPrivilege @params
+<pre><code class="powershell">Set-NexusUserPassword -Username jimmy -NewPassword (&quot;Sausage2021&quot; | ConvertTo-SecureString -AsPlainText -Force)
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
-<h3 id="-type">-Type</h3>
-<p>Privilege type to create</p>
+<h3 id="-username">-Username</h3>
+<p>The userid the request should apply to</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-name">-Name</h3>
-<p>The name of the privilege.
-This value cannot be changed.</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Default, Script, Repo
+<h3 id="-newpassword">-NewPassword</h3>
+<p>The new password to use.</p>
+<pre><code class="yaml">Type: SecureString
+Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-description">-Description</h3>
-<p>Brief description for the new privilege</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Script, Repo
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-action">-Action</h3>
-<p>A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as 'run' for script privileges.</p>
-<pre><code class="yaml">Type: String[]
-Parameter Sets: Script, Repo
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-repository">-Repository</h3>
-<p>The name of the repository this privilege will grant access to (or * for all).</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Repo
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-format">-Format</h3>
-<p>The repository format (i.e 'nuget', 'npm') this privilege will grant access to (or * for all).</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Repo
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-scriptname">-ScriptName</h3>
-<p>The name of a script to give access to.</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Script
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-domain">-Domain</h3>
-<p>The domain (i.e.
-'blobstores', 'capabilities' or even '*' for all) that this privilege is granting access to.
-Note that creating new privileges with a domain is only necessary when using plugins that define their own domain(s).</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Application
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-contentselector">-ContentSelector</h3>
-<p>Name of a ContentSelector for Content Selector privilege type</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Content
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-wildcardpattern">-WildcardPattern</h3>
-<p>A colon separated list of parts that create a permission string.</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Wildcard
-Aliases:
-
-Required: True
-Position: Named
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -689,10 +447,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Remove-NexusPrivilege/" class="btn btn-neutral float-right" title="Remove-NexusPrivilege">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../User%20Sources/Get-NexusUserSource/" class="btn btn-neutral float-right" title="Get-NexusUserSource">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Get-NexusPrivilege/" class="btn btn-neutral" title="Get-NexusPrivilege"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Set-NexusUser/" class="btn btn-neutral" title="Set-NexusUser"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -720,10 +478,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Get-NexusPrivilege/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Set-NexusUser/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Remove-NexusPrivilege/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../User%20Sources/Get-NexusUserSource/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

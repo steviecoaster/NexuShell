@@ -15,7 +15,7 @@ function Stop-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = '')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Tasks/Stop-NexusTask/')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

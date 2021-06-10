@@ -23,7 +23,7 @@ function Remove-NexusUser {
     
     .NOTES
     #>
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User/Remove-NexusUser/',SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [Alias('userId')]

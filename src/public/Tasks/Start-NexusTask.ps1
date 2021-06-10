@@ -15,7 +15,7 @@ function Start-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = '')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Tasks/Start-NexusTask/')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

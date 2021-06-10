@@ -24,7 +24,7 @@ function Get-NexusUser {
     .NOTES
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User/Get-NexusUser/')]
     Param(
         [Parameter()]
         [String]

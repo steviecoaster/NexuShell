@@ -39,7 +39,7 @@ function Set-NexusUser {
     .NOTES
     General notes
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User/Set-NexusUser/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter( {

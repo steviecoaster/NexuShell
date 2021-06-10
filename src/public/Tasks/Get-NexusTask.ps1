@@ -18,7 +18,7 @@ function Get-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = '')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Tasks/Get-NexusTask/')]
     Param(
         [Parameter()]
         [String[]]

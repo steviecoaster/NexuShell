@@ -10,18 +10,19 @@ Sonatype Nexus is a Repository Server that exists in two flavors. Open Source (S
 
 ## Functionality
 
-- Manage Repositories
+- Manage Repositories 🚧 WIP, partially implemented
 - Manage Assets 🚧 Coming Soon!
 - Manage Components 🚧 Coming Soon!
 - Manage Anonymous Access
 - Manage Licensing
 - Manage Email configuration
 - Manage Blob Stores
-- Manage Tasks 🚧 Coming Soon!
 - Manage Routing Rules
 - Manage Cleanup Policies 🚧 Coming Soon!
 - Manage Scripts
-- Manage Security
+- Manage Roles 🚧 Coming Soon!
+- Manage Privileges
+- Manage Users
 - Manage Tasks 🚧 Coming Soon!
 - Search Nexus 🚧 Coming Soon!
 - Collect Support information

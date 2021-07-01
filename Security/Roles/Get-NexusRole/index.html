@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>New-NexusContentSelector - TreasureChest Documentation</title>
+  <title>Get-NexusRole - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "New-NexusContentSelector";
-    var mkdocs_page_input_path = "Security/Content Selectors/New-NexusContentSelector.md";
+    var mkdocs_page_name = "Get-NexusRole";
+    var mkdocs_page_input_path = "Security/Roles/Get-NexusRole.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -246,49 +246,15 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Content Selectors</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../Get-NexusContentSelector/">Get-NexusContentSelector</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Content Selectors</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Content%20Selectors/Get-NexusContentSelector/">Get-NexusContentSelector</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">New-NexusContentSelector</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#-name">-Name</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-description">-Description</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-expression">-Expression</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Content%20Selectors/New-NexusContentSelector/">New-NexusContentSelector</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusContentSelector/">Remove-NexusContentSelector</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Content%20Selectors/Remove-NexusContentSelector/">Remove-NexusContentSelector</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Set-NexusContentSelector/">Set-NexusContentSelector</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Content%20Selectors/Set-NexusContentSelector/">Set-NexusContentSelector</a>
                 </li>
     </ul>
                     </li>
@@ -318,15 +284,49 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Roles</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Get-NexusRole/">Get-NexusRole</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Roles</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Get-NexusRole</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-role">-Role</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-source">-Source</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Roles/New-NexusRole/">New-NexusRole</a>
+                <li class="toctree-l2"><a class="reference internal" href="../New-NexusRole/">New-NexusRole</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Remove-NexusRole/">Remove-NexusRole</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusRole/">Remove-NexusRole</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Roles/Set-NexusRole/">Set-NexusRole</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Set-NexusRole/">Set-NexusRole</a>
                 </li>
     </ul>
                     </li>
@@ -391,7 +391,7 @@
     
       
         
-          <li>Content Selectors &raquo;</li>
+          <li>Roles &raquo;</li>
         
       
         
@@ -399,10 +399,10 @@
         
       
     
-    <li>New-NexusContentSelector</li>
+    <li>Get-NexusRole</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Security/Content Selectors/New-NexusContentSelector.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Security/Roles/Get-NexusRole.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -413,55 +413,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="new-nexuscontentselector">New-NexusContentSelector</h1>
+                <h1 id="get-nexusrole">Get-NexusRole</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Creates a new Content Selector in Nexus</p>
+<p>Retrieve Nexus Role information</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">New-NexusContentSelector [-Name] &lt;String&gt; [[-Description] &lt;String&gt;] [-Expression] &lt;String&gt; [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Get-NexusRole [[-Role] &lt;String&gt;] [[-Source] &lt;String&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Creates a new Content Selector in Nexus</p>
+<p>Retrieve Nexus Role information</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">New-NexusContentSelector -Name MavenContent -Expression 'format == &quot;maven2&quot; and path =^ &quot;/org/sonatype/nexus&quot;'
+<pre><code class="powershell">Get-NexusRole
+</code></pre>
+
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code class="powershell">Get-NexusRole -Role ExampleRole
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
-<h3 id="-name">-Name</h3>
-<p>The content selector name cannot be changed after creation</p>
+<h3 id="-role">-Role</h3>
+<p>The role to retrieve</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
-Aliases:
+Aliases: id
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-description">-Description</h3>
-<p>A human-readable description</p>
+<h3 id="-source">-Source</h3>
+<p>The source to retrieve from</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-expression">-Expression</h3>
-<p>The expression used to identify content</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -480,10 +471,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Remove-NexusContentSelector/" class="btn btn-neutral float-right" title="Remove-NexusContentSelector">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../New-NexusRole/" class="btn btn-neutral float-right" title="New-NexusRole">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Get-NexusContentSelector/" class="btn btn-neutral" title="Get-NexusContentSelector"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Privileges/Set-NexusPrivilege/" class="btn btn-neutral" title="Set-NexusPrivilege"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -511,10 +502,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Get-NexusContentSelector/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../Privileges/Set-NexusPrivilege/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Remove-NexusContentSelector/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../New-NexusRole/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

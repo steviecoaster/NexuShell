@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>New-NexusNugetProxyRepository - TreasureChest Documentation</title>
+  <title>Set-NexusCleanupPolicy - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "New-NexusNugetProxyRepository";
-    var mkdocs_page_input_path = "Repository/NuGet/New-NexusNugetProxyRepository.md";
+    var mkdocs_page_name = "Set-NexusCleanupPolicy";
+    var mkdocs_page_input_path = "Repository/Cleanup Policy/Set-NexusCleanupPolicy.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -157,15 +157,55 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Cleanup Policy</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Cleanup%20Policy/Get-NexusCleanupPolicy/">Get-NexusCleanupPolicy</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Cleanup Policy</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Get-NexusCleanupPolicy/">Get-NexusCleanupPolicy</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Cleanup%20Policy/New-NexusCleanupPolicy/">New-NexusCleanupPolicy</a>
+                <li class="toctree-l2"><a class="reference internal" href="../New-NexusCleanupPolicy/">New-NexusCleanupPolicy</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Cleanup%20Policy/Remove-NexusCleanupPolicy/">Remove-NexusCleanupPolicy</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Remove-NexusCleanupPolicy/">Remove-NexusCleanupPolicy</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Cleanup%20Policy/Set-NexusCleanupPolicy/">Set-NexusCleanupPolicy</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Set-NexusCleanupPolicy</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-format">-Format</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-notes">-Notes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-componentage">-ComponentAge</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-componentusage">-ComponentUsage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#-assetmatcher">-AssetMatcher</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#outputs">OUTPUTS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
                 </li>
     </ul>
                     </li>
@@ -211,101 +251,11 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">NuGet</a>
-    <ul class="current">
-                <li class="toctree-l2"><a class="reference internal" href="../New-NexusNugetHostedRepository/">New-NexusNugetHostedRepository</a>
+                    <li class="toctree-l1"><a class="reference internal" href="#">NuGet</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../NuGet/New-NexusNugetHostedRepository/">New-NexusNugetHostedRepository</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">New-NexusNugetProxyRepository</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#syntax">SYNTAX</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#default-default">Default (Default)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#authentication">Authentication</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#description">DESCRIPTION</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#examples">EXAMPLES</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#parameters">PARAMETERS</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#-name">-Name</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-proxyremoteurl">-ProxyRemoteUrl</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-contentmaxageminutes">-ContentMaxAgeMinutes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-metadatamaxageminutes">-MetadataMaxAgeMinutes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-querycacheitemmaxageseconds">-QueryCacheItemMaxAgeSeconds</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-nugetversion">-NugetVersion</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-usenegativecache">-UseNegativeCache</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-negativecachettlminutes">-NegativeCacheTTLMinutes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-cleanuppolicy">-CleanupPolicy</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-routingrule">-RoutingRule</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-online">-Online</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-blobstorename">-BlobStoreName</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-strictcontentvalidation">-StrictContentValidation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-deploymentpolicy">-DeploymentPolicy</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-usenexustruststore">-UseNexusTrustStore</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-useauthentication">-UseAuthentication</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-authenticationtype">-AuthenticationType</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-credential">-Credential</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-hostnamefqdn">-HostnameFqdn</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-domainname">-DomainName</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-blockoutboundconnections">-BlockOutboundConnections</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-enableautoblocking">-EnableAutoBlocking</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-connectionretries">-ConnectionRetries</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-connectiontimeoutseconds">-ConnectionTimeoutSeconds</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-enablecircularredirects">-EnableCircularRedirects</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-enablecookies">-EnableCookies</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#-customuseragent">-CustomUserAgent</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#commonparameters">CommonParameters</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#inputs">INPUTS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#outputs">OUTPUTS</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#notes">NOTES</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#related-links">RELATED LINKS</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../NuGet/New-NexusNugetProxyRepository/">New-NexusNugetProxyRepository</a>
                 </li>
     </ul>
                     </li>
@@ -459,7 +409,7 @@
     
       
         
-          <li>NuGet &raquo;</li>
+          <li>Cleanup Policy &raquo;</li>
         
       
         
@@ -467,10 +417,10 @@
         
       
     
-    <li>New-NexusNugetProxyRepository</li>
+    <li>Set-NexusCleanupPolicy</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Repository/NuGet/New-NexusNugetProxyRepository.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Repository/Cleanup Policy/Set-NexusCleanupPolicy.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -481,417 +431,95 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="new-nexusnugetproxyrepository">New-NexusNugetProxyRepository</h1>
+                <h1 id="set-nexuscleanuppolicy">Set-NexusCleanupPolicy</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Creates a new NuGet Proxy Repository</p>
+<p>Updates a Nexus Cleanup Policy</p>
 <h2 id="syntax">SYNTAX</h2>
-<h3 id="default-default">Default (Default)</h3>
-<pre><code class="powershell">New-NexusNugetProxyRepository -Name &lt;String&gt; -ProxyRemoteUrl &lt;String&gt; [-ContentMaxAgeMinutes &lt;String&gt;]
- [-MetadataMaxAgeMinutes &lt;String&gt;] [-QueryCacheItemMaxAgeSeconds &lt;String&gt;] -NugetVersion &lt;String&gt;
- [-UseNegativeCache] [-NegativeCacheTTLMinutes &lt;String&gt;] [-CleanupPolicy &lt;String&gt;] [-RoutingRule &lt;String&gt;]
- [-Online] [-BlobStoreName &lt;String&gt;] [-StrictContentValidation] [-DeploymentPolicy &lt;String&gt;]
- [-UseNexusTrustStore] [-BlockOutboundConnections] [-EnableAutoBlocking] [-ConnectionRetries &lt;String&gt;]
- [-ConnectionTimeoutSeconds &lt;String&gt;] [-EnableCircularRedirects] [-EnableCookies] [-CustomUserAgent &lt;String&gt;]
- [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h3 id="authentication">Authentication</h3>
-<pre><code class="powershell">New-NexusNugetProxyRepository -Name &lt;String&gt; -ProxyRemoteUrl &lt;String&gt; [-ContentMaxAgeMinutes &lt;String&gt;]
- [-MetadataMaxAgeMinutes &lt;String&gt;] [-QueryCacheItemMaxAgeSeconds &lt;String&gt;] -NugetVersion &lt;String&gt;
- [-UseNegativeCache] [-NegativeCacheTTLMinutes &lt;String&gt;] [-CleanupPolicy &lt;String&gt;] [-RoutingRule &lt;String&gt;]
- [-Online] [-BlobStoreName &lt;String&gt;] [-StrictContentValidation] [-DeploymentPolicy &lt;String&gt;]
- [-UseNexusTrustStore] [-UseAuthentication] -AuthenticationType &lt;String&gt; -Credential &lt;PSCredential&gt;
- [-HostnameFqdn &lt;String&gt;] [-DomainName &lt;String&gt;] [-BlockOutboundConnections] [-EnableAutoBlocking]
- [-ConnectionRetries &lt;String&gt;] [-ConnectionTimeoutSeconds &lt;String&gt;] [-EnableCircularRedirects] [-EnableCookies]
- [-CustomUserAgent &lt;String&gt;] [&lt;CommonParameters&gt;]
+<pre><code class="powershell">Set-NexusCleanupPolicy [-Name] &lt;String&gt; [[-Format] &lt;String&gt;] [[-Notes] &lt;String&gt;] [[-ComponentAge] &lt;Int32&gt;]
+ [[-ComponentUsage] &lt;Int32&gt;] [[-AssetMatcher] &lt;String&gt;] [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Creates a new NuGet Proxy Repository</p>
+<p>Updates a Nexus Cleanup Policy</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">$ProxyParameters = @{
-    Name = 'ChocoProxy'
-    ProxyRemoteUrl = 'https://community.chocolatey.org/api/v2'
-    NugetVersion = 'V2'
-    DeploymentPolicy = 'Allow'
-
-
-}
-
-New-NexusNugetProxyRepository @ProxyParameters
-</code></pre>
-
-<h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">$ProxyParameters = @{
-    Name = 'ChocoProxy'
-    ProxyRemoteUrl = 'https://community.chocolatey.org/api/v2'
-    NugetVersion = 'V2'
-    DeploymentPolicy = 'Allow'
-    UseAuthentication = $true
-    AuthenticationType = 'Username'
-    Credential = (Get-Credential)
-
-
-}
-
-New-NexusNugetProxyRepository @ProxyParameters
+<pre><code class="powershell">Set-NexusCleanupPolicy -Name TestPol -Notes &quot;New notes here&quot; -ComponentAge 60
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
 <h3 id="-name">-Name</h3>
-<p>The name to give the repository</p>
+<p>The cleanup policy to update</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-proxyremoteurl">-ProxyRemoteUrl</h3>
-<p>Location of the remote repository being proxied, e.g.
-https://api.nuget.org/v3/index.json</p>
+<h3 id="-format">-Format</h3>
+<p>The format that this cleanup policy can be applied to</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
-Position: Named
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-contentmaxageminutes">-ContentMaxAgeMinutes</h3>
-<p>Time before cached content is refreshed.
-Defaults to 1440</p>
+<h3 id="-notes">-Notes</h3>
+<p>Additional details about the policy</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: 1440
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-metadatamaxageminutes">-MetadataMaxAgeMinutes</h3>
-<p>Time before cached metadata is refreshed.
-Defaults to 1440</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 1440
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-querycacheitemmaxageseconds">-QueryCacheItemMaxAgeSeconds</h3>
-<p>Time before the query cache expires.
-Defaults to 3600</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 3600
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-nugetversion">-NugetVersion</h3>
-<p>Upstream NuGet version.
-Can either be V2 or V3</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-usenegativecache">-UseNegativeCache</h3>
-<p>Use the built-in Negative Cache feature</p>
-<pre><code class="yaml">Type: SwitchParameter
+<h3 id="-componentage">-ComponentAge</h3>
+<p>Remove components that were published over this many days</p>
+<pre><code class="yaml">Type: Int32
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: False
+Position: 4
+Default value: 0
 Accept pipeline input: False
 Accept wildcard characters: False
 </code></pre>
 
-<h3 id="-negativecachettlminutes">-NegativeCacheTTLMinutes</h3>
-<p>The Negative Cache Time To Live value.
-Defaults to 1440</p>
+<h3 id="-componentusage">-ComponentUsage</h3>
+<p>Remove components that haven't been downloaded in this many days</p>
+<pre><code class="yaml">Type: Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-assetmatcher">-AssetMatcher</h3>
+<p>Remove components that have at least one asset name matching the following regular expression pattern</p>
 <pre><code class="yaml">Type: String
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: 1440
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-cleanuppolicy">-CleanupPolicy</h3>
-<p>The Cleanup Policy to apply to this repository</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-routingrule">-RoutingRule</h3>
-<p>Routing Rules you wish to apply to this repository</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-online">-Online</h3>
-<p>Mark the repository as Online.
-Defaults to True</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: True
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-blobstorename">-BlobStoreName</h3>
-<p>The back-end blob store in which to store cached packages</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: Default
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-strictcontentvalidation">-StrictContentValidation</h3>
-<p>Validate that all content uploaded to this repository is of a MIME type appropriate for the repository format</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: True
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-deploymentpolicy">-DeploymentPolicy</h3>
-<p>Controls whether packages can be overwritten</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-usenexustruststore">-UseNexusTrustStore</h3>
-<p>Use certificates stored in the Nexus truststore to connect to external systems</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-useauthentication">-UseAuthentication</h3>
-<p>Use authentication for the upstream repository</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: Authentication
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-authenticationtype">-AuthenticationType</h3>
-<p>The type of authentication required by the upstream repository</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Authentication
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-credential">-Credential</h3>
-<p>Credentials to use to connecto to upstream repository</p>
-<pre><code class="yaml">Type: PSCredential
-Parameter Sets: Authentication
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-hostnamefqdn">-HostnameFqdn</h3>
-<p>If using NTLM authentication, the Hostname of the NTLM host to query</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Authentication
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-domainname">-DomainName</h3>
-<p>The domain name of the NTLM host</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: Authentication
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-blockoutboundconnections">-BlockOutboundConnections</h3>
-<p>Block outbound connections on the repository</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-enableautoblocking">-EnableAutoBlocking</h3>
-<p>Auto-block outbound connections on the repository if remote peer is detected as unreachable/unresponsive</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-connectionretries">-ConnectionRetries</h3>
-<p>Connection attempts to upstream repository before a failure</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-connectiontimeoutseconds">-ConnectionTimeoutSeconds</h3>
-<p>Amount of time to wait before retrying the connection to the upstream repository</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-enablecircularredirects">-EnableCircularRedirects</h3>
-<p>Enable redirects to the same location (may be required by some servers)</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-enablecookies">-EnableCookies</h3>
-<p>Allow cookies to be stored and used</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-customuseragent">-CustomUserAgent</h3>
-<p>Custom fragment to append to "User-Agent" header in HTTP requests</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -910,10 +538,10 @@ Accept wildcard characters: False
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../Raw/New-NexusRawGroupRepository/" class="btn btn-neutral float-right" title="New-NexusRawGroupRepository">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../CocoaPods/New-NexusCocoaPodProxyRepository/" class="btn btn-neutral float-right" title="New-NexusCocoaPodProxyRepository">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../New-NexusNugetHostedRepository/" class="btn btn-neutral" title="New-NexusNugetHostedRepository"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Remove-NexusCleanupPolicy/" class="btn btn-neutral" title="Remove-NexusCleanupPolicy"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -941,10 +569,10 @@ Accept wildcard characters: False
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../New-NexusNugetHostedRepository/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Remove-NexusCleanupPolicy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../../Raw/New-NexusRawGroupRepository/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../../CocoaPods/New-NexusCocoaPodProxyRepository/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

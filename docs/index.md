@@ -23,7 +23,7 @@ Sonatype Nexus is a Repository Server that exists in two flavors. Open Source (S
 - Manage Roles 🚧 Coming Soon!
 - Manage Privileges
 - Manage Users
-- Manage Tasks 🚧 Coming Soon!
+- Manage Tasks
 - Search Nexus 🚧 Coming Soon!
 - Collect Support information
 

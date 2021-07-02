@@ -19,6 +19,10 @@ function Invoke-Nexus {
 
         [Parameter()]
         [String]
+        $File,
+
+        [Parameter()]
+        [String]
         $ContentType = 'application/json',
 
         [Parameter(Mandatory)]
@@ -48,6 +52,11 @@ function Invoke-Nexus {
 
         if($BodyAsString){
             $Params.Add('Body',$BodyAsString)
+        }
+
+        if($File){
+            $Params.Remove('ContentType')
+            $Params.Add('InFile',$File)
         }
 
          Invoke-RestMethod @Params

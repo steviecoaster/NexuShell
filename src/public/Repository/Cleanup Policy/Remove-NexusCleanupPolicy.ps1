@@ -24,7 +24,7 @@ function Remove-NexusCleanupPolicy {
     .NOTES
     
     #>
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Repository/Cleanup%20Policy/Remove-NexusCleanupPolicy/',SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

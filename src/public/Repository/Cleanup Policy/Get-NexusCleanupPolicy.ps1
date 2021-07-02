@@ -21,7 +21,7 @@ function Get-NexusCleanupPolicy {
     .NOTES
     
     #>
-    [CmdletBinding()]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Repository/Cleanup%20Policy/Get-NexusCleanupPolicy/')]
     Param(
         [Parameter()]
         [Alias('Policy','CleanupPolicy')]

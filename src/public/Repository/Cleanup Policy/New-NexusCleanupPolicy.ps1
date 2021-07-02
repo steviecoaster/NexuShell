@@ -33,7 +33,7 @@ function New-NexusCleanupPolicy {
     
     .NOTES
     #>
-    [CmdletBinding(DefaultParameterSetName = "Default")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Repository/Cleanup%20Policy/New-NexusCleanupPolicy/',DefaultParameterSetName = "Default")]
     Param(
         [Parameter(Mandatory)]
         [Parameter(ParameterSetName = 'Age', Mandatory)]

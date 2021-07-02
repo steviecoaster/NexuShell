@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Get-NexusCertificate - TreasureChest Documentation</title>
+  <title>Get-NexusAsset - TreasureChest Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Get-NexusCertificate";
-    var mkdocs_page_input_path = "Certificates/Get-NexusCertificate.md";
+    var mkdocs_page_name = "Get-NexusAsset";
+    var mkdocs_page_input_path = "Assets/Get-NexusAsset.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,30 +63,18 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Assets</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Assets/Get-NexusAsset/">Get-NexusAsset</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Assets/Remove-NexusAsset/">Remove-NexusAsset</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Blob Stores</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStore/">Get-NexusBlobStore</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/New-NexusBlobStore/">New-NexusBlobStore</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Certificates</span></p>
                 <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Get-NexusCertificate</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Get-NexusAsset</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#repo-default">repo (Default)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#id">Id</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
     </li>
@@ -94,10 +82,16 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-repositoryname">-RepositoryName</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-id">-Id</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
     </li>
         </ul>
@@ -112,9 +106,27 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../New-NexusCertificate/">New-NexusCertificate</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusAsset/">Remove-NexusAsset</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Remove-NexusCertificate/">Remove-NexusCertificate</a>
+                </ul>
+                <p class="caption"><span class="caption-text">Blob Stores</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStore/">Get-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Get-NexusBlobStoreQuota/">Get-NexusBlobStoreQuota</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/New-NexusBlobStore/">New-NexusBlobStore</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Blob%20Stores/Remove-NexusBlobStore/">Remove-NexusBlobStore</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Certificates</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/Get-NexusCertificate/">Get-NexusCertificate</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/New-NexusCertificate/">New-NexusCertificate</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Certificates/Remove-NexusCertificate/">Remove-NexusCertificate</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Email</span></p>
@@ -404,14 +416,14 @@
     
       
         
-          <li>Certificates &raquo;</li>
+          <li>Assets &raquo;</li>
         
       
     
-    <li>Get-NexusCertificate</li>
+    <li>Get-NexusAsset</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Certificates/Get-NexusCertificate.md"
+        <a href="https://github.com/steviecoaster/TreausureChest/edit/master/docs/Assets/Get-NexusAsset.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -422,21 +434,56 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="get-nexuscertificate">Get-NexusCertificate</h1>
+                <h1 id="get-nexusasset">Get-NexusAsset</h1>
 <h2 id="synopsis">SYNOPSIS</h2>
-<p>Retrieve a list of certificates added to the trust store</p>
+<p>Retrieve asset information from Nexus</p>
 <h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">Get-NexusCertificate [&lt;CommonParameters&gt;]
+<h3 id="repo-default">repo (Default)</h3>
+<pre><code class="powershell">Get-NexusAsset -RepositoryName &lt;String&gt; [&lt;CommonParameters&gt;]
+</code></pre>
+
+<h3 id="id">Id</h3>
+<pre><code class="powershell">Get-NexusAsset -Id &lt;String&gt; [&lt;CommonParameters&gt;]
 </code></pre>
 
 <h2 id="description">DESCRIPTION</h2>
-<p>Retrieve a list of certificates added to the trust store</p>
+<p>Retrieve asset informatino from Nexus</p>
 <h2 id="examples">EXAMPLES</h2>
 <h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Get-Nexuscertificate
+<pre><code>Get-NexusAsset -RepositoryName Dev
+</code></pre>
+
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code>Get-NexusAsset -Id RGV2OmM2MGJjNmI5NjEyZjQ3ZDM5ZTc2ZmMwNTI1ODg0M2Rj
 </code></pre>
 
 <h2 id="parameters">PARAMETERS</h2>
+<h3 id="-repositoryname">-RepositoryName</h3>
+<p>The repository to query for assets</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: repo
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
+<h3 id="-id">-Id</h3>
+<p>A specific asset to retrieve</p>
+<pre><code class="yaml">Type: String
+Parameter Sets: Id
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+
 <h3 id="commonparameters">CommonParameters</h3>
 <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
 <h2 id="inputs">INPUTS</h2>
@@ -450,10 +497,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../New-NexusCertificate/" class="btn btn-neutral float-right" title="New-NexusCertificate">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Remove-NexusAsset/" class="btn btn-neutral float-right" title="Remove-NexusAsset">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Blob%20Stores/Remove-NexusBlobStore/" class="btn btn-neutral" title="Remove-NexusBlobStore"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Anonymous%20Auth/Set-NexusAnonymousAuth/" class="btn btn-neutral" title="Set-NexusAnonymousAuth"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -481,10 +528,10 @@
           <a href="https://github.com/steviecoaster/TreausureChest/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../Blob%20Stores/Remove-NexusBlobStore/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../Anonymous%20Auth/Set-NexusAnonymousAuth/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../New-NexusCertificate/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../Remove-NexusAsset/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

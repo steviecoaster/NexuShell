@@ -70,6 +70,6 @@ function New-NexusRawComponent {
             UseBasicParsing = $true
         }
 
-        $null = Invoke-WebRequest @params        
+        $null = Invoke-WebRequest @params
     }
 }

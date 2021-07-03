@@ -28,8 +28,6 @@ function Invoke-Nexus {
         [Parameter(Mandatory)]
         [String]
         $Method
-
-
     )
     process {
         $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
@@ -39,11 +37,12 @@ function Invoke-Nexus {
             ContentType = $ContentType
             Uri = $Uri
             Method = $Method
+            UseBasicParsing = $true
         }
 
         if($Body){
-                $Params.Add('Body',$($Body | ConvertTo-Json -Depth 3))
-            } 
+            $Params.Add('Body',$($Body | ConvertTo-Json -Depth 3))
+        } 
         
         if($BodyAsArray){
             $Params.Add('Body',$($BodyAsArray | ConvertTo-Json -Depth 3))
@@ -58,8 +57,6 @@ function Invoke-Nexus {
             $Params.Add('InFile',$File)
         }
 
-         Invoke-RestMethod @Params
-        
-
+        Invoke-RestMethod @Params
     }
 }

@@ -31,7 +31,7 @@ function Get-NexusNuGetApiKey {
 
         $uri = $UriBase + $slug
 
-        Invoke-RestMethod -Uri $uri -Method GET -ContentType 'application/json' -Headers $header
+        Invoke-RestMethod -Uri $uri -Method GET -ContentType 'application/json' -Headers $header -UseBasicParsing
 
     }
 }

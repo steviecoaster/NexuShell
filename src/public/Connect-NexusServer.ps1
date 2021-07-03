@@ -81,9 +81,10 @@ function Connect-NexusServer {
                 ContentType = 'application/json'
                 Method = 'GET'
                 Uri = $url
+                UseBasicParsing = $true
             }
 
-            $result =Invoke-RestMethod @params -ErrorAction Stop
+            $result = Invoke-RestMethod @params -ErrorAction Stop
             Write-Host "Connected to $Hostname" -ForegroundColor Green
         }
 

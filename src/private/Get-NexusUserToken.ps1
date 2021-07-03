@@ -35,7 +35,7 @@ function Get-NexusUserToken {
         }
 
         Write-Verbose ($data | ConvertTo-Json)
-        $result = Invoke-RestMethod -Uri $uri -Method POST -Body ($data | ConvertTo-Json) -ContentType 'application/json' -Headers $header
+        $result = Invoke-RestMethod -Uri $uri -Method POST -Body ($data | ConvertTo-Json) -ContentType 'application/json' -Headers $header -UseBasicParsing
         $token = $result.result.data
         $token
     }

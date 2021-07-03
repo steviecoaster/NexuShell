@@ -57,6 +57,7 @@ function New-NexusNugetComponent {
             ContentType = "multipart/form-data; boundary=----WebKitFormBoundary$($Boundary)"
             Body        = $MultipartContent
             Headers     = $header
+            UseBasicParsing = $true
         }
 
         $null = Invoke-WebRequest @params

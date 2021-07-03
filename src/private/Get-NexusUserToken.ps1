@@ -20,7 +20,7 @@ function Get-NexusUserToken {
     )
 
     process {
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         
         $slug = '/service/extdirect'
 

@@ -25,7 +25,7 @@ function Get-NexusNuGetApiKey {
     process {
         $token = Get-NexusUserToken -Credential $Credential
         $base64Token = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($token))
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         
         $slug = "/service/rest/internal/nuget-api-key?authToken=$base64Token&_dc=$(([DateTime]::ParseExact("01/02/0001 21:08:29", "MM/dd/yyyy HH:mm:ss",$null)).Ticks)"
 

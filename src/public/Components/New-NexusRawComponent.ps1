@@ -57,7 +57,7 @@ function New-NexusRawComponent {
             $urislug = "/repository/$($RepositoryName)/$($Directory)/$($Name)"
 
         }
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         $Uri = $UriBase + $UriSlug
 
 

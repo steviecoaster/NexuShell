@@ -32,8 +32,7 @@ function Invoke-Nexus {
 
     )
     process {
-
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         $Uri = $UriBase + $UriSlug
         $Params = @{
             Headers = $header

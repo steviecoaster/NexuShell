@@ -11,6 +11,9 @@ function Connect-NexusServer {
     
     .PARAMETER Credential
     The credentials to authenticate to your Nexus server
+
+    .PARAMETER Path
+    The optional context path used by the Nexus server
     
     .PARAMETER UseSSL
     Use https instead of http for REST calls. Defaults to 8443.
@@ -39,6 +42,10 @@ function Connect-NexusServer {
         $Credential,
 
         [Parameter()]
+        [String]
+        $Path = "/",
+
+        [Parameter()]
         [Switch]
         $UseSSL,
 
@@ -58,6 +65,7 @@ function Connect-NexusServer {
         }
 
         $script:HostName = $Hostname
+        $script:ContextPath = $Path.TrimEnd('/')
 
         $credPair = "{0}:{1}" -f $Credential.UserName,$Credential.GetNetworkCredential().Password
 
@@ -66,7 +74,7 @@ function Connect-NexusServer {
         $script:header = @{ Authorization = "Basic $encodedCreds"}
 
         try {
-            $url = "$($protocol)://$($Hostname):$($port)/service/rest/v1/status"
+            $url = "$($protocol)://$($Hostname):$($port)$($ContextPath)/service/rest/v1/status"
 
             $params = @{
                 Headers = $header

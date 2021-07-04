@@ -35,13 +35,17 @@ jobs:
       - name: Upload Built Module
         uses: actions/upload-artifact@v2
         with:
-          name: Modules
+          name: TreasureChest.${{ steps.gitversion.outputs.LegacySemVerPadded }}
           path: .\Output
 
       - name: Test Module
         if: false  # The test step is currently non-functional
         run: .\build.ps1 -TestPrePublish
         shell: pwsh
+
+      - name: Upload Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        if: always()
 
       - name: Create Release
         if: ${{ github.ref == 'refs/heads/main' }}

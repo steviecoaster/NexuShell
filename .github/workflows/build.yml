@@ -39,7 +39,6 @@ jobs:
           path: .\Output
 
       - name: Test Module
-        if: false  # The test step is currently non-functional
         run: .\build.ps1 -TestPrePublish
         shell: pwsh
 

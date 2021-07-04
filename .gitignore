@@ -1,8 +1,11 @@
 .DS_STORE
 Output\*
 Output
+[0-9]\.[0-9]\.[0-9]
 specifications
 specifications\*
 site\
 site
 site\*
+TestResults.xml
+Coverage.xml

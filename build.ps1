@@ -22,9 +22,9 @@ param(
 
     [Parameter()]
     [string]
-    $Version = $(
+    $SemVer = $(
         if (Get-Command gitversion -ErrorAction SilentlyContinue) {
-            (gitversion | ConvertFrom-Json).MajorMinorPatch
+            (gitversion | ConvertFrom-Json).LegacySemVerPadded
         }
     )
 )
@@ -35,34 +35,7 @@ process {
     switch ($true) {
 
         $Build {
-
-            if (Test-Path "$root\Output") {
-                Remove-Item "$root\Output\TreasureChest\*.psm1" -Recurse -Force
-            } else {
-                $Null = New-Item "$root\Output" -ItemType Directory
-                $null = New-item "$root\Output\TreasureChest" -ItemType Directory
-            }
-        
-            if (Test-Path "$root\src\nuget\tools\TreasureChest.zip") {
-                Remove-Item "$root\src\nuget\tools\TreasureChest.zip" -Force
-            }
-            
-            Get-ChildItem $root\src\public -Recurse -Filter *.ps1 | 
-            Foreach-Object { 
-                Get-Content $_.FullName | Add-Content "$root\Output\TreasureChest\TreasureChest.psm1" -Force
-            }
-
-            Get-ChildItem $root\src\private\*.ps1 | 
-            Foreach-Object { 
-                Get-Content $_.FullName | Add-Content "$root\Output\TreasureChest\TreasureChest.psm1" -Force
-            }
-
-            Copy-Item $root\TreasureChest.psd1 $root\Output\TreasureChest -Force
-
-            if ($Version) {
-                Update-ModuleManifest -Path $root\Output\TreasureChest\TreasureChest.psd1 -ModuleVersion $Version
-            }
-
+            Build-Module -SemVer $SemVer
         }
 
         $TestPrePublish {

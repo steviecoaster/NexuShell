@@ -20,18 +20,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        
+      - name: GitVersion
+        id: gitversion
+        uses: PoshCode/Actions/gitversion@v1
 
-      - uses: gittools/actions/gitversion/setup@v0.9.7
-        with:
-          versionSpec: '5.x'
-
-      - uses: gittools/actions/gitversion/execute@v0.9.7
-        id:   gitversion
+      - name: Install-RequiredModules
+        uses: PoshCode/Actions/install-requiredmodules@v1
 
       - name: Build Module
-        run: .\build.ps1 -Build -Version "${{ steps.gitversion.outputs.majorMinorPatch }}"
+        run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
         shell: pwsh
 
       - name: Upload Built Module

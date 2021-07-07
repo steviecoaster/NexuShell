@@ -28,12 +28,10 @@ param(
         }
     )
 )
-
 process {
     $root = Split-Path -Parent $MyInvocation.MyCommand.Definition
-
+    
     switch ($true) {
-
         $Build {
             Build-Module -SemVer $SemVer
         }
@@ -73,21 +71,21 @@ process {
         }
 
         $Choco {
-            $Nuspec = Get-ChildItem "$root\src\nuget" -recurse -filter *.nuspec
+            $PackageSource = Join-Path $root "src\nuget"
 
-            if (Test-Path "$root\src\nuget\tools\TreasureChest.zip") {
-                choco pack $Nuspec.Fullname --output-directory $Nuspec.directory
+            $Nuspec = Get-ChildItem $PackageSource -recurse -filter *.nuspec
+
+            Copy-Item -Path $root\LICENSE -Destination $PackageSource
+
+            if (Test-Path "$PackageSource\tools\TreasureChest.zip") {
+                choco pack $Nuspec.FullName --output-directory $root
             } else {
                 throw "Welp, ya need the zip in the tools folder, dumby"
             }
-            
-            Get-ChildItem "$root\src\nuget" -recurse -filter *.nupkg | 
-            Foreach-Object { 
+
+            Get-ChildItem $PackageSource -recurse -filter *.nupkg | ForEach-Object { 
                 choco push $_.FullName -s https://push.chocolatey.org --api-key="'$($env:ChocoApiKey)'"
             }
-
         }
-
     }
-
 }

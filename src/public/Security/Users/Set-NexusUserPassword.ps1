@@ -18,7 +18,7 @@ function Set-NexusUserPassword {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User/Set-NexusUserPassword/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/User/Set-NexusUserPassword/')]
     Param(
         [Parameter(Mandatory)]
         [String]

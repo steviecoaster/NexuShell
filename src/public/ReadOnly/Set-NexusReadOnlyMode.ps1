@@ -18,7 +18,7 @@ function Set-NexusReadOnlyMode {
     .EXAMPLE
     Set-NexusReadOnlyMode -Disable
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Set-NexusReadOnlyMode/',SupportsShouldProcess, DefaultParameterSetName = "Enable", ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Set-NexusReadOnlyMode/',SupportsShouldProcess, DefaultParameterSetName = "Enable", ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory, ParameterSetName = "Enable")]
         [Switch]

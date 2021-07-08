@@ -37,11 +37,11 @@ process {
         }
 
         $TestPrePublish {
-            if (Test-Path $root\Output\TreasureChest) {
+            if (Test-Path $root\Output\NexuShell) {
                 if ($env:PSModulePath.Split(';') -notcontains "$root\Output") {
                     $env:PSModulePath = "$root\Output;$env:PSModulePath"
                 }
-                Import-Module TreasureChest
+                Import-Module NexuShell
             }
 
             $TestArguments = @{
@@ -50,7 +50,7 @@ process {
                 OutputFile             = "$root\TestResults.xml"
                 OutputFormat           = "JUnitXml"
                 
-                CodeCoverage           = (Get-ChildItem $root\Output\TreasureChest -Recurse -Filter '*.ps*1').FullName
+                CodeCoverage           = (Get-ChildItem $root\Output\NexuShell -Recurse -Filter '*.ps*1').FullName
                 CodeCoverageOutputFile = "$root\Coverage.xml"
             }
 
@@ -60,14 +60,14 @@ process {
         }
 
         $TestPostPublish {
-            Install-Module TreasureChest -Force
+            Install-Module NexuShell -Force
             Import-Module PoshBot -Force
 
             Invoke-Pester "$root\tests\*.ps1"
         }
 
         $DeployToGallery {
-            Publish-Module -Path "$root\Output\TreasureChest" -NuGetApiKey $env:NugetApiKey
+            Publish-Module -Path "$root\Output\NexuShell" -NuGetApiKey $env:NugetApiKey
         }
 
         $Choco {
@@ -77,7 +77,7 @@ process {
 
             Copy-Item -Path $root\LICENSE -Destination $PackageSource
 
-            if (Test-Path "$PackageSource\tools\TreasureChest.zip") {
+            if (Test-Path "$PackageSource\tools\NexuShell.zip") {
                 choco pack $Nuspec.FullName --output-directory $root
             } else {
                 throw "Welp, ya need the zip in the tools folder, dumby"

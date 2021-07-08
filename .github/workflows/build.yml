@@ -1,4 +1,4 @@
-name: Build TreasureChest
+name: Build NexuShell
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       - name: Upload Built Module
         uses: actions/upload-artifact@v2
         with:
-          name: TreasureChest.${{ steps.gitversion.outputs.LegacySemVerPadded }}
+          name: NexuShell.${{ steps.gitversion.outputs.LegacySemVerPadded }}
           path: .\Output
 
       - name: Test Module

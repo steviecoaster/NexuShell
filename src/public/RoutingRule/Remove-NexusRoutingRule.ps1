@@ -20,7 +20,7 @@ function Remove-NexusRoutingRule {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/Remove-NexusRoutingRule.md',SupportsShouldProcess,ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/NexuShell/blob/develop/docs/Remove-NexusRoutingRule.md',SupportsShouldProcess,ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

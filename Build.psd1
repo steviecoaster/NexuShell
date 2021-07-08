@@ -1,4 +1,4 @@
 @{
-    ModuleManifest = ".\src\TreasureChest.psd1"
+    ModuleManifest = ".\src\NexuShell.psd1"
     SourceDirectories = "private", "public"
 }

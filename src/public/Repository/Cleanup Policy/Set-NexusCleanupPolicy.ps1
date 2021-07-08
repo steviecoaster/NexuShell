@@ -30,7 +30,7 @@ function Set-NexusCleanupPolicy {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Repository/Cleanup%20Policy/Set-NexusCleanupPolicy/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Repository/Cleanup%20Policy/Set-NexusCleanupPolicy/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter( {

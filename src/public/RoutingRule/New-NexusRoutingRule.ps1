@@ -24,7 +24,7 @@ function New-NexusRoutingRule {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusRoutingRule/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusRoutingRule/')]
     Param(
         [Parameter(Mandatory)]
         [String]

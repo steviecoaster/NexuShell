@@ -24,7 +24,7 @@ function Remove-NexusPrivilege {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/Privileges/Remove-NexusPrivilege/',SupportsShouldProcess,ConfirmImpact="High")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/Privileges/Remove-NexusPrivilege/',SupportsShouldProcess,ConfirmImpact="High")]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [ArgumentCompleter({

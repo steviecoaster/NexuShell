@@ -20,7 +20,7 @@ function Get-NexusComponent {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Components/Get-NexusComponent/',DefaultParameterSetName="repo")]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Components/Get-NexusComponent/',DefaultParameterSetName="repo")]
     Param(
         [Parameter(ParameterSetName="repo",Mandatory)]
         [String]

@@ -12,7 +12,7 @@ function Install-NexusLicense {
     .EXAMPLE
     Install-NexusLicense -NexusLicense 'C:\temp\sonatype-repository-manager.lic'
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Install-NexusLicense/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Install-NexusLicense/')]
     Param(
         [Parameter(Mandatory)]
         [ValidateScript({ Test-Path $_})]

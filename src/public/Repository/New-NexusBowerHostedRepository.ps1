@@ -44,7 +44,7 @@ function New-NexusBowerHostedRepository {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusBowerHostedRepository/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusBowerHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

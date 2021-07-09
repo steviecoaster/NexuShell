@@ -15,8 +15,8 @@ jobs:
   build:
     runs-on: windows-latest
     env:
-      NugetApiKey: ${{ secrets.PowerShellGalleryApiKey }}
-      ChocoApiKey: ${{ secrets.ChocolateyCommunityRepositoryApiKey }}
+      NugetApiKey: ${{ secrets.NugetApiKey }}
+      ChocoApiKey: ${{ secrets.ChocoApiKey }}
 
     steps:
       - uses: actions/checkout@v2

@@ -1,44 +1,15 @@
-# TreasureChest
+# NexuShell
 
 A PowerShell module for Sonatype Nexus repository server administration
 
 ## Try it out!
 
 1. Clone this repo and run `.\build.ps1 -Build` from the cloned folder
-2. Import the module with `Import-Module .\Output\TreasureChest\TreasureChest.psd1` from the cloned folder
-3. Discover the available commands with `Get-Command -Module TreasureChest`
+2. Import the module with `Import-Module .\Output\NexuShell\NexuShell.psd1` from the cloned folder
+3. Discover the available commands with `Get-Command -Module NexuShell`
 4. Explore the available commands with `Get-Help`
 5. Start having fun!
 
-### Currently supported functions
+### Documentation
 
-- Connect-NexusServer
-- Enable-NexusRealm
-- Get-NexusAnonymousAuthStatus
-- Get-NexusBlobStore
-- Get-NexusBlobStoreQuota
-- Get-NexusLicenseStatus
-- Get-NexusReadOnlyState
-- Get-NexusRealm
-- Get-NexusRepository
-- Install-NexusLicense
-- New-NexusAptHostedRepository
-- New-NexusAptProxyRepository
-- New-NexusBlobStore
-- New-NexusNugetHostedRepository
-- New-NexusNugetProxyRepository
-- New-NexusRawGroupRepository
-- New-NexusRawHostedRepository
-- New-NexusBowerHostedRepository
-- New-NexusBowerProxyRepository
-- New-NexusBowerGroupRepository
-- New-NexusCocoaPodProxyRepository
-- New-NexusConanProxyRepository
-- New-NexusCondaProxyRepository
-- New-NexusDockerGroupRepository
-- New-NexusDockerHostedRepository
-- New-NexusDockerProxyRepository
-- Remove-NexusBlobStore
-- Remove-NexusRepository
-- Set-NexusAnonymousAuth
-- Set-NexusReadOnlyMode
+Information about currently supported functions and their usage can be found on the [docs](https://steviecoaster.dev/NexuShell/) site.

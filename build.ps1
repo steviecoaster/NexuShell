@@ -18,88 +18,79 @@ param(
 
     [Parameter()]
     [Switch]
-    $Choco
+    $Choco,
+
+    [Parameter()]
+    [string]
+    $SemVer = $(
+        if (Get-Command gitversion -ErrorAction SilentlyContinue) {
+            (gitversion | ConvertFrom-Json).LegacySemVerPadded
+        }
+    )
 )
-
 process {
-
     $root = Split-Path -Parent $MyInvocation.MyCommand.Definition
-
+    
     switch ($true) {
+        (-not $env:CI) {
+            . $PSScriptRoot\Requirements.ps1
+        }
 
         $Build {
-
-            if (Test-Path "$root\Output") {
-                Remove-Item "$root\Output\TreasureChest\*.psm1" -Recurse -Force
-            } else {
-                $Null = New-Item "$root\Output" -ItemType Directory
-                $null = New-item "$root\Output\TreasureChest" -ItemType Directory
-            }
-        
-            if (Test-Path "$root\src\nuget\tools\TreasureChest.zip") {
-                Remove-Item "$root\src\nuget\tools\TreasureChest.zip" -Force
-            }
-            
-            Get-ChildItem $root\src\public -Recurse -Filter *.ps1 | 
-            Foreach-Object { 
-                Get-Content $_.FullName | Add-Content "$root\Output\TreasureChest\TreasureChest.psm1" -Force
-            }
-
-            Get-ChildItem $root\src\private\*.ps1 | 
-            Foreach-Object { 
-                Get-Content $_.FullName | Add-Content "$root\Output\TreasureChest\TreasureChest.psm1" -Force
-            }
-
-            Copy-Item $root\TreasureChest.psd1 $root\Output\TreasureChest -Force
-
-
+            Build-Module -SemVer $SemVer
         }
 
         $TestPrePublish {
-            
-            Get-ChildItem $root\src\public\*.ps1, $root\Poshbot\*.ps1 | 
-            Foreach-Object { 
-                . $_.FullName
+            if (Test-Path $root\Output\NexuShell) {
+                if ($env:PSModulePath.Split(';') -notcontains "$root\Output") {
+                    $env:PSModulePath = "$root\Output;$env:PSModulePath"
+                }
+                Import-Module NexuShell
             }
-            #Import-Module "$root\Output\TreasureChest\TreasureChest.psd1" -Force
-            Import-Module PoshBot -Force
 
-            Invoke-Pester "$root\tests\pre"
-            
+            $TestArguments = @{
+                Path                   = "$root\tests"
+
+                OutputFile             = "$root\TestResults.xml"
+                OutputFormat           = "JUnitXml"
+                
+                CodeCoverage           = (Get-ChildItem $root\Output\NexuShell -Recurse -Filter '*.ps*1').FullName
+                CodeCoverageOutputFile = "$root\Coverage.xml"
+            }
+
+            if (Test-Path $TestArguments.Path) {
+                Invoke-Pester @TestArguments
+            }
         }
 
         $TestPostPublish {
-
-            Install-Module TreasureChest -Force
+            Install-Module NexuShell -Force
             Import-Module PoshBot -Force
 
             Invoke-Pester "$root\tests\*.ps1"
         }
 
         $DeployToGallery {
-
-            Publish-Module -Path "$root\Output\TreasureChest" -NuGetApiKey $env:NugetApiKey
-
+            Publish-Module -Path "$root\Output\NexuShell" -NuGetApiKey $env:NugetApiKey
         }
 
         $Choco {
-            
-            $Nuspec = Get-ChildItem "$root\src\nuget" -recurse -filter *.nuspec
+            $PackageSource = Join-Path $root "src\nuget"
 
-            if (Test-Path "$root\src\nuget\tools\TreasureChest.zip") {
-                choco pack $Nuspec.Fullname --output-directory $Nuspec.directory
-            }
+            $Nuspec = Get-ChildItem $PackageSource -recurse -filter *.nuspec
 
-            else {
+            Copy-Item -Path $root\LICENSE -Destination $PackageSource
+            Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip
+
+            if (Test-Path "$PackageSource\tools\NexuShell.zip") {
+                choco pack $Nuspec.FullName --output-directory $root
+            } else {
                 throw "Welp, ya need the zip in the tools folder, dumby"
             }
-            Get-ChildItem "$root\src\nuget" -recurse -filter *.nupkg | 
-            Foreach-Object { 
+
+            Get-ChildItem $PackageSource -recurse -filter *.nupkg | ForEach-Object { 
                 choco push $_.FullName -s https://push.chocolatey.org --api-key="'$($env:ChocoApiKey)'"
             }
-
         }
-
     }
-
 }

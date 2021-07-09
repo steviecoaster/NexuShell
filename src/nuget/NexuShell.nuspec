@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>NexuShell</id>
+    <version>1.0.0</version>
+    <owners>steviecoaster</owners>
+    <packageSourceUrl>https://github.com/steviecoaster/NexuShell/tree/develop/src/public/nuget</packageSourceUrl>
+    <title>NexuShell</title>
+    <authors>Stephen Valdinger</authors>
+    <projectUrl>https://github.com/steviecoaster/NexuShell</projectUrl>
+    <projectSourceUrl>https://github.com/steviecoaster/NexuShell</projectSourceUrl>
+    <iconUrl></iconUrl>
+    <copyright>(c) 2021 steviecoaster. All rights reserved.</copyright>
+    <docsUrl>https://steviecoaster.dev/NexuShell/</docsUrl>
+    <bugTrackerUrl>https://github.com/steviecoaster/NexuShell/issues</bugTrackerUrl>
+    <licenseUrl>https://raw.githubusercontent.com/steviecoaster/NexuShell/main/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>sonatype nexus repository powershell module</tags>
+    <summary>A PowerShell module for Sonatype Nexus repository server administration.</summary>
+    <description>A PowerShell module for Sonatype Nexus repository server administration.
+
+You can pass the following parameters:
+
+* `/Core`         - Installs the module to the PowerShell Modules directory
+* `/Windows`      - Installs the module to the WindowsPowerShell Modules directory
+* `/CurrentUser`  - Installs the module to the CurrentUser scope
+* `/AllUsers`     - Installs the module to the AllUsers scope
+</description>
+    <releaseNotes>https://github.com/steviecoaster/NexuShell/releases</releaseNotes>
+    <dependencies></dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

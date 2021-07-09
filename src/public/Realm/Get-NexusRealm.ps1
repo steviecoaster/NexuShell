@@ -15,7 +15,7 @@ function Get-NexusRealm {
     .EXAMPLE
     Get-NexusRealm -Active
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/Get-NexusRealm/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Get-NexusRealm/')]
     Param(
         [Parameter()]
         [Switch]

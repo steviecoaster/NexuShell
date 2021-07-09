@@ -63,7 +63,7 @@ function New-NexusRepository {
     .EXAMPLE
     New-NexusRepository -Name ChocoUpstream -Format nuget -Type proxy -ProxyRemoteUrl 'https://chocolatey.org/api/v2'
     #>
-    [CmdletBinding(HelpUri='https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusRepository.md')]
+    [CmdletBinding(HelpUri='https://github.com/steviecoaster/NexuShell/blob/develop/docs/New-NexusRepository.md')]
     Param(
         [Parameter(Mandatory)]
         [String]

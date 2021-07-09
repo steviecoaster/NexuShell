@@ -1,0 +1,67 @@
+name: Build NexuShell
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches: 
+      - main
+      - develop
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      NugetApiKey: ${{ secrets.PowerShellGalleryApiKey }}
+      ChocoApiKey: ${{ secrets.ChocolateyCommunityRepositoryApiKey }}
+
+    steps:
+      - uses: actions/checkout@v2
+        
+      - name: GitVersion
+        id: gitversion
+        uses: PoshCode/Actions/gitversion@v1
+
+      - name: Install-RequiredModules
+        uses: PoshCode/Actions/install-requiredmodules@v1
+
+      - name: Build Module
+        run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        shell: pwsh
+
+      - name: Upload Built Module
+        uses: actions/upload-artifact@v2
+        with:
+          name: NexuShell.${{ steps.gitversion.outputs.LegacySemVerPadded }}
+          path: .\Output
+
+      - name: Test Module
+        run: .\build.ps1 -TestPrePublish -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        shell: pwsh
+
+      - name: Upload Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        if: always()
+
+      - name: Create Release
+        if: ${{ github.ref == 'refs/heads/main' }}
+        continue-on-error: true
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: NexuShell v${{ steps.gitversion.outputs.MajorMinorPatch }}
+          tag_name: ${{ steps.gitversion.outputs.MajorMinorPatch }}
+          body: |
+            PowerShellGallery: [NexuShell ](https://www.powershellgallery.com/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
+            Chocolatey Community Repository: [NexuShell ](https://community.chocolatey.org/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
+          draft: false
+          prerelease: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Publish Module
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: .\build.ps1 -DeployToGallery -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"

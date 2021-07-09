@@ -47,7 +47,7 @@ function New-NexusRawHostedRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusRawHostedRepository/', DefaultParameterSetname = "Default")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusRawHostedRepository/', DefaultParameterSetname = "Default")]
     Param(
         [Parameter(Mandatory)]
         [String]

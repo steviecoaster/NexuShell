@@ -1,0 +1,4 @@
+site_name: NexuShell Documentation
+theme: readthedocs
+repo_url: https://github.com/steviecoaster/NexuShell
+docs_dir: ../docs/

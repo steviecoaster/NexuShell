@@ -35,7 +35,7 @@ function New-NexusDockerGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/TreasureChest/New-NexusDockerGroupRepository/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusDockerGroupRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

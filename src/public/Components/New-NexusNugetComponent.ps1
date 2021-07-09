@@ -35,7 +35,7 @@ function New-NexusNugetComponent {
     process {
 
         $urislug = "/service/rest/v1/components?repository=$($RepositoryName)"
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         $Uri = $UriBase + $UriSlug
 
         $boundary = [System.Guid]::NewGuid().ToString(); 
@@ -57,6 +57,7 @@ function New-NexusNugetComponent {
             ContentType = "multipart/form-data; boundary=----WebKitFormBoundary$($Boundary)"
             Body        = $MultipartContent
             Headers     = $header
+            UseBasicParsing = $true
         }
 
         $null = Invoke-WebRequest @params

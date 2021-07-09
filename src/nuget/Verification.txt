@@ -1,0 +1,7 @@
+VERIFICATION
+
+To verify the files using the project source:
+
+1. Please go to the project source location (https://github.com/steviecoaster/NexuShell) and download the source files
+2. Run `Requirements.ps1` (if required) and `build.ps1 -Build` to compile the module
+3. Use `Get-FileHash` on the resultant psm1/psd1 to get the file hash value from both the built file (from step 1 above) and the file from the package and compare them - as they're currently not being signed before publishing, they should be identical.

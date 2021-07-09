@@ -1,6 +1,6 @@
 ---
-external help file: TreasureChest-help.xml
-Module Name: TreasureChest
+external help file: NexuShell-help.xml
+Module Name: NexuShell
 online version:
 schema: 2.0.0
 ---

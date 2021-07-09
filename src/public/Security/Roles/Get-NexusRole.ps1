@@ -21,7 +21,7 @@ function Get-NexusRole {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/Roles/Get-NexusRole/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/Roles/Get-NexusRole/')]
     Param(
         [Parameter()]
         [Alias('id')]
@@ -55,7 +55,7 @@ function Get-NexusRole {
         $result | ForEach-Object {
             [PSCustomObject]@{
                 Id          = $_.id
-                Souce       = $_.source
+                Source       = $_.source
                 Name        = $_.name
                 Description = $_.description
                 Privileges  = $_.privileges

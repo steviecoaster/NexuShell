@@ -43,7 +43,7 @@ function New-NexusUser {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User/New-NexusUser/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/User/New-NexusUser/')]
     Param(
         [Parameter(Mandatory)]
         [String]
@@ -71,7 +71,10 @@ function New-NexusUser {
         $Status,
 
         [Parameter(Mandatory)]
-        [ValidateSet('nx-admin', 'nx-anonymous')]
+        [ArgumentCompleter({
+            param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
+            (Get-NexusRole).Id.Where{$_ -like "*$WordToComplete*"}
+        })]
         [String[]]
         $Roles
     )
@@ -84,7 +87,7 @@ function New-NexusUser {
             firstName    = $FirstName
             lastName     = $LastName
             emailAddress = $EmailAddress
-            password     = ($Password | ConvertFrom-SecureString -AsPlainText)
+            password     = [System.Net.NetworkCredential]::new($Username, $Password).Password
             status       = $Status
             roles        = $Roles
         }

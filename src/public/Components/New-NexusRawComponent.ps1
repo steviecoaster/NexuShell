@@ -57,7 +57,7 @@ function New-NexusRawComponent {
             $urislug = "/repository/$($RepositoryName)/$($Directory)/$($Name)"
 
         }
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         $Uri = $UriBase + $UriSlug
 
 
@@ -70,6 +70,6 @@ function New-NexusRawComponent {
             UseBasicParsing = $true
         }
 
-        $null = Invoke-WebRequest @params        
+        $null = Invoke-WebRequest @params
     }
 }

@@ -15,7 +15,7 @@ function Get-NexusNuGetApiKey {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/API%20Key/Get-NexusNuGetApiKey/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/API%20Key/Get-NexusNuGetApiKey/')]
     Param(
         [Parameter(Mandatory)]
         [PSCredential]
@@ -25,13 +25,13 @@ function Get-NexusNuGetApiKey {
     process {
         $token = Get-NexusUserToken -Credential $Credential
         $base64Token = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($token))
-        $UriBase = "$($protocol)://$($Hostname):$($port)"
+        $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         
         $slug = "/service/rest/internal/nuget-api-key?authToken=$base64Token&_dc=$(([DateTime]::ParseExact("01/02/0001 21:08:29", "MM/dd/yyyy HH:mm:ss",$null)).Ticks)"
 
         $uri = $UriBase + $slug
 
-        Invoke-RestMethod -Uri $uri -Method GET -ContentType 'application/json' -Headers $header
+        Invoke-RestMethod -Uri $uri -Method GET -ContentType 'application/json' -Headers $header -UseBasicParsing
 
     }
 }

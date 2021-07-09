@@ -11,6 +11,9 @@ function Connect-NexusServer {
     
     .PARAMETER Credential
     The credentials to authenticate to your Nexus server
+
+    .PARAMETER Path
+    The optional context path used by the Nexus server
     
     .PARAMETER UseSSL
     Use https instead of http for REST calls. Defaults to 8443.
@@ -27,7 +30,7 @@ function Connect-NexusServer {
     .EXAMPLE
     Connect-NexusServer -Hostname nexus.fabrikam.com -Credential $Cred -UseSSL -Sslport 443
     #>
-    [cmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Connect-NexusServer/')]
+    [cmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Connect-NexusServer/')]
     param(
         [Parameter(Mandatory,Position=0)]
         [Alias('Server')]
@@ -37,6 +40,10 @@ function Connect-NexusServer {
         [Parameter(Mandatory,Position=1)]
         [System.Management.Automation.PSCredential]
         $Credential,
+
+        [Parameter()]
+        [String]
+        $Path = "/",
 
         [Parameter()]
         [Switch]
@@ -58,6 +65,7 @@ function Connect-NexusServer {
         }
 
         $script:HostName = $Hostname
+        $script:ContextPath = $Path.TrimEnd('/')
 
         $credPair = "{0}:{1}" -f $Credential.UserName,$Credential.GetNetworkCredential().Password
 
@@ -66,16 +74,17 @@ function Connect-NexusServer {
         $script:header = @{ Authorization = "Basic $encodedCreds"}
 
         try {
-            $url = "$($protocol)://$($Hostname):$($port)/service/rest/v1/status"
+            $url = "$($protocol)://$($Hostname):$($port)$($ContextPath)/service/rest/v1/status"
 
             $params = @{
                 Headers = $header
                 ContentType = 'application/json'
                 Method = 'GET'
                 Uri = $url
+                UseBasicParsing = $true
             }
 
-            $result =Invoke-RestMethod @params -ErrorAction Stop
+            $result = Invoke-RestMethod @params -ErrorAction Stop
             Write-Host "Connected to $Hostname" -ForegroundColor Green
         }
 

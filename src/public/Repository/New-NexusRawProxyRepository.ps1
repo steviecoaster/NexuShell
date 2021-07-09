@@ -110,7 +110,7 @@ $ProxyParameters = @{
 
 New-NexusRawProxyRepository @ProxyParameters
 #>
-    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/TreasureChest/blob/develop/docs/New-NexusRawProxyRepository.md', DefaultParameterSetname = "Default")]
+    [CmdletBinding(HelpUri = 'https://github.com/steviecoaster/NexuShell/blob/develop/docs/New-NexusRawProxyRepository.md', DefaultParameterSetname = "Default")]
     Param(
         [Parameter(Mandatory)]
         [String]

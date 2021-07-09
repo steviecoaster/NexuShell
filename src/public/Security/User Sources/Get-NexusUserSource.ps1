@@ -12,7 +12,7 @@ Get-NexusUserSource
 .NOTES
 
 #>
-[CmdletBinding(HelpUri='https://steviecoaster.dev/TreasureChest/Security/User%20Sources/Get-NexusUserSource/')]
+[CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/User%20Sources/Get-NexusUserSource/')]
 Param()
     begin {
         if (-not $header) {

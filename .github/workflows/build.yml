@@ -54,9 +54,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_name: NexuShell v${{ steps.gitversion.outputs.FullSemVer }}
+          release_name: NexuShell v${{ steps.gitversion.outputs.MajorMinorPatch }}
           tag_name: ${{ steps.gitversion.outputs.MajorMinorPatch }}
-          body:
+          body: |
+            PowerShellGallery: [NexuShell ](https://www.powershellgallery.com/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
+            Chocolatey Community Repository: [NexuShell ](https://community.chocolatey.org/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
           draft: false
           prerelease: ${{ github.ref != 'refs/heads/main' }}
 

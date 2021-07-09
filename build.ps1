@@ -18,11 +18,18 @@ param(
 
     [Parameter()]
     [Switch]
-    $Choco
+    $Choco,
+
+    [Parameter()]
+    [string]
+    $Version = $(
+        if (Get-Command gitversion -ErrorAction SilentlyContinue) {
+            (gitversion | ConvertFrom-Json).MajorMinorPatch
+        }
+    )
 )
 
 process {
-
     $root = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
     switch ($true) {
@@ -52,6 +59,9 @@ process {
 
             Copy-Item $root\TreasureChest.psd1 $root\Output\TreasureChest -Force
 
+            if ($Version) {
+                Update-ModuleManifest -Path $root\Output\TreasureChest\TreasureChest.psd1 -ModuleVersion $Version
+            }
 
         }
 

@@ -1,0 +1,64 @@
+name: Build TreasureChest
+
+on:
+  push:
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    branches: 
+      - main
+      - develop
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      NugetApiKey: ${{ secrets.PowerShellGalleryApiKey }}
+      ChocoApiKey: ${{ secrets.ChocolateyCommunityRepositoryApiKey }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: gittools/actions/gitversion/setup@v0.9.7
+        with:
+          versionSpec: '5.x'
+
+      - uses: gittools/actions/gitversion/execute@v0.9.7
+        id:   gitversion
+
+      - name: Build Module
+        run: .\build.ps1 -Build -Version "${{ steps.gitversion.outputs.majorMinorPatch }}"
+        shell: pwsh
+
+      - name: Upload Built Module
+        uses: actions/upload-artifact@v2
+        with:
+          name: Modules
+          path: .\Output
+
+      - name: Test Module
+        if: false  # The test step is currently non-functional
+        run: .\build.ps1 -TestPrePublish
+        shell: pwsh
+
+      - name: Create Release
+        if: ${{ github.ref == 'refs/heads/main' }}
+        continue-on-error: true
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: NexuShell v${{ steps.gitversion.outputs.FullSemVer }}
+          tag_name: ${{ steps.gitversion.outputs.MajorMinorPatch }}
+          body:
+          draft: false
+          prerelease: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Publish Module
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: .\build.ps1 -DeployToGallery

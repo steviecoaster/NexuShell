@@ -32,6 +32,10 @@ process {
     $root = Split-Path -Parent $MyInvocation.MyCommand.Definition
     
     switch ($true) {
+        (-not $env:CI) {
+            . $PSScriptRoot\Requirements.ps1
+        }
+
         $Build {
             Build-Module -SemVer $SemVer
         }
@@ -76,6 +80,7 @@ process {
             $Nuspec = Get-ChildItem $PackageSource -recurse -filter *.nuspec
 
             Copy-Item -Path $root\LICENSE -Destination $PackageSource
+            Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip
 
             if (Test-Path "$PackageSource\tools\NexuShell.zip") {
                 choco pack $Nuspec.FullName --output-directory $root

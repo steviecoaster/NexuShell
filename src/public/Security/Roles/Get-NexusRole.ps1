@@ -55,7 +55,7 @@ function Get-NexusRole {
         $result | ForEach-Object {
             [PSCustomObject]@{
                 Id          = $_.id
-                Souce       = $_.source
+                Source       = $_.source
                 Name        = $_.name
                 Description = $_.description
                 Privileges  = $_.privileges

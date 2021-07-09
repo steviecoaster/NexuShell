@@ -39,7 +39,7 @@ jobs:
           path: .\Output
 
       - name: Test Module
-        run: .\build.ps1 -TestPrePublish
+        run: .\build.ps1 -TestPrePublish -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
         shell: pwsh
 
       - name: Upload Test Results
@@ -62,4 +62,4 @@ jobs:
 
       - name: Publish Module
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: .\build.ps1 -DeployToGallery
+        run: .\build.ps1 -DeployToGallery -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"

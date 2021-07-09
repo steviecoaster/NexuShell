@@ -10,7 +10,8 @@ if (-not (Get-Command gitversion -ErrorAction SilentlyContinue)) {
     choco install gitversion -y
 }
 
-if (-not (Get-Command Install-RequiredModule -ErrorAction SilentlyContinue)) {
-    Install-Script Install-RequiredModule -Force
+if (-not ($Script = (Get-Command Install-RequiredModule -ErrorAction SilentlyContinue).Source)) {
+    $Install = Install-Script Install-RequiredModule -Force -PassThru
+    $Script = Join-Path $Install.InstalledLocation $Install.Name
 }
-Install-RequiredModule -Path $PSScriptRoot\RequiredModules.psd1
+& $Script -Path $PSScriptRoot\RequiredModules.psd1

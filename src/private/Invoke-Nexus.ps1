@@ -19,6 +19,10 @@ function Invoke-Nexus {
 
         [Parameter()]
         [String]
+        $BodyAsSecureString,
+
+        [Parameter()]
+        [String]
         $File,
 
         [Parameter()]
@@ -42,14 +46,23 @@ function Invoke-Nexus {
 
         if($Body){
             $Params.Add('Body',$($Body | ConvertTo-Json -Depth 3))
-        } 
-        
+        }
+
         if($BodyAsArray){
             $Params.Add('Body',$($BodyAsArray | ConvertTo-Json -Depth 3))
         }
 
         if($BodyAsString){
             $Params.Add('Body',$BodyAsString)
+        }
+
+        if($BodyAsSecureString){
+            $Params.Add(
+                'Body',
+                [Runtime.InteropServices.Marshal]::PtrToStringBSTR(
+                    [Runtime.InteropServices.Marshal]::SecureStringToBSTR($BodyAsSecureString)
+                )
+            )
         }
 
         if($File){

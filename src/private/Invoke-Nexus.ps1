@@ -18,7 +18,7 @@ function Invoke-Nexus {
         $BodyAsString,
 
         [Parameter()]
-        [String]
+        [SecureString]
         $BodyAsSecureString,
 
         [Parameter()]

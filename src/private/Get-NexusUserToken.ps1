@@ -26,6 +26,11 @@ function Get-NexusUserToken {
 
         $uri = $UriBase + $slug
 
+        $credPair = "{0}:{1}" -f $Credential.UserName,$Credential.GetNetworkCredential().Password
+        $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($credPair))
+        $ApiKeyHeader = @{ Authorization = "Basic $encodedCreds"}
+
+
         $data = @{
             action = 'rapture_Security'
             method = 'authenticationToken'
@@ -35,7 +40,7 @@ function Get-NexusUserToken {
         }
 
         Write-Verbose ($data | ConvertTo-Json)
-        $result = Invoke-RestMethod -Uri $uri -Method POST -Body ($data | ConvertTo-Json) -ContentType 'application/json' -Headers $header -UseBasicParsing
+        $result = Invoke-RestMethod -Uri $uri -Headers $ApiKeyHeader -Method POST -Body ($data | ConvertTo-Json) -ContentType 'application/json' -UseBasicParsing
         $token = $result.result.data
         $token
     }

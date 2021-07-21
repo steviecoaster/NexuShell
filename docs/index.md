@@ -1,5 +1,7 @@
 # NexuShell Documentation
 
+![NexuShell logo](https://cdn.jsdelivr.net/gh/steviecoaster/NexuShell@develop/logo/nexushell.svg)
+
 You've found the online documentation for [NexuShell](https://github.com/steviecoaster/NexuShell)!
 
 NexuShell is a PowerShell module for the [Sonatype Nexus Repository Server](https://www.sonatype.com/products/repository-oss) API. Each function inside of the module links back to its corresponding page here on the docs site.

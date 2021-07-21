@@ -1,5 +1,7 @@
 # NexuShell
 
+![NexuShell logo](https://cdn.jsdelivr.net/gh/steviecoaster/NexuShell@develop/logo/nexushell.svg)
+
 A PowerShell module for Sonatype Nexus repository server administration
 
 ## Try it out!

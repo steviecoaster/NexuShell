@@ -92,7 +92,7 @@ function Set-NexusUser {
             throw "Username cannot be changed or not found in list of existing users"
         }
 
-        switch($false){
+        switch($null){
             $FirstName { $FirstName = $user.FirstName}
             $LastName { $LastName = $user.LastName }
             $EmailAddress { $EmailAddress = $user.EmailAddress }
@@ -102,13 +102,14 @@ function Set-NexusUser {
         }
 
         $Body = @{
-            userName = $Username
+            userId = $Username
             firstName = $FirstName
             lastName = $LastName
             emailAddress = $EmailAddress
             status = $Status.ToLower()
-            readOnly = $ReadOnly
+            readOnly = [bool]$ReadOnly
             roles = $Roles
+            source = $($user.Source)
         }
 
         Write-Verbose ($Body | ConvertTo-Json)

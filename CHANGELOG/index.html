@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Connect-NexusServer - NexuShell Documentation</title>
+  <title>Changelog - NexuShell Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Connect-NexusServer";
-    var mkdocs_page_input_path = "Connect-NexusServer.md";
+    var mkdocs_page_name = "Changelog";
+    var mkdocs_page_input_path = "CHANGELOG.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -51,8 +51,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG/">Changelog</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Changelog</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#10">1.0</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#101-21-july-2021">1.0.1 (21 July 2021)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#bug-fixes">Bug Fixes</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -76,10 +86,10 @@
     
       
     
-    <li>Connect-NexusServer</li>
+    <li>Changelog</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/steviecoaster/NexuShell/edit/master/docs/Connect-NexusServer.md"
+        <a href="https://github.com/steviecoaster/NexuShell/edit/master/docs/CHANGELOG.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -90,93 +100,40 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="connect-nexusserver">Connect-NexusServer</h1>
-<h2 id="synopsis">SYNOPSIS</h2>
-<p>Creates the authentication header needed for REST calls to your Nexus server</p>
-<h2 id="syntax">SYNTAX</h2>
-<pre><code class="powershell">Connect-NexusServer [-Hostname] &lt;String&gt; [-Credential] &lt;PSCredential&gt; [-UseSSL] [-Sslport &lt;String&gt;]
- [&lt;CommonParameters&gt;]
-</code></pre>
-
-<h2 id="description">DESCRIPTION</h2>
-<p>Creates the authentication header needed for REST calls to your Nexus server</p>
-<h2 id="examples">EXAMPLES</h2>
-<h3 id="example-1">EXAMPLE 1</h3>
-<pre><code class="powershell">Connect-NexusServer -Hostname nexus.fabrikam.com -Credential (Get-Credential)
-</code></pre>
-
-<h3 id="example-2">EXAMPLE 2</h3>
-<pre><code class="powershell">Connect-NexusServer -Hostname nexus.fabrikam.com -Credential (Get-Credential) -UseSSL
-</code></pre>
-
-<h3 id="example-3">EXAMPLE 3</h3>
-<pre><code class="powershell">Connect-NexusServer -Hostname nexus.fabrikam.com -Credential $Cred -UseSSL -Sslport 443
-</code></pre>
-
-<h2 id="parameters">PARAMETERS</h2>
-<h3 id="-hostname">-Hostname</h3>
-<p>The hostname or ip address of your Nexus server</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases: Server
-
-Required: True
-Position: 1
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-credential">-Credential</h3>
-<p>The credentials to authenticate to your Nexus server</p>
-<pre><code class="yaml">Type: PSCredential
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-usessl">-UseSSL</h3>
-<p>Use https instead of http for REST calls.
-Defaults to 8443.</p>
-<pre><code class="yaml">Type: SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="-sslport">-Sslport</h3>
-<p>If not the default 8443 provide the current SSL port your Nexus server uses</p>
-<pre><code class="yaml">Type: String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 8443
-Accept pipeline input: False
-Accept wildcard characters: False
-</code></pre>
-
-<h3 id="commonparameters">CommonParameters</h3>
-<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
-<h2 id="inputs">INPUTS</h2>
-<h2 id="outputs">OUTPUTS</h2>
-<h2 id="notes">NOTES</h2>
-<h2 id="related-links">RELATED LINKS</h2>
+                <h1 id="nexushell-changelog">NexuShell Changelog</h1>
+<h2 id="10">1.0</h2>
+<p>Initial release</p>
+<h2 id="101-21-july-2021">1.0.1 (21 July 2021)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>
+<h1 id="9-set-nexususerpassword-reports-unsupported-media-type">9 Set-NexusUserPassword reports "Unsupported Media Type"</h1>
+</li>
+<li>
+<h1 id="8-set-nexususer-requires-parameters-some-of-which-cant-be-supplied">8 Set-NexusUser requires parameters (some of which can't be supplied)</h1>
+</li>
+<li>
+<h1 id="7-get-nexusnugetapikey-does-not-work-with-a-user-not-authenticated-through-connect-nexusserver">7 Get-NexusNuGetApiKey does not work with a user not authenticated through Connect-NexusServer</h1>
+</li>
+<li>Fixes parameter typo in ChocolateyInstall.ps1</li>
+<li>Switches to <code>Join-Path</code> for building zip archive path in ChocolateyInstall.ps1</li>
+</ul>
+<h3 id="maintenance">Maintenance</h3>
+<ul>
+<li>Added a <code>-Force</code> Parameter to <code>Compress-Archive</code> in the build script to allow the choco package to be created locally without having to manually delete files.</li>
+<li>Adds logo to Project README</li>
+</ul>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -201,6 +158,8 @@ Accept wildcard characters: False
       
           <a href="https://github.com/steviecoaster/NexuShell/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>

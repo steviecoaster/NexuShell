@@ -31,7 +31,12 @@ function Get-NexusNuGetApiKey {
 
         $uri = $UriBase + $slug
 
-        Invoke-RestMethod -Uri $uri -Method GET -ContentType 'application/json' -Headers $header -UseBasicParsing
+
+        $credPair = "{0}:{1}" -f $Credential.UserName,$Credential.GetNetworkCredential().Password
+        $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($credPair))
+        $ApiKeyHeader = @{ Authorization = "Basic $encodedCreds"}
+
+        Invoke-RestMethod -Uri $uri -Headers $ApiKeyHeader -Method GET -ContentType 'application/json' -UseBasicParsing
 
     }
 }

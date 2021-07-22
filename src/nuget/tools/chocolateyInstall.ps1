@@ -17,7 +17,7 @@ if (Test-Path -Path $savedParamsPath) {
     Remove-Item -Path $savedParamsPath -Force
 }
 
-$sourcePath = Convert-Path $toolsDir\$ModuleName.*.zip
+$sourcePath = Join-Path $toolsDir -ChildPath "$($ModuleName).zip"
 $destinationPath = @()
 
 $PathSegment = @{
@@ -30,14 +30,14 @@ $PathSegment = @{
 
 $Parameters = Get-PackageParameters
 
-if (-not $Parameters.ContainsKey('Windows') -and -not $Parameter.ContainsKey('Core')) {
+if (-not $Parameters.ContainsKey('Windows') -and -not $Parameters.ContainsKey('Core')) {
     $Parameters += @{
         Windows = $PSVersionTable.PSVersion.Major -le 5
         Core    = $PSVersionTable.PSVersion.Major -gt 5
     }
 }
 
-if (-not $Parameters.ContainsKey('AllUsers') -and -not $Parameter.ContainsKey('CurrentUser')) {
+if (-not $Parameters.ContainsKey('AllUsers') -and -not $Parameters.ContainsKey('CurrentUser')) {
     $Parameters += @{
         AllUsers    = Test-ProcessAdminRights
         CurrentUser = -not (Test-ProcessAdminRights)

@@ -80,7 +80,7 @@ process {
             $Nuspec = Get-ChildItem $PackageSource -recurse -filter *.nuspec
 
             Copy-Item -Path $root\LICENSE -Destination $PackageSource
-            Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip
+            Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip -Force #Added force to allow local testing without shenanigans
 
             if (Test-Path "$PackageSource\tools\NexuShell.zip") {
                 choco pack $Nuspec.FullName --output-directory $root

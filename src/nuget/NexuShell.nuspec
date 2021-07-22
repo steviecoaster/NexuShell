@@ -10,7 +10,7 @@
     <authors>Stephen Valdinger</authors>
     <projectUrl>https://github.com/steviecoaster/NexuShell</projectUrl>
     <projectSourceUrl>https://github.com/steviecoaster/NexuShell</projectSourceUrl>
-    <iconUrl></iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/steviecoaster/NexuShell@develop/logo/nexushell.svg</iconUrl>
     <copyright>(c) 2021 steviecoaster. All rights reserved.</copyright>
     <docsUrl>https://steviecoaster.dev/NexuShell/</docsUrl>
     <bugTrackerUrl>https://github.com/steviecoaster/NexuShell/issues</bugTrackerUrl>

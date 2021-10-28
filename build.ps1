@@ -48,18 +48,27 @@ process {
                 Import-Module NexuShell
             }
 
-            $TestArguments = @{
-                Path                   = "$root\tests"
-
-                OutputFile             = "$root\TestResults.xml"
-                OutputFormat           = "JUnitXml"
-                
-                CodeCoverage           = (Get-ChildItem $root\Output\NexuShell -Recurse -Filter '*.ps*1').FullName
-                CodeCoverageOutputFile = "$root\Coverage.xml"
+            $TestConfiguration = New-PesterConfiguration @{
+                Run          = @{
+                    Path = "$root\tests"
+                }
+                TestResult   = @{
+                    Enabled      = $true
+                    OutputPath   = "$root\TestResults.xml"
+                    OutputFormat = "JUnitXml"
+                }
+                Output = @{
+                    Verbosity  = "Detailed"
+                }
+                CodeCoverage = @{
+                    Enabled    = $true
+                    Path       = (Get-ChildItem $root\Output\NexuShell -Recurse -Filter '*.ps*1').FullName
+                    OutputPath = "$root\Coverage.xml"
+                }
             }
 
-            if (Test-Path $TestArguments.Path) {
-                Invoke-Pester @TestArguments
+            if (Test-Path $TestConfiguration.Run.Path.Value) {
+                Invoke-Pester -Configuration $TestConfiguration
             }
         }
 

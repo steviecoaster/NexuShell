@@ -45,6 +45,8 @@ jobs:
       - name: Upload Test Results
         uses: EnricoMi/publish-unit-test-result-action/composite@v1
         if: always()
+        with:
+          files: TestResults.xml
 
       - name: Create Release
         if: ${{ github.ref == 'refs/heads/main' }}

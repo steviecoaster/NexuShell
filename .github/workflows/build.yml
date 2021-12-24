@@ -28,6 +28,11 @@ jobs:
       - name: Install-RequiredModules
         uses: PoshCode/Actions/install-requiredmodules@v1
 
+      - name: Install and cache PowerShell modules
+        uses: potatoqualitee/psmodulecache@v4
+        with:
+          modules-to-cache: PlatyPS:0.14.0
+
       - name: Build Module
         run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
         shell: pwsh

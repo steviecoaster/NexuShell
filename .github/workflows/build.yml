@@ -68,6 +68,7 @@ jobs:
           prerelease: ${{ github.ref != 'refs/heads/main' }}
 
       - name: Write MD Docs with PlatyPS
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: .\build.ps1 -WriteMdDocs -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
         shell: pwsh
 

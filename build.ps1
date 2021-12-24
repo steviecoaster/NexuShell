@@ -106,14 +106,14 @@ process {
         }
 
         $WriteMdDocs {
-            if (Test-Path $root\Output\BeautifulDocs) {
+            if (Test-Path $root\Output\NexuShell) {
                 if ($env:PSModulePath.Split(';') -notcontains "$root\Output") {
                     $env:PSModulePath = "$root\Output;$env:PSModulePath"
                 }
-                Import-Module BeautifulDocs -Force
+                Import-Module NexuShell -Force
                 Import-Module PlatyPS -Force
 
-                New-MarkdownHelp -Module BeautifulDocs -OutputFolder $root\docs
+                New-MarkdownHelp -Module NexuShell -OutputFolder $root\docs
 
             }
         }
@@ -131,7 +131,7 @@ process {
             git config --global user.name 'Stephen Valdinger'
             git config --global user.email 'stephen@chocolatey.io'
             git remote rm origin
-            $url = 'https://steviecoaster:' + $env:GH_TOKEN + '@github.com/steviecoaster/BeautifulDocs.git'
+            $url = 'https://steviecoaster:' + $env:GH_TOKEN + '@github.com/steviecoaster/NexuShell.git'
             git remote add origin $url
 
             $mkDocsArgs = @('gh-deploy','--force')

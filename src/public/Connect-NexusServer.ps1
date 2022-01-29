@@ -72,6 +72,7 @@ function Connect-NexusServer {
         $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($credPair))
 
         $script:header = @{ Authorization = "Basic $encodedCreds"}
+        $script:Credential = $Credential
 
         try {
             $url = "$($protocol)://$($Hostname):$($port)$($ContextPath)/service/rest/v1/status"

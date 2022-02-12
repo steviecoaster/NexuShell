@@ -62,14 +62,11 @@ function New-NexusRawComponent {
 
 
         $params = @{
-            Uri         = $Uri
-            Method      = 'PUT'
-            ContentType = 'text/plain'
-            InFile        = $File
-            Headers     = $header
-            UseBasicParsing = $true
+            Url         = $Uri
+            File        = $File
+            Credential = $Credential
         }
 
-        $null = Invoke-WebRequest @params
+        Upload-File @params
     }
 }

@@ -31,7 +31,7 @@ Sonatype Nexus is a Repository Server that exists in two flavors. Open Source (S
 
 ## Building
 
-While in development there is no official module up on the PSGallery. If you'd like to take it for a spin while I'm working on it, follow these steps:
+To build this project from source, follow these steps:
 
 1. Clone this repo and run `.\build.ps1 -Build` from the cloned folder
 2. Import the module with `Import-Module .\Output\NexuShell\NexuShell.psd1` from the cloned folder
@@ -40,6 +40,13 @@ While in development there is no official module up on the PSGallery. If you'd l
 5. Start having fun!
 
 Once I have complete API coverage I'll publish this to the Gallery, and from there you'll be able to do `Install-Module NexuShell`, `Update-Module NexuShell` etc
+
+## Installation
+
+You can install this module a couple of ways:
+
+- PowerShell Gallery: `Install-Module NexuShell -Force`
+- Chocolatey: `choco install nexushell -y -s https://community.chocolatey.org/api/v2`
 ## Contributing
 
 This is an Open Source project. If you spot a bug, or a feature that is missing file an [issue](https://github.com/steviecoaster/NexuShell/issues/new)! You're also welcome to file a Pull Request with your changes. When filing issues please ensure to include as much information as possible to make troubleshooting easier. Things like Operating System, PowerShell Version, Nexus Version, and any error output you receive while running a command are extremely helpful.

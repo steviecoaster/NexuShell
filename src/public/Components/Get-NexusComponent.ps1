@@ -20,13 +20,13 @@ function Get-NexusComponent {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Components/Get-NexusComponent/',DefaultParameterSetName="repo")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Components/Get-NexusComponent/', DefaultParameterSetName = "repo")]
     Param(
-        [Parameter(ParameterSetName="repo",Mandatory)]
+        [Parameter(ParameterSetName = "repo", Mandatory)]
         [String]
         $RepositoryName,
 
-        [Parameter(ParameterSetName="Id",Mandatory)]
+        [Parameter(ParameterSetName = "Id", Mandatory)]
         [String]
         $Id
     )
@@ -39,18 +39,46 @@ function Get-NexusComponent {
         }
 
         else {
+
+            $resultCollection = [System.Collections.Generic.List[psobject]]::new()
             $urislug = "/service/rest/v1/components?repository=$($RepositoryName)"
 
             $result = Invoke-Nexus -Urislug $urislug -Method GET
 
-            $result.items
-
-            if ($($result.continuationToken)) {
-
-                $urislug = "/service/rest/v1/components?continuationToken=$($result.continuationToken)&repository=$($RepositoryName)"
-                $result = Invoke-Nexus -Urislug $urislug -Method GET
-                $result.items
+            $result.items | Foreach-Object {
+                $temp = [PsCustomObject]@{
+                    Id         = $_.id
+                    Repository = $_.repository
+                    Format     = $_.format
+                    Group      = $_.group
+                    Name       = $_.name
+                    Version    = $_.version
+                    Assets     = $_.assets
+                }
+                $resultCollection.Add($temp)
             }
+
+            do {
+                $urislug = "/service/rest/v1/components?repository=$($RepositoryName)&continuationToken=$($result.continuationToken)"
+                $result = Invoke-Nexus -Urislug $urislug -Method GET
+                
+                $result.items | Foreach-Object {
+                    $temp = [PsCustomObject]@{
+                        Id         = $_.id
+                        Repository = $_.repository
+                        Format     = $_.format
+                        Group      = $_.group
+                        Name       = $_.name
+                        Version    = $_.version
+                        Assets     = $_.assets
+                    }
+                    $resultCollection.Add($temp)
+                }
+            }
+            
+            while ($null -ne $result.continuationToken)
+            $resultCollection
+
         }
     }
 }

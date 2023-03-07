@@ -1,24 +1,22 @@
 function Get-NexusComponent {
     <#
     .SYNOPSIS
-    Retrieve asset information from Nexus
+    Retrieve component information from Nexus
     
     .DESCRIPTION
-    Retrieve asset informatino from Nexus
+    Retrieve component information from Nexus
     
     .PARAMETER RepositoryName
     The repository to query for components
     
     .PARAMETER Id
-    A specific asset to retrieve
+    A specific component to retrieve
     
     .EXAMPLE
-    Get-NexusAsset -RepositoryName Dev
+    Get-NexusComponent -RepositoryName Dev
 
     .EXAMPLE
-    Get-NexusAsset -Id RGV2OmM2MGJjNmI5NjEyZjQ3ZDM5ZTc2ZmMwNTI1ODg0M2Rj
-    
-    .NOTES
+    Get-NexusComponent -Id RGV2OmM2MGJjNmI5NjEyZjQ3ZDM5ZTc2ZmMwNTI1ODg0M2Rj
     #>
     [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Components/Get-NexusComponent/', DefaultParameterSetName = "repo")]
     Param(

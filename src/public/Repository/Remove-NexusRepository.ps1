@@ -23,7 +23,7 @@ function Remove-NexusRepository {
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [Alias('Name')]
         [ArgumentCompleter( {
-                param($command, $WordToComplete, $CommandAst, $FakeBoundParams)
+                param($CommandName, $ParameterName, $WordToComplete, $CommandAst, $FakeBoundParameters)
                 $repositories = (Get-NexusRepository).Name
 
                 if ($WordToComplete) {

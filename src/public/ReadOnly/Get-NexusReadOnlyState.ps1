@@ -9,7 +9,7 @@ function Get-NexusReadOnlyState {
     .EXAMPLE
     Get-NexusReadOnlyState
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Get-NexusReadOnlyState/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusReadOnlyState/')]
     Param()
     begin {
 

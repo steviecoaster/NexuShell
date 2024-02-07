@@ -9,7 +9,7 @@ function Get-NexusAnonymousAuthStatus {
     .EXAMPLE
     Get-NexusAnonymousAuth
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Get-NexusAnonymousAuthStatus/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusAnonymousAuthStatus/')]
     Param()
 
     begin {

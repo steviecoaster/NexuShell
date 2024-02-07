@@ -127,7 +127,7 @@ function New-NexusPrivilege {
     .NOTES
 
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/Privileges/New-NexusPrivilege/',DefaultParameterSetName="Default")]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Privileges/New-NexusPrivilege/',DefaultParameterSetName="Default")]
     Param(
         [Parameter(Mandatory,ParameterSetName="Default")]
         [Parameter(Mandatory,ParameterSetName="Repo")]

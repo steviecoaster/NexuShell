@@ -23,7 +23,7 @@ function Remove-NexusCertificate {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Remove-NexusCertificate/',SupportsShouldProcess,ConfirmImpact='High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Remove-NexusCertificate/',SupportsShouldProcess,ConfirmImpact='High')]
     Param(
         [Alias('Id')]
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]

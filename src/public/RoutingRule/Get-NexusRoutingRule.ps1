@@ -17,7 +17,7 @@ function Get-NexusRoutingRule {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Get-NexusRoutingRule/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusRoutingRule/')]
     Param(
         [Parameter()]
         [String[]]

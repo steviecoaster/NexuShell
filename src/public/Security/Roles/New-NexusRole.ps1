@@ -30,7 +30,7 @@ function New-NexusRole {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/Roles/New-NexusRole/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Roles/New-NexusRole/')]
     Param(
         [Parameter(Mandatory)]
         [String]

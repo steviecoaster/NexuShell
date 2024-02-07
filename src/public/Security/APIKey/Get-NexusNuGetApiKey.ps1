@@ -15,7 +15,7 @@ function Get-NexusNuGetApiKey {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/API%20Key/Get-NexusNuGetApiKey/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/API%20Key/Get-NexusNuGetApiKey/')]
     Param(
         [Parameter(Mandatory)]
         [PSCredential]

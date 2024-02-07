@@ -18,12 +18,12 @@ function Remove-NexusRepository {
     .EXAMPLE
     Remove-NexusRepository -Repository MavenReleases -Force()
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Remove-NexusRepository/', SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Remove-NexusRepository/', SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [Alias('Name')]
         [ArgumentCompleter( {
-                param($command, $WordToComplete, $CommandAst, $FakeBoundParams)
+                param($CommandName, $ParameterName, $WordToComplete, $CommandAst, $FakeBoundParameters)
                 $repositories = (Get-NexusRepository).Name
 
                 if ($WordToComplete) {

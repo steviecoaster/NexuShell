@@ -24,7 +24,7 @@ function Update-NexusFileBlobStore {
 
     # Sets the default blobstore to the location listed
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Update-NexusFileBlobStore/', SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Update-NexusFileBlobStore/', SupportsShouldProcess, ConfirmImpact = 'High')]
     param(
         [Parameter(Mandatory)]
         [string]

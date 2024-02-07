@@ -15,7 +15,7 @@ function Stop-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Tasks/Stop-NexusTask/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Tasks/Stop-NexusTask/')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

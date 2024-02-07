@@ -105,7 +105,7 @@ function New-NexusCocoaPodProxyRepository {
     
     New-NexusCocoaPodProxyRepository @ProxyParameters
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusCocoaPodProxyRepository/',DefaultParameterSetname="Default")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusCocoaPodProxyRepository/',DefaultParameterSetname="Default")]
     Param(
         [Parameter(Mandatory)]
         [String]

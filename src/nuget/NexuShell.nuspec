@@ -12,7 +12,7 @@
     <projectSourceUrl>https://github.com/steviecoaster/NexuShell</projectSourceUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/steviecoaster/NexuShell@develop/logo/nexushell.svg</iconUrl>
     <copyright>(c) 2021 steviecoaster. All rights reserved.</copyright>
-    <docsUrl>https://steviecoaster.dev/NexuShell/</docsUrl>
+    <docsUrl>https://steviecoaster.github.io/NexuShell/</docsUrl>
     <bugTrackerUrl>https://github.com/steviecoaster/NexuShell/issues</bugTrackerUrl>
     <licenseUrl>https://raw.githubusercontent.com/steviecoaster/NexuShell/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -23,7 +23,7 @@ function Set-NexusRoutingRule {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Set-NexusRoutingRule/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Set-NexusRoutingRule/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter( {

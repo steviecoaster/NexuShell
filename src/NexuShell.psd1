@@ -50,5 +50,5 @@
     } # End of PrivateData hashtable
 
     # HelpInfo URI of this module
-    HelpInfoURI       = 'https://steviecoaster.dev/NexuShell/'
+    HelpInfoURI       = 'https://steviecoaster.github.io/NexuShell/'
 }

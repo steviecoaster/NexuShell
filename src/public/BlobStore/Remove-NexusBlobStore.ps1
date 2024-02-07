@@ -18,7 +18,7 @@ function Remove-NexusBlobStore {
     .EXAMPLE
     Remove-NexusBlobStore -Name TreasureBlob -Force
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Remove-NexusBlobStore/',SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Remove-NexusBlobStore/',SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory)]
         [String]

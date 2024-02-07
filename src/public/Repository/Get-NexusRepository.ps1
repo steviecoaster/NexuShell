@@ -21,7 +21,7 @@ function Get-NexusRepository {
     .EXAMPLE
     Get-NexusRepository -Name CompanyNugetPkgs
     #>
-    [cmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Get-NexusRepository/',DefaultParameterSetName="default")]
+    [cmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusRepository/',DefaultParameterSetName="default")]
     param(
         [Parameter(ParameterSetName="Format",Mandatory)]
         [String]

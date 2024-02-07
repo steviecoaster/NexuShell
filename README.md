@@ -14,4 +14,4 @@ A PowerShell module for Sonatype Nexus repository server administration
 
 ### Documentation
 
-Information about currently supported functions and their usage can be found on the [docs](https://steviecoaster.dev/NexuShell/) site.
+Information about currently supported functions and their usage can be found on the [docs](https://steviecoaster.github.io/NexuShell/) site.

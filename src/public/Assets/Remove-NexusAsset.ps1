@@ -20,7 +20,7 @@ function Remove-NexusAsset {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Assets/Remove-NexusAsset/',SupportsShouldProcess,ConfirmImpact='High')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Assets/Remove-NexusAsset/',SupportsShouldProcess,ConfirmImpact='High')]
     Param(
         [Parameter(Mandatory)]
         [String[]]

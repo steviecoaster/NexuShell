@@ -17,7 +17,7 @@ function Enable-NexusRealm {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Enable-NexusRealm/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Enable-NexusRealm/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter({

@@ -59,7 +59,7 @@ function New-NexusDockerHostedRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/New-NexusDockerHostedRepository/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusDockerHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

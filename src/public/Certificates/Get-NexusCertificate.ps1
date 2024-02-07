@@ -12,7 +12,7 @@ function Get-NexusCertificate {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Get-NexusCertificate/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusCertificate/')]
     Param()
 
     begin {

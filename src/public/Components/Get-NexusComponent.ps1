@@ -18,7 +18,7 @@ function Get-NexusComponent {
     .EXAMPLE
     Get-NexusComponent -Id RGV2OmM2MGJjNmI5NjEyZjQ3ZDM5ZTc2ZmMwNTI1ODg0M2Rj
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.dev/NexuShell/Components/Get-NexusComponent/', DefaultParameterSetName = "repo")]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Components/Get-NexusComponent/', DefaultParameterSetName = "repo")]
     Param(
         [Parameter(ParameterSetName = "repo", Mandatory)]
         [String]

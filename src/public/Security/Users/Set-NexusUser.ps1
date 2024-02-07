@@ -39,7 +39,7 @@ function Set-NexusUser {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/User/Set-NexusUser/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/User/Set-NexusUser/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter( {

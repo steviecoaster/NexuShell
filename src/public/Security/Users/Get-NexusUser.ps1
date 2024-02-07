@@ -24,7 +24,7 @@ function Get-NexusUser {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.dev/NexuShell/Security/User/Get-NexusUser/')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/User/Get-NexusUser/')]
     Param(
         [Parameter()]
         [String]

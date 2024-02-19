@@ -21,7 +21,7 @@ function New-NexusContentSelector {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Content%20Selectors/New-NexusContentSelector/')]
     Param(
         [Parameter(Mandatory)]
         [String]

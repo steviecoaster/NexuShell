@@ -21,7 +21,7 @@ function Set-NexusContentSelector {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='')]
+    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Content%20Selectors/Set-NexusContentSelector/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter({

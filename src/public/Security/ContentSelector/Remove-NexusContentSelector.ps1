@@ -24,7 +24,7 @@ function Remove-NexusContentSelector {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = '',SupportsShouldProcess,ConfirmImpact='High')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Security/Content%20Selectors/Remove-NexusContentSelector/',SupportsShouldProcess,ConfirmImpact='High')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

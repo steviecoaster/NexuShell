@@ -4,13 +4,20 @@
 
 A PowerShell module for Sonatype Nexus repository server administration
 
-## Try it out!
+## Installation
 
-1. Clone this repo and run `.\build.ps1 -Build` from the cloned folder
-2. Import the module with `Import-Module .\Output\NexuShell\NexuShell.psd1` from the cloned folder
-3. Discover the available commands with `Get-Command -Module NexuShell`
-4. Explore the available commands with `Get-Help`
-5. Start having fun!
+### From the PowerShell Gallery
+
+```powershell
+Install-Module NexuShell -Scope CurrentUser -Force
+```
+
+### From Chocolatey CLI
+
+```powershell
+choco install NexuShell -y -s https://community.chocolatey.org/api/v2
+```
+
 
 ### Documentation
 

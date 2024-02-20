@@ -9,3 +9,7 @@ site
 site\*
 TestResults.xml
 Coverage.xml
+vagrant
+vagrant\
+docs
+docs\*

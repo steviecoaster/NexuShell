@@ -26,7 +26,7 @@ function New-NexusGoGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusGoGroupRepository/')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusGoGroupRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

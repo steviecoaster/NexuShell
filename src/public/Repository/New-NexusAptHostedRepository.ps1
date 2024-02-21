@@ -47,7 +47,7 @@ function New-NexusAptHostedRepository {
     New-NexusAptHostedRepository @RepoParams
 
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/New-NexusAptHostedRepository/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/New-NexusAptHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

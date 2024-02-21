@@ -18,7 +18,7 @@ function Get-NexusPrivilege {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Privileges/Get-NexusPrivilege/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/Privileges/Get-NexusPrivilege/')]
     Param(
         [Parameter()]
         [String]

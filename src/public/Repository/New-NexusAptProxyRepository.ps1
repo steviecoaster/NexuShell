@@ -107,7 +107,7 @@ function New-NexusAptProxyRepository {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/New-NexusAptProxyRepository/',DefaultParameterSetName = 'Hosted')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/New-NexusAptProxyRepository/',DefaultParameterSetName = 'Hosted')]
     Param(
         [Parameter(Mandatory)]
         [String]

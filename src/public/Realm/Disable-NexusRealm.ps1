@@ -17,7 +17,7 @@ function Disable-NexusRealm {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Disable-NexusRealm/',SupportsShouldProcess,ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/Disable-NexusRealm/',SupportsShouldProcess,ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

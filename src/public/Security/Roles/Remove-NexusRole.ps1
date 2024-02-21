@@ -23,7 +23,7 @@ function Remove-NexusRole {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Roles/Remove-NexusRole/',SupportsShouldProcess,ConfirmImpact='High')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/Roles/Remove-NexusRole/',SupportsShouldProcess,ConfirmImpact='High')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

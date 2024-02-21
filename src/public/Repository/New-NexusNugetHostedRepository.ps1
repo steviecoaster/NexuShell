@@ -46,7 +46,7 @@ function New-NexusNugetHostedRepository {
     .NOTES
     General notes
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusNugetHostedRepository/')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusNugetHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

@@ -27,7 +27,7 @@ function Set-NexusRole {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Roles/Set-NexusRole/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/Roles/Set-NexusRole/')]
     Param(
         [Parameter(Mandatory)]
         [ArgumentCompleter( {

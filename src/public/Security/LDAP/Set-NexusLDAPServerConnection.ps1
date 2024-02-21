@@ -119,7 +119,7 @@ function Set-NexusLDAPServerConnection {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Security/LDAP/Set-NexusLDAPServerConnection/', DefaultParameterSetName = "default")]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/Security/LDAP/Set-NexusLDAPServerConnection/', DefaultParameterSetName = "default")]
     Param(
         [Parameter(Mandatory)]
         [String]

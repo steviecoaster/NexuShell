@@ -21,4 +21,4 @@ choco install NexuShell -y -s https://community.chocolatey.org/api/v2
 
 ### Documentation
 
-Information about currently supported functions and their usage can be found on the [docs](https://steviecoaster.github.io/NexuShell/) site.
+Information about currently supported functions and their usage can be found on the [docs](https://nexushell.dev/) site.

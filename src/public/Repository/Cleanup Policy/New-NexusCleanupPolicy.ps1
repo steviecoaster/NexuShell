@@ -33,7 +33,7 @@ function New-NexusCleanupPolicy {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Repository/Cleanup%20Policy/New-NexusCleanupPolicy/',DefaultParameterSetName = "Default")]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Repository/Cleanup%20Policy/New-NexusCleanupPolicy/',DefaultParameterSetName = "Default")]
     Param(
         [Parameter(Mandatory)]
         [Parameter(ParameterSetName = 'Age', Mandatory)]

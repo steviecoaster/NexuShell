@@ -9,7 +9,7 @@ function Get-NexusLicenseStatus {
     .EXAMPLE
     Get-NexusLicenseStatus
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusLicenseStatus/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Get-NexusLicenseStatus/')]
     Param()
     begin {
 

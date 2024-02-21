@@ -32,7 +32,7 @@ function New-NexusRawGroupRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/New-NexusRawGroupRepository/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/New-NexusRawGroupRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

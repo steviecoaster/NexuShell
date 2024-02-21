@@ -21,7 +21,7 @@ function Get-NexusCleanupPolicy {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Repository/Cleanup%20Policy/Get-NexusCleanupPolicy/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Repository/Cleanup%20Policy/Get-NexusCleanupPolicy/')]
     Param(
         [Parameter()]
         [Alias('Policy','CleanupPolicy')]

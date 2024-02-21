@@ -25,7 +25,7 @@ function Remove-NexusTag {
     .LINK
     https://help.sonatype.com/en/tagging.html
     #>
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High', HelpUri = 'https://steviecoaster.github.io/NexuShell/Tags/Remove-NexusTag/')]
+    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High', HelpUri = 'https://nexushell.dev/Tags/Remove-NexusTag/')]
     Param(
         [Parameter(Mandatory)]
         [String]

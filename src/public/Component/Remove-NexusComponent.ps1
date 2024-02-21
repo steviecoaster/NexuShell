@@ -15,7 +15,7 @@ function Remove-NexusComponent {
     .EXAMPLE
     Get-NexusComponent -Repository dev | Where-Object {$_.Name -eq "somePackage" -and $_.Version "1.2.3"} | Remove-NexusComponent -Confirm:$false
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Assets/Remove-NexusComponent/', SupportsShouldProcess, ConfirmImpact='High')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Assets/Remove-NexusComponent/', SupportsShouldProcess, ConfirmImpact='High')]
     Param(
         [Parameter(Mandatory, ValueFromPipelineByPropertyName)]
         [String[]]

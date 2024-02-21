@@ -43,7 +43,7 @@ function New-NexusUser {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/User/New-NexusUser/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/User/New-NexusUser/')]
     Param(
         [Parameter(Mandatory)]
         [String]

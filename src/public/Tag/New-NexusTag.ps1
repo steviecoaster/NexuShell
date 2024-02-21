@@ -26,7 +26,7 @@ Any additional metadata you wish to tag a component with
 .LINK
 https://help.sonatype.com/en/tagging.html
 #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Tags/New-NexusTag/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Tags/New-NexusTag/')]
     Param(
         [Parameter(Mandatory)]
         [ValidateLength(1,256)]

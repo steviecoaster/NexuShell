@@ -18,7 +18,7 @@ function Get-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Tasks/Get-NexusTask/')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/Tasks/Get-NexusTask/')]
     Param(
         [Parameter()]
         [String[]]

@@ -21,7 +21,7 @@ function Remove-NexusTagAssociation {
     .LINK
     https://help.sonatype.com/en/tagging.html
     #>
-    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High', HelpUri = 'https://steviecoaster.github.io/NexuShell/Tags/Remove-NexusTagAssociation/')]
+    [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'High', HelpUri = 'https://nexushell.dev/Tags/Remove-NexusTagAssociation/')]
     Param(
         [Parameter(Mandatory)]
         [String]

@@ -19,7 +19,7 @@ function Get-NexusLDAPServerConnection {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/LDAP/Get-NexusLDAPServerConnection/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/LDAP/Get-NexusLDAPServerConnection/')]
     Param(
         [Parameter()]
         [String[]]

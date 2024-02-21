@@ -101,7 +101,7 @@ function New-NexusDockerProxyRepository {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusDockerProxyRepository/',DefaultParameterSetName = "Default")]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusDockerProxyRepository/',DefaultParameterSetName = "Default")]
     Param(
         [Parameter(Mandatory)]
         [String]

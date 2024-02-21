@@ -17,7 +17,7 @@ function Remove-NexusLicense {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Remove-NexusLicense/',SupportsShouldProcess,ConfirmImpact='High')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Remove-NexusLicense/',SupportsShouldProcess,ConfirmImpact='High')]
     Param(
         [Parameter()]
         [Switch]

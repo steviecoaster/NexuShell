@@ -15,7 +15,7 @@ function Get-NexusFormat {
     .EXAMPLE
     Get-NexusFormat -RepositoryFormat nuget
     #>
-    [Cmdletbinding(HelpUri='https://steviecoaster.github.io/NexuShell/Formats/Get-NexusFormat/')]
+    [Cmdletbinding(HelpUri='https://nexushell.dev/Formats/Get-NexusFormat/')]
     Param(
         [Parameter()]
         [Alias('Format')]

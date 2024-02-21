@@ -1,5 +1,5 @@
 function Get-NexusTag {
-    [Cmdletbinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Tags/Get-NexusTag/')]
+    [Cmdletbinding(HelpUri = 'https://nexushell.dev/Tags/Get-NexusTag/')]
     Param(
         [Parameter()]
         [String]

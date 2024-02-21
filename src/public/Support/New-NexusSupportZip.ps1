@@ -45,7 +45,7 @@ function New-NexusSupportZip {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Support/New-NexusSupportZip/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Support/New-NexusSupportZip/')]
     Param(
         [Parameter()]
         [Switch]

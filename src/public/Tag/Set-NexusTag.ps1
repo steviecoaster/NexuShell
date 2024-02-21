@@ -18,7 +18,7 @@ function Set-NexusTag {
     .LINK
     https://help.sonatype.com/en/tagging.html
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Tags/Set-NexusTag/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Tags/Set-NexusTag/')]
     Param(
         [Parameter(Mandatory)]
         [String]

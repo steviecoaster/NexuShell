@@ -21,7 +21,7 @@ function Get-NexusRole {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Roles/Get-NexusRole/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/Roles/Get-NexusRole/')]
     Param(
         [Parameter()]
         [Alias('id')]

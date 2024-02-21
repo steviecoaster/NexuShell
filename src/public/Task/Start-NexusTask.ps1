@@ -15,7 +15,7 @@ function Start-NexusTask {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/Tasks/Start-NexusTask/')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/Tasks/Start-NexusTask/')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

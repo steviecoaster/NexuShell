@@ -20,7 +20,7 @@ function Get-NexusAsset {
     
     .NOTES
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Assets/Get-NexusAsset/',DefaultParameterSetName="repo")]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Assets/Get-NexusAsset/',DefaultParameterSetName="repo")]
     Param(
         [Parameter(ParameterSetName="repo",Mandatory)]
         [String]

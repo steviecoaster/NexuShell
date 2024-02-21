@@ -18,7 +18,7 @@ function Get-NexusContentSelector {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Security/Content%20Selectors/Get-NexusContentSelector/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Security/Content%20Selectors/Get-NexusContentSelector/')]
     Param(
         [Parameter()]
         [String[]]

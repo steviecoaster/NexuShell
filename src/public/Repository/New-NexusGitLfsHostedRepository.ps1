@@ -43,7 +43,7 @@ function New-NexusGitlfsHostedRepository {
 
     .NOTES
     #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/NexuShell/New-NexusGitlfsHostedRepository/')]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusGitlfsHostedRepository/')]
     Param(
         [Parameter(Mandatory)]
         [String]

@@ -12,7 +12,7 @@ function Get-NexusBlobStoreQuota {
     .EXAMPLE
     Get-NexusBlobStoreQuota -Name TestBlob
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Get-NexusBlobStoreQuota/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Get-NexusBlobStoreQuota/')]
     Param(
         [Parameter(Mandatory)]
         [String[]]

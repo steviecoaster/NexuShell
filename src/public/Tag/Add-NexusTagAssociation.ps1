@@ -18,7 +18,7 @@ function Add-NexusTagAssociation {
     .LINK
     https://help.sonatype.com/en/tagging.html
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Tags/Add-NexusTagAssociation/')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Tags/Add-NexusTagAssociation/')]
     Param(
         [Parameter(Mandatory)]
         [String]

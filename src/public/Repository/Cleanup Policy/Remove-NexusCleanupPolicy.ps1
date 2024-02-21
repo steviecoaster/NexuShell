@@ -24,7 +24,7 @@ function Remove-NexusCleanupPolicy {
     .NOTES
     
     #>
-    [CmdletBinding(HelpUri='https://steviecoaster.github.io/NexuShell/Repository/Cleanup%20Policy/Remove-NexusCleanupPolicy/',SupportsShouldProcess, ConfirmImpact = 'High')]
+    [CmdletBinding(HelpUri='https://nexushell.dev/Repository/Cleanup%20Policy/Remove-NexusCleanupPolicy/',SupportsShouldProcess, ConfirmImpact = 'High')]
     Param(
         [Parameter(Mandatory, ValueFromPipeline, ValueFromPipelineByPropertyName)]
         [ArgumentCompleter( {

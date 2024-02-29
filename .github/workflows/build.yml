@@ -28,6 +28,11 @@ jobs:
       - name: Install-RequiredModules
         uses: PoshCode/Actions/install-requiredmodules@v1
 
+      - name: Install and cache PowerShell modules
+        uses: potatoqualitee/psmodulecache@v4
+        with:
+          modules-to-cache: PlatyPS:0.14.0
+
       - name: Build Module
         run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
         shell: pwsh
@@ -63,6 +68,20 @@ jobs:
             Chocolatey Community Repository: [NexuShell ](https://community.chocolatey.org/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
           draft: false
           prerelease: ${{ github.ref != 'refs/heads/main' }}
+
+      - name: Write MD Docs with PlatyPS
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: .\build.ps1 -WriteMdDocs -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        shell: pwsh
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
+        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONFIG_FILE: .\mkdocs_template\mkdocs.yml
+          EXTRA_PACKAGES: build-base
+          # GITHUB_DOMAIN: github.myenterprise.com
 
       - name: Publish Module
         if: ${{ github.ref == 'refs/heads/main' }}

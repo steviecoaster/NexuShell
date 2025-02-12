@@ -24,7 +24,11 @@ param(
     [string]
     $SemVer = $(
         if (Get-Command gitversion -ErrorAction SilentlyContinue) {
-            (gitversion | ConvertFrom-Json).LegacySemVerPadded
+            if (([version]((gitversion /version).Split('+')[0])).Major -gt 5) {
+                gitversion /showvariable SemVer
+            } else {
+                gitversion /showvariable LegacySemVerPadded
+            }
         }
     )
 )

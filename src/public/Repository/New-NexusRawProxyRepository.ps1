@@ -305,6 +305,6 @@ New-NexusRawProxyRepository @ProxyParameters
         }
 
         Write-Verbose $($Body | ConvertTo-Json)
-        Invoke-Nexus -UriSlug $urislug -Body $Body -Method POST
+        $null = Invoke-Nexus -UriSlug $urislug -Body $Body -Method POST
     }
 }

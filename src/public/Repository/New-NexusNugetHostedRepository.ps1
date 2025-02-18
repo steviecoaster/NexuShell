@@ -117,7 +117,7 @@ function New-NexusNugetHostedRepository {
         }
 
         Write-Verbose $($Body | ConvertTo-Json)
-        Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
+        $null = Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
 
     }
 }

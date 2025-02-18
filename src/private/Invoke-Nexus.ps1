@@ -31,11 +31,21 @@ function Invoke-Nexus {
 
         [Parameter(Mandatory)]
         [String]
-        $Method
+        $Method,
+
+        [Parameter()]
+        [hashtable]
+        $Headers
     )
     process {
         $UriBase = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
         $Uri = $UriBase + $UriSlug
+        if ($Headers) {
+            $local:header = $script:header.Clone()
+            $Headers.Keys.ForEach{
+                $header[$_] = $Headers[$_]
+            }
+        }
         $Params = @{
             Headers = $header
             ContentType = $ContentType

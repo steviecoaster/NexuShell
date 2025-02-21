@@ -96,13 +96,15 @@ process {
             Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip -Force #Added force to allow local testing without shenanigans
 
             if (Test-Path "$PackageSource\tools\NexuShell.zip") {
-                choco pack $Nuspec.FullName --output-directory $root
+                choco pack $Nuspec.FullName --version $SemVer --output-directory $root
             } else {
                 throw "Welp, ya need the zip in the tools folder, dumby"
             }
 
-            Get-ChildItem $PackageSource -recurse -filter *.nupkg | ForEach-Object { 
-                choco push $_.FullName -s https://push.chocolatey.org --api-key="'$($env:ChocoApiKey)'"
+            if ($env:ChocoApiKey) {
+                Get-ChildItem $PackageSource -Recurse -Filter *.nupkg | ForEach-Object { 
+                    choco push $_.FullName -s https://push.chocolatey.org --api-key="'$($env:ChocoApiKey)'"
+                }
             }
         }
     }

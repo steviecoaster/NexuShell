@@ -25,7 +25,11 @@ $PathSegment = @{
     Core    = "PowerShell\Modules\"
 
     AllUsers = $env:ProgramFiles
-    CurrentUser = $PROFILE | Split-Path | Split-Path
+    CurrentUser = try {
+        $PROFILE | Split-Path | Split-Path
+    } catch {
+        Write-Warning "Profile is set to '$($PROFILE)'. Current user '$($env:USERNAME)' may not be able to install at user level."
+    }
 }
 
 $Parameters = Get-PackageParameters

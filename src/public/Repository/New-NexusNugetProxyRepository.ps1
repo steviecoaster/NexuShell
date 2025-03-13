@@ -1,5 +1,5 @@
 function New-NexusNugetProxyRepository {
-<#
+    <#
 .SYNOPSIS
 Creates a new NuGet Proxy Repository
 
@@ -114,7 +114,7 @@ $ProxyParameters = @{
 
 New-NexusNugetProxyRepository @ProxyParameters
 #>
-    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusNugetProxyRepository/',DefaultParameterSetname="Default")]
+    [CmdletBinding(HelpUri = 'https://nexushell.dev/New-NexusNugetProxyRepository/', DefaultParameterSetname = "Default")]
     Param(
         [Parameter(Mandatory)]
         [String]
@@ -208,7 +208,7 @@ New-NexusNugetProxyRepository @ProxyParameters
         $EnableAutoBlocking = $false,
 
         [Parameter()]
-        [ValidateRange(0,10)]
+        [ValidateRange(0, 10)]
         [String]
         $ConnectionRetries,
 
@@ -241,8 +241,6 @@ New-NexusNugetProxyRepository @ProxyParameters
         $formatUrl = $urislug + "/nuget"
 
         $FullUrlSlug = $formatUrl + "/proxy"
-
-        $AuthenticationType = $AuthenticationType.ToLower()
 
         $body = @{
             name          = $Name
@@ -288,13 +286,13 @@ New-NexusNugetProxyRepository @ProxyParameters
 
         if ($UseAuthentication) {
             
-            switch($AuthenticationType){
+            switch ($AuthenticationType) {
                 'Username' {
                     $authentication = @{
-                        type       = $AuthenticationType
+                        type       = $AuthenticationType.ToLower()
                         username   = $Credential.UserName
                         password   = $Credential.GetNetworkCredential().Password
-                        ntlmHost = ''
+                        ntlmHost   = ''
                         ntlmDomain = ''
                     }
         
@@ -302,9 +300,10 @@ New-NexusNugetProxyRepository @ProxyParameters
                 }
 
                 'NTLM' {
-                    if(-not $HostnameFqdn -and $DomainName){
+                    if (-not $HostnameFqdn -and $DomainName) {
                         throw "Parameter HostnameFqdn and DomainName are required when using WindowsNTLM authentication"
-                    } else {
+                    }
+                    else {
                         $authentication = @{
                             type       = $AuthenticationType
                             username   = $Credential.UserName

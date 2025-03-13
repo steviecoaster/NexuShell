@@ -121,7 +121,7 @@ New-NexusRawProxyRepository @ProxyParameters
         $ProxyRemoteUrl,
 
         [Parameter(Mandatory)]
-        [ValidateSet('Inline','Attachment')]
+        [ValidateSet('Inline', 'Attachment')]
         [String]
         $ContentDisposition,
 
@@ -230,8 +230,6 @@ New-NexusRawProxyRepository @ProxyParameters
     }
     process {
 
-        $AuthenticationType = $AuthenticationType.ToLower()
-
         $body = @{
             name          = $Name
             online        = [bool]$Online
@@ -263,8 +261,8 @@ New-NexusRawProxyRepository @ProxyParameters
                     useTrustStore           = [bool]$UseNexusTrustStore
                 }
             }
-            routingRule = $RoutingRule
-            raw = @{
+            routingRule   = $RoutingRule
+            raw           = @{
                 contentDisposition = $ContentDisposition
             }
         }
@@ -274,7 +272,7 @@ New-NexusRawProxyRepository @ProxyParameters
             switch ($AuthenticationType) {
                 'Username' {
                     $authentication = @{
-                        type       = $AuthenticationType
+                        type       = $AuthenticationType.ToLower()
                         username   = $Credential.UserName
                         password   = $Credential.GetNetworkCredential().Password
                         ntlmHost   = ''

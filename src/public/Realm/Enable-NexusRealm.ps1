@@ -73,7 +73,7 @@ function Enable-NexusRealm {
         $body = $collection
 
         Write-Verbose $($Body | ConvertTo-Json)
-        Invoke-Nexus -UriSlug $urislug -BodyAsArray $Body -Method PUT
+        $null = Invoke-Nexus -UriSlug $urislug -BodyAsArray $Body -Method PUT
 
     }
 }

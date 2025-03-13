@@ -151,7 +151,7 @@ function New-NexusDockerHostedRepository {
 
 
         Write-Verbose $($Body | ConvertTo-Json)
-        Invoke-Nexus -UriSlug $urislug -Body $Body -Method POST
+        $null = Invoke-Nexus -UriSlug $urislug -Body $Body -Method POST
 
         if($ForceBasicAuth -eq $false){
             Write-Warning "Docker Bearer Token Realm required since -ForceBasicAuth was not passed."

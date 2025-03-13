@@ -186,7 +186,7 @@ function New-NexusRepository {
                 }
 
                 Write-Verbose $($Body | ConvertTo-Json)
-                Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
+                $null = Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
 
             }
             'Proxy' {
@@ -235,7 +235,7 @@ function New-NexusRepository {
                 }
 
                 Write-Verbose $($Body | ConvertTo-Json)
-                Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
+                $null = Invoke-Nexus -UriSlug $FullUrlSlug -Body $Body -Method POST
 
             }
         }

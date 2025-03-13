@@ -1,0 +1,1 @@
+$script:InstalledNexusService = Get-NexusRepositoryServiceInstall -ErrorAction SilentlyContinue

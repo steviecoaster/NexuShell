@@ -19,27 +19,29 @@ jobs:
       ChocoApiKey: ${{ secrets.ChocoApiKey }}
 
     steps:
-      - uses: actions/checkout@v2
-        
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Required for GitVersion to behave
+
       - name: GitVersion
         id: gitversion
-        uses: PoshCode/Actions/gitversion@v1
+        uses: PoshCode/Actions/gitversion@v1.0.1
 
       - name: Install-RequiredModules
         uses: PoshCode/Actions/install-requiredmodules@v1
 
       - name: Build Module
-        run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        run: .\build.ps1 -Build -SemVer "${{ steps.gitversion.outputs.SemVer }}"
         shell: pwsh
 
       - name: Upload Built Module
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          name: NexuShell.${{ steps.gitversion.outputs.LegacySemVerPadded }}
+          name: NexuShell.${{ steps.gitversion.outputs.SemVer }}
           path: .\Output
 
       - name: Test Module
-        run: .\build.ps1 -TestPrePublish -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        run: .\build.ps1 -TestPrePublish -SemVer "${{ steps.gitversion.outputs.SemVer }}"
         shell: pwsh
 
       - name: Upload Test Results
@@ -66,4 +68,4 @@ jobs:
 
       - name: Publish Module
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: .\build.ps1 -DeployToGallery -SemVer "${{ steps.gitversion.outputs.LegacySemVerPadded }}"
+        run: .\build.ps1 -DeployToGallery -SemVer "${{ steps.gitversion.outputs.SemVer }}"

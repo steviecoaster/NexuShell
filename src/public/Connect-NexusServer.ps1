@@ -20,7 +20,16 @@ function Connect-NexusServer {
     
     .PARAMETER Sslport
     If not the default 8443 provide the current SSL port your Nexus server uses
-    
+
+    .PARAMETER LocalService
+    Connects to a locally running instance of Nexus, if it can be found
+
+    .EXAMPLE
+    Connect-NexusServer -LocalService -Credential admin
+
+    .EXAMPLE
+    Connect-NexusServer -LocalService -Credential admin -Hostname nexus.fabrikam.com
+
     .EXAMPLE
     Connect-NexusServer -Hostname nexus.fabrikam.com -Credential (Get-Credential)
 
@@ -30,66 +39,83 @@ function Connect-NexusServer {
     .EXAMPLE
     Connect-NexusServer -Hostname nexus.fabrikam.com -Credential $Cred -UseSSL -Sslport 443
     #>
-    [cmdletBinding(HelpUri='https://nexushell.dev/Connect-NexusServer/')]
+    [CmdletBinding(DefaultParameterSetName="Specified", HelpUri='https://nexushell.dev/Connect-NexusServer/')]
     param(
-        [Parameter(Mandatory,Position=0)]
+        [Parameter(ParameterSetName="Specified", Mandatory, Position=0)]
+        [Parameter(ParameterSetName="LocalService", Position=0)]
         [Alias('Server')]
         [String]
         $Hostname,
 
-        [Parameter(Mandatory,Position=1)]
+        [Parameter(Mandatory, Position=1)]
         [System.Management.Automation.PSCredential]
         $Credential,
 
-        [Parameter()]
+        [Parameter(ParameterSetName="Specified")]
         [String]
         $Path = "/",
 
-        [Parameter()]
+        [Parameter(ParameterSetName="Specified")]
         [Switch]
         $UseSSL,
 
-        [Parameter()]
+        [Parameter(ParameterSetName="Specified")]
         [String]
-        $Sslport = '8443'
+        $Sslport = '8443',
+
+        [Parameter(ParameterSetName="LocalService", Mandatory)]
+        [Switch]
+        $LocalService
     )
-
-    process {
-
-        if($UseSSL){
-            $script:protocol = 'https'
-            $script:port = $Sslport
-        } else {
-            $script:protocol = 'http'
-            $script:port = '8081'
-        }
-
-        $script:HostName = $Hostname
-        $script:ContextPath = $Path.TrimEnd('/')
-
+    end {
         $credPair = "{0}:{1}" -f $Credential.UserName,$Credential.GetNetworkCredential().Password
 
         $encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($credPair))
 
-        $script:header = @{ Authorization = "Basic $encodedCreds"}
+        $script:header = @{ Authorization = "Basic $encodedCreds" }
         $script:Credential = $Credential
 
-        try {
-            $url = "$($protocol)://$($Hostname):$($port)$($ContextPath)/service/rest/v1/status"
+        switch ($PSCmdlet.ParameterSetName) {
+            "Specified" {
+                if($UseSSL){
+                    $script:protocol = 'https'
+                    $script:port = $Sslport
+                } else {
+                    $script:protocol = 'http'
+                    $script:port = '8081'
+                }
 
-            $params = @{
-                Headers = $header
-                ContentType = 'application/json'
-                Method = 'GET'
-                Uri = $url
-                UseBasicParsing = $true
+                $script:HostName = $Hostname
+                $script:ContextPath = $Path.TrimEnd('/')
+
+                $uri = "$($protocol)://$($Hostname):$($port)$($ContextPath)"
             }
+            "LocalService" {
+                $UriArgs = @{}
+                if ($Hostname) {
+                    $UriArgs.HostnameOverride = $Hostname
+                }
+                [uri]$uri = Get-NexusUri @UriArgs
 
-            $result = Invoke-RestMethod @params -ErrorAction Stop
-            Write-Host "Connected to $Hostname" -ForegroundColor Green
+                $script:protocol = $uri.Scheme
+                $script:port = $uri.Port
+                $script:HostName = $uri.Host
+                $script:ContextPath = $uri.LocalPath.TrimEnd('/')
+            }
         }
 
-        catch {
+        $params = @{
+            Headers = $header
+            ContentType = 'application/json'
+            Method = 'GET'
+            Uri = "$($uri.ToString().TrimEnd('/'))/service/rest/v1/status"
+            UseBasicParsing = $true
+        }
+
+        try {
+            $null = Invoke-RestMethod @params -ErrorAction Stop
+            Write-Host "Connected to $($script:HostName)" -ForegroundColor Green
+        } catch {
             $_.Exception.Message
         }
     }

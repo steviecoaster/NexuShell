@@ -45,8 +45,7 @@ function Get-NexusAsset {
 
             $result.items
 
-            if ($($result.continuationToken)) {
-
+            while ($($result.continuationToken)) {
                 $urislug = "/service/rest/v1/assets?continuationToken=$($result.continuationToken)&repository=$($RepositoryName)"
                 $result = Invoke-Nexus -Urislug $urislug -Method GET
                 $result.items

@@ -17,10 +17,6 @@ param(
     $DeployToGallery,
 
     [Parameter()]
-    [Switch]
-    $Choco,
-
-    [Parameter()]
     [string]
     $SemVer = $(
         if (Get-Command gitversion -ErrorAction SilentlyContinue) {
@@ -85,27 +81,6 @@ process {
 
         $DeployToGallery {
             Publish-Module -Path "$root\Output\NexuShell" -NuGetApiKey $env:NugetApiKey
-        }
-
-        $Choco {
-            $PackageSource = Join-Path $root "src\nuget"
-
-            $Nuspec = Get-ChildItem $PackageSource -recurse -filter *.nuspec
-
-            Copy-Item -Path $root\LICENSE -Destination $PackageSource
-            Compress-Archive -Path $root\Output\* -DestinationPath $PackageSource\tools\NexuShell.zip -Force #Added force to allow local testing without shenanigans
-
-            if (Test-Path "$PackageSource\tools\NexuShell.zip") {
-                choco pack $Nuspec.FullName --version $SemVer --output-directory $root
-            } else {
-                throw "Welp, ya need the zip in the tools folder, dumby"
-            }
-
-            if ($env:ChocoApiKey) {
-                Get-ChildItem $PackageSource -Recurse -Filter *.nupkg | ForEach-Object { 
-                    choco push $_.FullName -s https://push.chocolatey.org --api-key="'$($env:ChocoApiKey)'"
-                }
-            }
         }
     }
 }

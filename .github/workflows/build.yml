@@ -16,7 +16,6 @@ jobs:
     runs-on: windows-latest
     env:
       NugetApiKey: ${{ secrets.NugetApiKey }}
-      ChocoApiKey: ${{ secrets.ChocoApiKey }}
 
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +61,6 @@ jobs:
           tag_name: ${{ steps.gitversion.outputs.MajorMinorPatch }}
           body: |
             PowerShellGallery: [NexuShell ](https://www.powershellgallery.com/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
-            Chocolatey Community Repository: [NexuShell ](https://community.chocolatey.org/packages/NexuShell/${{ steps.gitversion.outputs.MajorMinorPatch }})
           draft: false
           prerelease: ${{ github.ref != 'refs/heads/main' }}
 

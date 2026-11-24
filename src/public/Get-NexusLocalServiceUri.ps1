@@ -49,7 +49,9 @@ function Get-NexusLocalServiceUri {
   
         if ($Config.'application-port-ssl' -gt 0) {
             'https'
-            if ($CertDomain = Get-NexusCertificateDomain -ConfigPath $ConfigPath) {
+            if ($HostnameOverride) {
+                $HostnameOverride
+            } elseif ($CertDomain = Get-NexusCertificateDomain -ConfigPath $ConfigPath) {
                 if (-not $script:OverriddenDomains) { $script:OverriddenDomains = @{} }
                 if ($CertDomain -notmatch '^\*') {
                     $CertDomain
